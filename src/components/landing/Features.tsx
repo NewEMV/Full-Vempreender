@@ -1,4 +1,3 @@
-
 import { BrainCircuit, Copy, Store, Clock, CalendarClock, DollarSign } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -49,12 +48,12 @@ export default function ComoFunciona() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Um bom atendimento cativa clientes e impulsiona vendas!
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground">
+          <p className="mt-10 text-lg text-muted-foreground/80">
             Empreendedor, sabemos que cada cliente é vital. Vempreender é seu aliado estratégico para transformar o atendimento em resultados reais, com um chatbot que realmente conversa com seu cliente.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
           {features.map((feature) => (
             <Card
               key={feature.title}
