@@ -15,9 +15,9 @@ const navLinks = [
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/80 backdrop-blur-lg">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+      <div className="container mx-auto flex h-16 items-center justify-between px-8">
         <Logo />
-        <nav className="hidden items-center space-x-4 text-sm font-medium lg:flex">
+        <nav className="hidden items-center space-x-4 text-base font-medium lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.label}

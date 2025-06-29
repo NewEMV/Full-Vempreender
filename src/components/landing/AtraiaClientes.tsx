@@ -20,7 +20,7 @@ const insights = [
 export default function AtraiaClientes() {
   return (
     <section id="atraia-clientes" className="py-20 md:py-32 bg-background/50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Sua Máquina de Aquisição de Clientes

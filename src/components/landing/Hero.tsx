@@ -12,9 +12,9 @@ export default function Hero() {
         <div className="h-56 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-primary"></div>
         <div className="h-32 bg-gradient-to-r from-accent to-cyan-400 blur-[106px] dark:to-accent"></div>
       </div>
-      <div className="container relative mx-auto px-4">
+      <div className="container relative mx-auto px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
+          <h1 className="font-headline text-4xl font-semibold tracking-tight text-foreground sm:text-6xl">
             Atender bem vende mais.
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
