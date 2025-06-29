@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="h-56 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-primary"></div>
         <div className="h-32 bg-gradient-to-r from-accent to-cyan-400 blur-[106px] dark:to-accent"></div>
       </div>
-      <div className="container relative mx-auto px-24">
+      <div className="container relative mx-auto flex h-full flex-grow items-center px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="font-headline text-4xl font-semibold tracking-tight text-foreground sm:text-6xl">
             Atender bem vende mais.
@@ -22,12 +22,11 @@ export default function Hero() {
           <p className="mt-10 text-2xl font-medium leading-tight text-muted-foreground sm:text-4xl">
             Transforme um bom atendimento em vendas.
           </p>
-          <p className="mt-10 text-lg font-normal text-muted-foreground/80 sm:text-xl">
+          <p className="mt-10 text-lg font-normal text-muted-foreground/80 sm:text-[22px]">
             Se um novo cliente não é bem atendido, a venda vai embora. Simples
             assim. Com Vempreender você tem um Atendente com Inteligência
             Artificial que conversa com todo novo cliente como se fosse você. Ele
-            responde, explica seus serviços e ajuda a filtrar quem realmente
-            está pronto para comprar.
+            responde, explica seus serviços e ajuda a separar curiosos de clientes.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button
@@ -50,18 +49,6 @@ export default function Hero() {
                 →
               </span>
             </Button>
-          </div>
-        </div>
-        <div className="mt-16 flow-root sm:mt-24">
-          <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-            <img
-              src="https://placehold.co/1200x600.png"
-              alt="App screenshot"
-              width={2432}
-              height={1442}
-              data-ai-hint="chatbot interface"
-              className="rounded-md shadow-2xl ring-1 ring-gray-900/10"
-            />
           </div>
         </div>
       </div>
