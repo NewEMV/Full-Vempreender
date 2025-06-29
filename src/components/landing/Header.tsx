@@ -3,7 +3,6 @@ import Logo from "@/components/icons/Logo";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-    { href: "#inicio", label: "Início" },
     { href: "#como-funciona", label: "Como Funciona" },
     { href: "#atraia-clientes", label: "Atraia Clientes" },
     { href: "#nosso-plano", label: "Nosso Plano" },
@@ -15,7 +14,7 @@ const navLinks = [
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/80 backdrop-blur-lg">
-      <div className="container mx-auto flex h-16 items-center justify-between px-8">
+      <div className="container mx-auto flex h-16 items-center justify-between px-24">
         <Logo />
         <nav className="hidden items-center space-x-4 text-base font-medium lg:flex">
           {navLinks.map((link) => (

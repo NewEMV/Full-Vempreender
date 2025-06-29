@@ -20,12 +20,12 @@ const insights = [
 export default function AtraiaClientes() {
   return (
     <section id="atraia-clientes" className="py-20 md:py-32 bg-background/50">
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Sua Máquina de Aquisição de Clientes
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-6 text-lg text-muted-foreground">
             Você já faz um trabalho incrível e que merece ser visto! Elimine o gargalo do atendimento e divulgue seu negócio sem medo. Com Vempreender, você atende a todos, de forma inteligente, eficiente e acessível. O Vempreender cuida da conversa para você vender mais, com mais inteligência e menos esforço.
           </p>
         </div>

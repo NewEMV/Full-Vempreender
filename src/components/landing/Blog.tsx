@@ -24,12 +24,12 @@ const blogPosts = [
 export default function Blog() {
   return (
     <section id="blog" className="py-20 md:py-32">
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Blog Vempreender: Dicas e Estratégias para sua Empresa Crescer
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-6 text-lg text-muted-foreground">
             Quer mais clientes e aumentar suas vendas? No Blog Vempreender você encontra dicas práticas de marketing, vendas e como usar seu chatbot, que é seu Agente IA personalizado, para crescer.
           </p>
         </div>

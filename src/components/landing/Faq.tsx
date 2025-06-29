@@ -20,12 +20,12 @@ const testimonials = [
 export default function Depoimentos() {
   return (
     <section id="depoimentos" className="py-20 md:py-32 bg-background/50">
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Empreendedores como Você Vão Amar o Vempreender
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-6 text-lg text-muted-foreground">
             Em breve, histórias de sucesso de empreendedores que transformaram seus negócios com Vempreender. Veja alguns exemplos do que eles dirão sobre nosso atendimento inteligente:
           </p>
         </div>
@@ -34,8 +34,8 @@ export default function Depoimentos() {
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="bg-card">
               <CardContent className="p-6">
-                <Quote className="h-8 w-8 text-primary mb-4" />
-                <p className="text-muted-foreground mb-4">“{testimonial.quote}”</p>
+                <Quote className="h-8 w-8 text-primary mb-6" />
+                <p className="text-muted-foreground mb-6">“{testimonial.quote}”</p>
                 <p className="font-bold text-foreground">- {testimonial.name}</p>
               </CardContent>
             </Card>

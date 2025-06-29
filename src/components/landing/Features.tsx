@@ -44,12 +44,12 @@ const features = [
 export default function ComoFunciona() {
   return (
     <section id="como-funciona" className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Um bom atendimento cativa clientes e impulsiona vendas!
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-6 text-lg text-muted-foreground">
             Empreendedor, sabemos que cada cliente é vital. Vempreender é seu aliado estratégico para transformar o atendimento em resultados reais, com um chatbot que realmente conversa com seu cliente.
           </p>
         </div>
