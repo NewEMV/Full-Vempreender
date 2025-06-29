@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Suspense, useEffect } from "react";
@@ -6,8 +7,13 @@ import { useToast } from "@/hooks/use-toast";
 
 import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
-import Features from "@/components/landing/Features";
-import Faq from "@/components/landing/Faq";
+import ComoFunciona from "@/components/landing/Features";
+import AtraiaClientes from "@/components/landing/AtraiaClientes";
+import NossoPlano from "@/components/landing/NossoPlano";
+import Depoimentos from "@/components/landing/Faq";
+import Blog from "@/components/landing/Blog";
+import Afiliados from "@/components/landing/Afiliados";
+import NewFaq from "@/components/landing/NewFaq";
 import Footer from "@/components/landing/Footer";
 import Chatbot from "@/components/chatbot/Chatbot";
 
@@ -19,8 +25,8 @@ function ReferralHandler() {
     const ref = searchParams.get("ref");
     if (ref) {
       toast({
-        title: "Referral Applied!",
-        description: `Welcome! Your referral code "${ref}" has been successfully applied.`,
+        title: "Indicação Aplicada!",
+        description: `Bem-vindo! Seu código de indicação "${ref}" foi aplicado com sucesso.`,
         duration: 5000,
       });
     }
@@ -38,8 +44,13 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <Features />
-        <Faq />
+        <ComoFunciona />
+        <AtraiaClientes />
+        <NossoPlano />
+        <Depoimentos />
+        <Blog />
+        <Afiliados />
+        <NewFaq />
       </main>
       <Footer />
       <Chatbot />

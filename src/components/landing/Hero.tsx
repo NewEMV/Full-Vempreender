@@ -1,9 +1,10 @@
+
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Bot } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-32">
+    <section id="inicio" className="relative overflow-hidden py-20 md:py-32">
       <div
         aria-hidden="true"
         className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20"
@@ -19,24 +20,25 @@ export default function Hero() {
               size="sm"
               className="rounded-full bg-background/50"
             >
-              <Bot className="mr-2 h-4 w-4 text-primary" />
-              Now Powered by Generative AI
+              <Sparkles className="mr-2 h-4 w-4 text-primary" />
+              Teste Grátis por 7 Dias
             </Button>
           </div>
           <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-            Transform Customer Interaction with Intelligent AI
+            Atender bem vende mais.
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Vempreender AI provides a smart, conversational chatbot that
-            qualifies leads, answers questions, and delivers personalized
-            experiences to every user, 24/7.
+            Um bom atendimento transforma interesse em vendas.
+          </p>
+          <p className="mt-4 text-base text-muted-foreground/80">
+            Se um novo cliente não é bem atendido, a venda vai embora. Simples assim. Com Vempreender você tem um Atendente com Inteligência Artificial que conversa com todo novo cliente como se fosse você. Ele responde, explica seus serviços e ajuda a filtrar quem realmente está pronto para comprar.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button
               size="lg"
               className="font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30"
             >
-              Get Started for Free
+              Teste Grátis Agora
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
@@ -44,7 +46,7 @@ export default function Hero() {
               size="lg"
               className="group font-bold transition-all"
             >
-              Request a Demo{" "}
+              Saiba Mais{" "}
               <span
                 aria-hidden="true"
                 className="ml-2 transition-transform group-hover:translate-x-1"

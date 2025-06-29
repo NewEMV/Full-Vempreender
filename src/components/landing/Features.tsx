@@ -1,48 +1,60 @@
-import { Bot, BarChart, Users, Zap } from "lucide-react";
+
+import { BrainCircuit, Copy, Store, Clock, CalendarClock, DollarSign } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const features = [
   {
-    icon: <Bot className="h-8 w-8 text-primary" />,
-    title: "Intelligent Chatbot",
+    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+    title: "Foque no Seu Trabalho!",
     description:
-      "Engage customers 24/7 with a smart AI that understands context, answers complex questions, and provides a human-like conversational experience.",
+      "Deixe o Vempreender conversar e tirar dúvidas dos seus clientes. Você foca no que realmente importa e retorna o contato no seu tempo.",
   },
   {
-    icon: <Users className="h-8 w-8 text-primary" />,
-    title: "Automated Lead Qualification",
+    icon: <Copy className="h-8 w-8 text-primary" />,
+    title: "Seu clone digital",
     description:
-      "Our AI automatically identifies and qualifies high-potential leads, so your sales team can focus on closing deals instead of prospecting.",
+      "Nossa IA aprende com você para atender com seu conhecimento, através de conversas inteligentes, construindo confiança. Faça do atendimento seu melhor vendedor.",
   },
   {
-    icon: <BarChart className="h-8 w-8 text-primary" />,
-    title: "Data-Driven Insights",
+    icon: <Store className="h-8 w-8 text-primary" />,
+    title: "Vender!",
     description:
-      "Gain valuable insights from customer interactions. Understand their needs, pain points, and feedback to improve your products and services.",
+      "Divulgue o link do seu chatbot na Bio do Instagram, no seu Perfil do Google Maps e onde mais quiser. Ao clicar no link, seu novo cliente vai conversar com um Agente IA que tem todo o conhecimento sobre o seu negócio.",
   },
   {
-    icon: <Zap className="h-8 w-8 text-primary" />,
-    title: "Seamless Integration",
+    icon: <Clock className="h-8 w-8 text-primary" />,
+    title: "Pronto em Até 24 Horas",
     description:
-      "Easily integrate our AI chatbot with your existing website, CRM, and other business tools for a streamlined and efficient workflow.",
+      "Simples e rápido: preencha o formulário e seu chatbot IA Vempreender fica pronto em até 24h. Teste grátis por 7 dias!",
+  },
+  {
+    icon: <CalendarClock className="h-8 w-8 text-primary" />,
+    title: "Atendimento 24/7",
+    description:
+      "Seu negócio disponível 24 horas por dia, 7 dias por semana. Não perca mais clientes por demora no atendimento. Vempreender está sempre online.",
+  },
+  {
+    icon: <DollarSign className="h-8 w-8 text-primary" />,
+    title: "Custo Benefício Excelente",
+    description:
+      "Atendimento contínuo, inclusive em madrugadas e férias, por uma fração do custo de um atendente humano. Economia real para seu negócio.",
   },
 ];
 
-export default function Features() {
+export default function ComoFunciona() {
   return (
-    <section id="features" className="py-20 md:py-32 bg-background">
+    <section id="como-funciona" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Supercharge Your Business with AI
+            Um bom atendimento cativa clientes e impulsiona vendas!
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            From automating customer service to qualifying leads, our AI is
-            designed to help you work smarter, not harder.
+            Empreendedor, sabemos que cada cliente é vital. Vempreender é seu aliado estratégico para transformar o atendimento em resultados reais, com um chatbot que realmente conversa com seu cliente.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
             <Card
               key={feature.title}
