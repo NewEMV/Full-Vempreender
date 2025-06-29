@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
 
@@ -22,10 +21,10 @@ export default function Depoimentos() {
     <section id="depoimentos" className="py-20 md:py-32 bg-background/50">
       <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Empreendedores como Você Vão Amar o Vempreender
           </h2>
-          <p className="mt-10 text-xl text-muted-foreground sm:text-2xl">
+          <p className="mt-10 text-lg font-normal text-muted-foreground sm:text-xl">
             Em breve, histórias de sucesso de empreendedores que transformaram seus negócios com Vempreender. Veja alguns exemplos do que eles dirão sobre nosso atendimento inteligente:
           </p>
         </div>

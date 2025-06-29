@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -7,10 +6,10 @@ export default function NossoPlano() {
     <section id="nosso-plano" className="py-20 md:py-32">
       <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Simples no uso. Enorme no resultado.
           </h2>
-          <p className="mt-10 text-xl text-muted-foreground sm:text-2xl">
+          <p className="mt-10 text-lg font-normal text-muted-foreground sm:text-xl">
             Sem complexidade ou funcionalidades que você não usa. Foco em resolver seu problema principal: atender bem para vender mais.
           </p>
         </div>

@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Handshake } from "lucide-react";
 
@@ -7,10 +6,10 @@ export default function Afiliados() {
     <section id="afiliados" className="py-20 md:py-32 bg-background/50">
       <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Indique Vempreender e Ganhe: Programa de Afiliados
           </h2>
-          <p className="mt-10 text-xl text-muted-foreground sm:text-2xl">
+          <p className="mt-10 text-lg font-normal text-muted-foreground sm:text-xl">
             Ajude outros empreendedores a transformar o atendimento com Vempreender e gere uma renda extra. Conheça nosso Programa de Afiliados!
           </p>
         </div>

@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
@@ -26,10 +25,10 @@ export default function Blog() {
     <section id="blog" className="py-20 md:py-32">
       <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Blog Vempreender: Dicas e Estratégias para sua Empresa Crescer
           </h2>
-          <p className="mt-10 text-xl text-muted-foreground sm:text-2xl">
+          <p className="mt-10 text-lg font-normal text-muted-foreground sm:text-xl">
             Quer mais clientes e aumentar suas vendas? No Blog Vempreender você encontra dicas práticas de marketing, vendas e como usar seu chatbot, que é seu Agente IA personalizado, para crescer.
           </p>
         </div>
