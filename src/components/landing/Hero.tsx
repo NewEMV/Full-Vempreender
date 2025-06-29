@@ -32,9 +32,9 @@ export default function Hero() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
-              variant="ghost"
+              variant="outline"
               size="lg"
-              className="group font-bold transition-all"
+              className="group font-bold transition-all border-primary border-[1.5px]"
             >
               Saiba Mais{" "}
               <span
