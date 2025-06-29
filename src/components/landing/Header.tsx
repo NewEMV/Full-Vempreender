@@ -3,6 +3,7 @@ import Logo from "@/components/icons/Logo";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
+    { href: "#inicio", label: "Início" },
     { href: "#como-funciona", label: "Como Funciona" },
     { href: "#atraia-clientes", label: "Atraia Clientes" },
     { href: "#nosso-plano", label: "Nosso Plano" },
