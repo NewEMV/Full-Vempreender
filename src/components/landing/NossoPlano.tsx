@@ -10,7 +10,7 @@ export default function NossoPlano() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Simples no uso. Enorme no resultado.
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground">
+          <p className="mt-10 text-lg text-muted-foreground sm:text-xl">
             Sem complexidade ou funcionalidades que você não usa. Foco em resolver seu problema principal: atender bem para vender mais.
           </p>
         </div>
@@ -24,7 +24,7 @@ export default function NossoPlano() {
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <Card className="flex flex-col">
             <CardHeader>
-              <CardTitle>Implantação Vempreender</CardTitle>
+              <CardTitle className="font-semibold">Implantação Vempreender</CardTitle>
               <CardDescription>
                 De <span className="line-through">R$ 800,00</span> por <span className="text-primary font-bold text-2xl">R$ 400,00</span>
               </CardDescription>
@@ -38,7 +38,7 @@ export default function NossoPlano() {
           </Card>
           <Card className="flex flex-col border-primary shadow-lg shadow-primary/20">
             <CardHeader>
-              <CardTitle>Mensalidade Vempreender</CardTitle>
+              <CardTitle className="font-semibold">Mensalidade Vempreender</CardTitle>
               <CardDescription>
                  De <span className="line-through">R$ 579,00</span> por <span className="text-primary font-bold text-2xl">R$ 250,00/mês</span>
               </CardDescription>

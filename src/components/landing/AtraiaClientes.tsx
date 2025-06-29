@@ -25,7 +25,7 @@ export default function AtraiaClientes() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Sua Máquina de Aquisição de Clientes
           </h2>
-          <p className="mt-10 text-lg text-muted-foreground">
+          <p className="mt-10 text-lg text-muted-foreground sm:text-xl">
             Você já faz um trabalho incrível e que merece ser visto! Elimine o gargalo do atendimento e divulgue seu negócio sem medo. Com Vempreender, você atende a todos, de forma inteligente, eficiente e acessível. O Vempreender cuida da conversa para você vender mais, com mais inteligência e menos esforço.
           </p>
         </div>
@@ -50,7 +50,7 @@ export default function AtraiaClientes() {
         </div>
         
         <div className="mt-12 text-center">
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground sm:text-xl">
             Quer dominar o Impulsionamento e Tráfego Pago? <a href="#blog" className="text-primary hover:underline">Visite nosso Blog</a> para dicas práticas e faça o Vempreender render ainda mais!
           </p>
         </div>
