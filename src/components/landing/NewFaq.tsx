@@ -46,7 +46,7 @@ export default function NewFaq() {
               <Accordion type="single" collapsible className="w-full">
                 {faqData.map((item, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                    <AccordionTrigger className="text-left font-medium hover:no-underline">
                       {item.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-muted-foreground">

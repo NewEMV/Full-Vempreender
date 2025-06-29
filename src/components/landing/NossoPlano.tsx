@@ -10,13 +10,13 @@ export default function NossoPlano() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Simples no uso. Enorme no resultado.
           </h2>
-          <p className="mt-10 text-lg text-muted-foreground sm:text-xl">
+          <p className="mt-10 text-xl text-muted-foreground sm:text-2xl">
             Sem complexidade ou funcionalidades que você não usa. Foco em resolver seu problema principal: atender bem para vender mais.
           </p>
         </div>
 
         <div className="mx-auto mt-8 max-w-2xl text-center">
-          <p className="text-lg font-semibold text-primary">
+          <p className="text-lg font-medium text-primary">
             Vempreender será seu melhor funcionário por uma fração do salário de um atendente humano. Não falta, não esquece suas instruções e não te atrapalha.
           </p>
         </div>
@@ -24,7 +24,7 @@ export default function NossoPlano() {
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <Card className="flex flex-col">
             <CardHeader>
-              <CardTitle className="font-semibold">Implantação Vempreender</CardTitle>
+              <CardTitle className="font-medium">Implantação Vempreender</CardTitle>
               <CardDescription>
                 De <span className="line-through">R$ 800,00</span> por <span className="text-primary font-bold text-2xl">R$ 400,00</span>
               </CardDescription>
@@ -38,7 +38,7 @@ export default function NossoPlano() {
           </Card>
           <Card className="flex flex-col border-primary shadow-lg shadow-primary/20">
             <CardHeader>
-              <CardTitle className="font-semibold">Mensalidade Vempreender</CardTitle>
+              <CardTitle className="font-medium">Mensalidade Vempreender</CardTitle>
               <CardDescription>
                  De <span className="line-through">R$ 579,00</span> por <span className="text-primary font-bold text-2xl">R$ 250,00/mês</span>
               </CardDescription>

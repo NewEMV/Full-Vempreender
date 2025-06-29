@@ -48,7 +48,7 @@ export default function ComoFunciona() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Um bom atendimento cativa clientes e impulsiona vendas!
           </h2>
-          <p className="mt-10 text-lg text-muted-foreground/80 sm:text-xl">
+          <p className="mt-10 text-xl text-muted-foreground/80 sm:text-2xl">
             Empreendedor, sabemos que cada cliente é vital. Vempreender é seu aliado estratégico para transformar o atendimento em resultados reais, com um chatbot que realmente conversa com seu cliente.
           </p>
         </div>
@@ -61,7 +61,7 @@ export default function ComoFunciona() {
             >
               <CardHeader className="flex flex-col items-start gap-4">
                 {feature.icon}
-                <CardTitle className="font-headline text-xl font-semibold">
+                <CardTitle className="font-headline text-xl font-medium">
                   {feature.title}
                 </CardTitle>
               </CardHeader>
