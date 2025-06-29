@@ -10,7 +10,7 @@ export default function Afiliados() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Indique Vempreender e Ganhe: Programa de Afiliados
           </h2>
-          <p className="mt-10 text-3xl text-muted-foreground sm:text-4xl">
+          <p className="mt-10 text-xl text-muted-foreground sm:text-2xl">
             Ajude outros empreendedores a transformar o atendimento com Vempreender e gere uma renda extra. Conheça nosso Programa de Afiliados!
           </p>
         </div>

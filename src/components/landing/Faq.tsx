@@ -25,7 +25,7 @@ export default function Depoimentos() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Empreendedores como Você Vão Amar o Vempreender
           </h2>
-          <p className="mt-10 text-3xl text-muted-foreground sm:text-4xl">
+          <p className="mt-10 text-xl text-muted-foreground sm:text-2xl">
             Em breve, histórias de sucesso de empreendedores que transformaram seus negócios com Vempreender. Veja alguns exemplos do que eles dirão sobre nosso atendimento inteligente:
           </p>
         </div>

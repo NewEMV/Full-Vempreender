@@ -29,7 +29,7 @@ export default function Blog() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Blog Vempreender: Dicas e Estratégias para sua Empresa Crescer
           </h2>
-          <p className="mt-10 text-3xl text-muted-foreground sm:text-4xl">
+          <p className="mt-10 text-xl text-muted-foreground sm:text-2xl">
             Quer mais clientes e aumentar suas vendas? No Blog Vempreender você encontra dicas práticas de marketing, vendas e como usar seu chatbot, que é seu Agente IA personalizado, para crescer.
           </p>
         </div>
