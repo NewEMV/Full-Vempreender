@@ -1,10 +1,13 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative overflow-hidden py-20 md:py-32">
+    <section
+      id="inicio"
+      className="relative flex items-center min-h-[calc(100vh-4rem)] overflow-hidden py-12"
+    >
       <div
         aria-hidden="true"
         className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20"
