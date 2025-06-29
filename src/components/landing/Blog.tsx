@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 
 const blogPosts = [
@@ -29,7 +29,7 @@ export default function Blog() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Blog Vempreender: Dicas e Estratégias para sua Empresa Crescer
           </h2>
-          <p className="mt-10 text-lg text-muted-foreground sm:text-xl">
+          <p className="mt-10 text-3xl text-muted-foreground sm:text-4xl">
             Quer mais clientes e aumentar suas vendas? No Blog Vempreender você encontra dicas práticas de marketing, vendas e como usar seu chatbot, que é seu Agente IA personalizado, para crescer.
           </p>
         </div>
@@ -53,7 +53,7 @@ export default function Blog() {
         </div>
 
         <div className="mt-12 text-center">
-          <Button size="lg" className="font-bold">Ver Todas as Dicas no Blog</Button>
+          <Button size="lg" className="text-base font-bold">Ver Todas as Dicas no Blog</Button>
         </div>
       </div>
     </section>

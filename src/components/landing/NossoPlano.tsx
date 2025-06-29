@@ -10,7 +10,7 @@ export default function NossoPlano() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Simples no uso. Enorme no resultado.
           </h2>
-          <p className="mt-10 text-xl text-muted-foreground sm:text-2xl">
+          <p className="mt-10 text-3xl text-muted-foreground sm:text-4xl">
             Sem complexidade ou funcionalidades que você não usa. Foco em resolver seu problema principal: atender bem para vender mais.
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function NossoPlano() {
               <p>Garanta seu Desconto na implantação do seu chatbot Vempreender. Durante a criação do seu chatbot, basta baixar e publicar nosso post nos Stories do seu Instagram marcando o @vempreender.ia.</p>
             </CardContent>
             <CardFooter>
-              <Button className="w-full font-bold">Começar Agora!</Button>
+              <Button className="w-full text-base font-bold">Começar Agora!</Button>
             </CardFooter>
           </Card>
           <Card className="flex flex-col border-primary shadow-lg shadow-primary/20">
@@ -47,7 +47,7 @@ export default function NossoPlano() {
                 <p>Conquiste seu desconto permanente nas mensalidades. Basta indicar 3 amigos durante a criação do seu chatbot.</p>
             </CardContent>
             <CardFooter>
-              <Button className="w-full font-bold">Quero meu Vempreender!</Button>
+              <Button className="w-full text-base font-bold">Quero meu Vempreender!</Button>
             </CardFooter>
           </Card>
         </div>

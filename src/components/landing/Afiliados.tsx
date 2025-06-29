@@ -10,7 +10,7 @@ export default function Afiliados() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Indique Vempreender e Ganhe: Programa de Afiliados
           </h2>
-          <p className="mt-10 text-lg text-muted-foreground sm:text-xl">
+          <p className="mt-10 text-3xl text-muted-foreground sm:text-4xl">
             Ajude outros empreendedores a transformar o atendimento com Vempreender e gere uma renda extra. Conheça nosso Programa de Afiliados!
           </p>
         </div>
@@ -29,7 +29,7 @@ export default function Afiliados() {
               Pagamento transparente 30 dias após a confirmação do cliente.
             </p>
           </div>
-          <Button size="lg" className="font-bold">Quero Ser Afiliado!</Button>
+          <Button size="lg" className="text-base font-bold">Quero Ser Afiliado!</Button>
         </div>
       </div>
     </section>
