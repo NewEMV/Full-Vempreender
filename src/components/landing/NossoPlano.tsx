@@ -20,7 +20,63 @@ export default function NossoPlano() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+        <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-8">
+          <Card className="flex flex-col">
+            <CardHeader>
+              <CardTitle className="font-medium">Implantação Vempreender</CardTitle>
+              <CardDescription>
+                De <span className="line-through">R$ 800,00</span> por <span className="text-primary font-bold text-2xl">R$ 400,00</span>
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex-1">
+              <p>Garanta seu Desconto na implantação do seu chatbot Vempreender. Durante a criação do seu chatbot, basta baixar e publicar nosso post nos Stories do seu Instagram marcando o @vempreender.ia.</p>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full text-base font-bold">Começar Agora!</Button>
+            </CardFooter>
+          </Card>
+          <Card className="flex flex-col border-primary shadow-lg shadow-primary/20">
+            <CardHeader>
+              <CardTitle className="font-medium">Mensalidade Vempreender</CardTitle>
+              <CardDescription>
+                 De <span className="line-through">R$ 579,00</span> por <span className="text-primary font-bold text-2xl">R$ 250,00/mês</span>
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex-1">
+                <p>Conquiste seu desconto permanente nas mensalidades. Basta indicar 3 amigos durante a criação do seu chatbot.</p>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full text-base font-bold">Quero meu Vempreender!</Button>
+            </CardFooter>
+          </Card>
+          <Card className="flex flex-col">
+            <CardHeader>
+              <CardTitle className="font-medium">Implantação Vempreender</CardTitle>
+              <CardDescription>
+                De <span className="line-through">R$ 800,00</span> por <span className="text-primary font-bold text-2xl">R$ 400,00</span>
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex-1">
+              <p>Garanta seu Desconto na implantação do seu chatbot Vempreender. Durante a criação do seu chatbot, basta baixar e publicar nosso post nos Stories do seu Instagram marcando o @vempreender.ia.</p>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full text-base font-bold">Começar Agora!</Button>
+            </CardFooter>
+          </Card>
+          <Card className="flex flex-col border-primary shadow-lg shadow-primary/20">
+            <CardHeader>
+              <CardTitle className="font-medium">Mensalidade Vempreender</CardTitle>
+              <CardDescription>
+                 De <span className="line-through">R$ 579,00</span> por <span className="text-primary font-bold text-2xl">R$ 250,00/mês</span>
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex-1">
+                <p>Conquiste seu desconto permanente nas mensalidades. Basta indicar 3 amigos durante a criação do seu chatbot.</p>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full text-base font-bold">Quero meu Vempreender!</Button>
+            </CardFooter>
+          </Card>
           <Card className="flex flex-col">
             <CardHeader>
               <CardTitle className="font-medium">Implantação Vempreender</CardTitle>
