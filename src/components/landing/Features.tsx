@@ -46,14 +46,14 @@ export default function ComoFunciona() {
       <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Um bom atendimento cativa clientes e impulsiona vendas!
+            Um bom atendimento cativa clientes!
           </h2>
-          <p className="mt-10 text-lg font-normal text-muted-foreground/80 sm:text-xl">
-            Empreendedor, sabemos que cada cliente é vital. Vempreender é seu aliado estratégico para transformar o atendimento em resultados reais, com um chatbot que realmente conversa com seu cliente.
+          <p className="mt-10 text-lg text-muted-foreground/80 sm:text-xl">
+            Empreendedor, cada cliente é vital. Vempreender é seu aliado estratégico para transformar o atendimento em resultados reais, com um chatbot que realmente conversa com seu cliente.
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
           {features.map((feature) => (
             <Card
               key={feature.title}
