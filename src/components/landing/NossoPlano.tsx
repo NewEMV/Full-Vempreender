@@ -29,7 +29,7 @@ export default function NossoPlano() {
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-1">
-              <p>Garanta seu Desconto na implantação do seu chatbot Vempreender. Durante a criação do seu chatbot, basta baixar e publicar nosso post nos Stories do seu Instagram marcando o @vempreender.ia.</p>
+              <p>Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.</p>
             </CardContent>
             <CardFooter>
               <Button className="w-full text-base font-bold">Começar Agora!</Button>
@@ -57,7 +57,7 @@ export default function NossoPlano() {
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-1">
-              <p>Garanta seu Desconto na implantação do seu chatbot Vempreender. Durante a criação do seu chatbot, basta baixar e publicar nosso post nos Stories do seu Instagram marcando o @vempreender.ia.</p>
+              <p>Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.</p>
             </CardContent>
             <CardFooter>
               <Button className="w-full text-base font-bold">Começar Agora!</Button>
@@ -85,7 +85,7 @@ export default function NossoPlano() {
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-1">
-              <p>Garanta seu Desconto na implantação do seu chatbot Vempreender. Durante a criação do seu chatbot, basta baixar e publicar nosso post nos Stories do seu Instagram marcando o @vempreender.ia.</p>
+              <p>Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.</p>
             </CardContent>
             <CardFooter>
               <Button className="w-full text-base font-bold">Começar Agora!</Button>
