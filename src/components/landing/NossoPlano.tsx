@@ -23,10 +23,8 @@ export default function NossoPlano() {
         <div className="mx-auto mt-12 grid max-w-xl grid-cols-1 gap-8">
           <Card className="flex flex-col border-2 border-primary">
             <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
-                <Button className="text-base font-bold">Concorrentes</Button>
-              </div>
+              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
+              <Button className="w-full text-base font-bold">Concorrentes</Button>
               <CardDescription className="text-xl font-bold text-primary">
                 Podem custar de 1.200,00 a 5.000,00
               </CardDescription>
@@ -51,10 +49,8 @@ export default function NossoPlano() {
           </Card>
           <Card className="flex flex-col border-2 border-chart-1">
             <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
-                <Button className="text-base font-bold">Concorrentes</Button>
-              </div>
+              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
+              <Button className="w-full text-base font-bold">Concorrentes</Button>
               <CardDescription className="text-xl font-bold text-primary">
                 Podem custar de 1.200,00 a 5.000,00
               </CardDescription>
@@ -79,10 +75,8 @@ export default function NossoPlano() {
           </Card>
           <Card className="flex flex-col border-2 border-chart-3">
             <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
-                <Button className="text-base font-bold">Concorrentes</Button>
-              </div>
+              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
+              <Button className="w-full text-base font-bold">Concorrentes</Button>
               <CardDescription className="text-xl font-bold text-primary">
                 Podem custar de 1.200,00 a 5.000,00
               </CardDescription>
