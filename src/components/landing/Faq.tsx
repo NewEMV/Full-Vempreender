@@ -30,9 +30,9 @@ export default function Depoimentos() {
       <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Empreendedores como Você Vão Amar o Vempreender
+            Depoimentos
           </h2>
-          <p className="mt-6 text-lg font-normal text-muted-foreground sm:text-xl md:text-2xl">
+          <p className="mt-10 text-lg font-normal text-muted-foreground/80 sm:text-xl md:text-2xl">
             Veja o que nossos clientes estão dizendo sobre como o Vempreender transformou seus negócios.
           </p>
         </div>
