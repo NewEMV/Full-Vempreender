@@ -23,7 +23,7 @@ export default function NossoPlano() {
         <div className="mx-auto mt-12 grid max-w-xl grid-cols-1 gap-8">
           <Card className="flex flex-col border-2 border-primary">
             <CardHeader>
-              <CardTitle className="font-medium">Implantação Vempreender</CardTitle>
+              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
               <CardDescription>
                 De <span className="line-through">R$ 800,00</span> por <span className="text-primary font-bold text-2xl">R$ 400,00</span>
               </CardDescription>
@@ -51,7 +51,7 @@ export default function NossoPlano() {
           </Card>
           <Card className="flex flex-col border-2 border-chart-1">
             <CardHeader>
-              <CardTitle className="font-medium">Implantação Vempreender</CardTitle>
+              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
               <CardDescription>
                 De <span className="line-through">R$ 800,00</span> por <span className="text-primary font-bold text-2xl">R$ 400,00</span>
               </CardDescription>
@@ -79,7 +79,7 @@ export default function NossoPlano() {
           </Card>
           <Card className="flex flex-col border-2 border-chart-3">
             <CardHeader>
-              <CardTitle className="font-medium">Implantação Vempreender</CardTitle>
+              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
               <CardDescription>
                 De <span className="line-through">R$ 800,00</span> por <span className="text-primary font-bold text-2xl">R$ 400,00</span>
               </CardDescription>
