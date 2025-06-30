@@ -1,7 +1,14 @@
 
+import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const testimonials = [
   {
@@ -22,41 +29,70 @@ const testimonials = [
     avatar: "https://placehold.co/100x100.png",
     aiHint: "man smiling",
   },
+  {
+    quote: "Muitos pacientes chegavam com dúvidas básicas que tomavam tempo da consulta. O Vempreender agora educa eles antes mesmo de agendar. Otimizou meu tempo e melhorou a experiência do paciente. Recomendo demais!",
+    name: "Dra. Ana B., Nutricionista",
+    avatar: "https://placehold.co/100x100.png",
+    aiHint: "woman professional",
+  },
+  {
+    quote: "A primeira sessão de terapia pode ser intimidante. O Vempreender ajuda a quebrar o gelo, respondendo perguntas iniciais e explicando minha abordagem. Os clientes chegam mais tranquilos e confiantes. Fez toda a diferença.",
+    name: "Lucas T., Psicólogo",
+    avatar: "https://placehold.co/100x100.png",
+    aiHint: "man thinking",
+  },
 ];
 
 export default function Depoimentos() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true })
+  );
+
   return (
     <section id="depoimentos" className="py-20 md:py-32 bg-background/50">
-      <div className="container mx-auto px-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Depoimentos
           </h2>
-          <p className="mt-10 text-lg font-normal text-muted-foreground/80 sm:text-xl md:text-2xl">
+          <p className="mt-6 text-2xl font-medium text-muted-foreground/80 sm:text-[22px]">
             Veja o que nossos clientes estão dizendo sobre como o Vempreender transformou seus negócios.
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-card flex flex-col">
-              <CardContent className="p-6 flex flex-col flex-1">
-                <Quote className="h-8 w-8 text-primary mb-6" />
-                <p className="text-muted-foreground mb-6 flex-1">“{testimonial.quote}”</p>
-                <div className="flex items-center gap-4 mt-auto">
-                    <Avatar>
-                        <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
-                        <AvatarFallback>{testimonial.name.split(" ")[0][0]}{testimonial.name.split(" ")[1][0]}</AvatarFallback>
-                    </Avatar>
-                    <div>
-                        <p className="font-bold text-foreground">{testimonial.name.split(",")[0]}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.name.split(",")[1].trim()}</p>
-                    </div>
+        <Carousel
+          plugins={[plugin.current]}
+          className="w-full max-w-6xl mx-auto mt-12"
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="-ml-4">
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <div className="h-full p-1">
+                  <Card className="bg-card flex flex-col h-full">
+                    <CardContent className="p-6 flex flex-col flex-1">
+                      <Quote className="h-8 w-8 text-primary mb-6" />
+                      <p className="text-muted-foreground mb-6 flex-1">“{testimonial.quote}”</p>
+                      <div className="flex items-center gap-4 mt-auto">
+                          <Avatar>
+                              <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
+                              <AvatarFallback>{testimonial.name.split(" ")[0][0]}{testimonial.name.split(" ")[1][0]}</AvatarFallback>
+                          </Avatar>
+                          <div>
+                              <p className="font-bold text-foreground">{testimonial.name.split(",")[0]}</p>
+                              <p className="text-sm text-muted-foreground">{testimonial.name.split(",")[1].trim()}</p>
+                          </div>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
     </section>
   );
