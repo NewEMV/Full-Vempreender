@@ -24,7 +24,7 @@ export default function NossoPlano() {
           <Card className="flex flex-col border-2 border-primary">
             <CardHeader>
               <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
-              <CardDescription>
+              <CardDescription className="text-xl font-bold text-primary">
                 Podem custar de 1.200,00 a 5.000,00
               </CardDescription>
             </CardHeader>
@@ -52,7 +52,7 @@ export default function NossoPlano() {
           <Card className="flex flex-col border-2 border-chart-1">
             <CardHeader>
               <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
-              <CardDescription>
+              <CardDescription className="text-xl font-bold text-primary">
                 Podem custar de 1.200,00 a 5.000,00
               </CardDescription>
             </CardHeader>
@@ -80,7 +80,7 @@ export default function NossoPlano() {
           <Card className="flex flex-col border-2 border-chart-3">
             <CardHeader>
               <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
-              <CardDescription>
+              <CardDescription className="text-xl font-bold text-primary">
                 Podem custar de 1.200,00 a 5.000,00
               </CardDescription>
             </CardHeader>
