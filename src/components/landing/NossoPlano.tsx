@@ -20,8 +20,8 @@ export default function NossoPlano() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-8">
-          <Card className="flex flex-col">
+        <div className="mx-auto mt-12 grid max-w-xl grid-cols-1 gap-8">
+          <Card className="flex flex-col border-2 border-primary">
             <CardHeader>
               <CardTitle className="font-medium">Implantação Vempreender</CardTitle>
               <CardDescription>
@@ -35,7 +35,7 @@ export default function NossoPlano() {
               <Button className="w-full text-base font-bold">Começar Agora!</Button>
             </CardFooter>
           </Card>
-          <Card className="flex flex-col border-primary shadow-lg shadow-primary/20">
+          <Card className="flex flex-col border-2 border-accent shadow-lg shadow-accent/20">
             <CardHeader>
               <CardTitle className="font-medium">Mensalidade Vempreender</CardTitle>
               <CardDescription>
@@ -49,7 +49,7 @@ export default function NossoPlano() {
               <Button className="w-full text-base font-bold">Quero meu Vempreender!</Button>
             </CardFooter>
           </Card>
-          <Card className="flex flex-col">
+          <Card className="flex flex-col border-2 border-chart-1">
             <CardHeader>
               <CardTitle className="font-medium">Implantação Vempreender</CardTitle>
               <CardDescription>
@@ -63,7 +63,7 @@ export default function NossoPlano() {
               <Button className="w-full text-base font-bold">Começar Agora!</Button>
             </CardFooter>
           </Card>
-          <Card className="flex flex-col border-primary shadow-lg shadow-primary/20">
+          <Card className="flex flex-col border-2 border-chart-2 shadow-lg shadow-chart-2/20">
             <CardHeader>
               <CardTitle className="font-medium">Mensalidade Vempreender</CardTitle>
               <CardDescription>
@@ -77,7 +77,7 @@ export default function NossoPlano() {
               <Button className="w-full text-base font-bold">Quero meu Vempreender!</Button>
             </CardFooter>
           </Card>
-          <Card className="flex flex-col">
+          <Card className="flex flex-col border-2 border-chart-3">
             <CardHeader>
               <CardTitle className="font-medium">Implantação Vempreender</CardTitle>
               <CardDescription>
@@ -91,7 +91,7 @@ export default function NossoPlano() {
               <Button className="w-full text-base font-bold">Começar Agora!</Button>
             </CardFooter>
           </Card>
-          <Card className="flex flex-col border-primary shadow-lg shadow-primary/20">
+          <Card className="flex flex-col border-2 border-chart-4 shadow-lg shadow-chart-4/20">
             <CardHeader>
               <CardTitle className="font-medium">Mensalidade Vempreender</CardTitle>
               <CardDescription>
