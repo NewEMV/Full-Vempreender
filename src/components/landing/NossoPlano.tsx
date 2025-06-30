@@ -23,17 +23,17 @@ export default function NossoPlano() {
         <div className="mx-auto mt-12 grid max-w-xl grid-cols-1 gap-8">
           <Card className="flex flex-col border-2 border-primary">
             <CardHeader>
-              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
+              <div className="flex items-center justify-between">
+                <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
+                <Button className="text-base font-bold">Concorrentes</Button>
+              </div>
               <CardDescription className="text-xl font-bold text-primary">
                 Podem custar de 1.200,00 a 5.000,00
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-1">
-              <p>Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.</p>
+              <p>Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que nem todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.</p>
             </CardContent>
-            <CardFooter>
-              <Button className="w-full text-base font-bold">Começar Agora!</Button>
-            </CardFooter>
           </Card>
           <Card className="flex flex-col border-2 border-accent shadow-lg shadow-accent/20">
             <CardHeader>
@@ -51,7 +51,10 @@ export default function NossoPlano() {
           </Card>
           <Card className="flex flex-col border-2 border-chart-1">
             <CardHeader>
-              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
+              <div className="flex items-center justify-between">
+                <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
+                <Button className="text-base font-bold">Concorrentes</Button>
+              </div>
               <CardDescription className="text-xl font-bold text-primary">
                 Podem custar de 1.200,00 a 5.000,00
               </CardDescription>
@@ -59,9 +62,6 @@ export default function NossoPlano() {
             <CardContent className="flex-1">
               <p>Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.</p>
             </CardContent>
-            <CardFooter>
-              <Button className="w-full text-base font-bold">Começar Agora!</Button>
-            </CardFooter>
           </Card>
           <Card className="flex flex-col border-2 border-chart-2 shadow-lg shadow-chart-2/20">
             <CardHeader>
@@ -79,7 +79,10 @@ export default function NossoPlano() {
           </Card>
           <Card className="flex flex-col border-2 border-chart-3">
             <CardHeader>
-              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
+              <div className="flex items-center justify-between">
+                <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
+                <Button className="text-base font-bold">Concorrentes</Button>
+              </div>
               <CardDescription className="text-xl font-bold text-primary">
                 Podem custar de 1.200,00 a 5.000,00
               </CardDescription>
@@ -87,9 +90,6 @@ export default function NossoPlano() {
             <CardContent className="flex-1">
               <p>Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.</p>
             </CardContent>
-            <CardFooter>
-              <Button className="w-full text-base font-bold">Começar Agora!</Button>
-            </CardFooter>
           </Card>
           <Card className="flex flex-col border-2 border-chart-4 shadow-lg shadow-chart-4/20">
             <CardHeader>
