@@ -1,4 +1,4 @@
-import { Instagram, Target } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const insights = [
@@ -9,7 +9,16 @@ const insights = [
       "Impulsionou no Instagram e a procura aumentou? Vempreender é seu Agente IA 24/7 para recepcionar interessados, responder dúvidas e capturar dados. Contatos qualificados direto para você. Adicione o link na sua Bio!",
   },
   {
-    icon: <Target className="h-8 w-8 text-primary" />,
+    icon: (
+      <svg
+        className="h-8 w-8 text-primary"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M12.024 10.428h-6.012v2.856h6.012c-.228 1.452-1.632 3.576-4.5 3.576-2.724 0-4.932-2.22-4.932-4.956s2.208-4.956 4.932-4.956c1.56 0 2.58 .672 3.18 1.248l2.292-2.292c-1.38-1.296-3.18-2.076-5.472-2.076-4.524 0-8.196 3.672-8.196 8.196s3.672 8.196 8.196 8.196c4.716 0 7.824-3.264 7.824-7.98 0-.528-.06-1.02-.156-1.5H12.024v.000z"/>
+      </svg>
+    ),
     title: "Maximize seu Tráfego Pago",
     description:
       "Invista em Tráfego Pago (Google/Meta Ads) com inteligência. Cada clique é um investimento. Vempreender garante atendimento imediato a todos, qualificando contatos e aproveitando ao máximo seu investimento.",
@@ -18,7 +27,7 @@ const insights = [
 
 export default function AtraiaClientes() {
   return (
-    <section id="atraia-clientes" className="py-10 md:py-16 bg-background/50">
+    <section id="atraia-clientes" className="py-5 md:py-8 bg-background/50">
       <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
