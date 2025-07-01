@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 export default function NossoPlano() {
   return (
     <section id="nosso-plano" className="py-20 md:py-32">
-      <div className="container mx-auto px-24">
+      <div className="container mx-auto px-4 md:px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Simples no uso. Enorme no resultado.
@@ -23,11 +23,11 @@ export default function NossoPlano() {
         <div className="mx-auto mt-12 grid max-w-xl grid-cols-1 gap-8">
           <Card className="flex flex-col border-2 border-primary">
             <CardHeader>
-              <Button className="w-full text-2xl font-bold">Concorrentes</Button>
+              <Button className="w-full text-xl font-bold md:text-2xl">Concorrentes - Implantação 5.000,00</Button>
               <CardTitle className="font-medium">
                 Implantação nos Concorrentes
               </CardTitle>
-              <CardDescription className="text-xl font-bold text-primary">
+              <CardDescription className="text-lg font-bold text-primary md:text-xl">
                 Podem custar de 1.200,00 a 5.000,00
               </CardDescription>
             </CardHeader>
@@ -37,9 +37,9 @@ export default function NossoPlano() {
           </Card>
           <Card className="flex flex-col border-2 border-accent shadow-lg shadow-accent/20">
           <CardHeader>
-              <Button className="w-full text-2xl font-bold">Concorrentes</Button>
+              <Button className="w-full text-xl font-bold md:text-2xl">Concorrentes - Mensalidade 3.000,00</Button>
               <CardTitle className="font-medium">Mensalidade nos Concorrentes</CardTitle>
-              <CardDescription className="text-xl font-bold text-primary">
+              <CardDescription className="text-lg font-bold text-primary md:text-xl">
                 Podem custar de 900,00 a 3.000,00 por mês.
               </CardDescription>
             </CardHeader>
@@ -49,30 +49,30 @@ export default function NossoPlano() {
           </Card>
           <Card className="flex flex-col border-2 border-chart-1">
             <CardHeader>
-              <Button className="w-full text-2xl font-bold">Vempreender - Implantação 400,00</Button>
+              <Button className="w-full text-xl font-bold md:text-2xl">Vempreender - Implantação 400,00</Button>
               <CardTitle className="font-medium">Implantação na Vempreender</CardTitle>
-              <CardDescription className="text-xl font-bold text-primary">
+              <CardDescription className="text-lg font-bold text-primary md:text-xl">
                 Nossa implantação custa 800,00 fora da promoção.
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-1">
               <p>Nossa Promoção é muito simples. Basta baixar nosso post e publicar no Stories do seu Instagram marcando o @ai.vempreender e você terá 50% de desconto no valor da implantação. Você faz a indicação durante a criação do seu chatbot.</p>
-              <CardDescription className="mt-4 text-xl font-bold text-primary">
+              <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
                 Na promoção a implantação custa apenas 400,00.
               </CardDescription>
             </CardContent>
            </Card>
            <Card className="flex flex-col border-2 border-chart-2">
             <CardHeader>
-              <Button className="w-full text-2xl font-bold">Vempreender - Mensalidade 250,00</Button>
+              <Button className="w-full text-xl font-bold md:text-2xl">Vempreender - Mensalidade 250,00</Button>
               <CardTitle className="font-medium">Mensalidade na Vempreender</CardTitle>
-              <CardDescription className="text-xl font-bold text-primary">
+              <CardDescription className="text-lg font-bold text-primary md:text-xl">
                 Nossa mensalidade custa 579,00 fora da promoção.
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-1">
               <p>É muito simples. Basta indicar 3 contatos que precisam de um chatbot e já recebe o desconto. Você faz a indicação durante a criação do seu chatbot.</p>
-              <CardDescription className="mt-4 text-xl font-bold text-primary">
+              <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
                   Na promoção a mensalidade fica apenas 250,00.
                 </CardDescription>
             </CardContent>
