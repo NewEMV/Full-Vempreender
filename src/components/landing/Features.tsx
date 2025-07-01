@@ -1,5 +1,5 @@
 
-import { BrainCircuit, Copy, Store, Clock, CalendarClock, Rocket } from "lucide-react";
+import { BrainCircuit, Copy, Clock, CalendarClock, Rocket, MessageCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const features = [
@@ -34,7 +34,7 @@ const features = [
       "Seu negócio disponível 24 horas por dia, 7 dias por semana. Não perca mais clientes por demora no atendimento. Vempreender está sempre online.",
   },
   {
-    icon: <Rocket className="h-8 w-8 text-primary" />,
+    icon: <MessageCircle className="h-8 w-8 text-primary" />,
     title: "Whatsapp Livre",
     description:
       "O Vempreender recebe os novos clientes (e curiosos) no chat. E no seu Whatsapp você só conversa com os potenciais clientes, sem perder tempo com curiosos.",
