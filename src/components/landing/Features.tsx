@@ -35,7 +35,7 @@ const features = [
   },
   {
     icon: <DollarSign className="h-8 w-8 text-primary" />,
-    title: "Custo Benefício Excelente",
+    title: "Whatsapp Livre",
     description:
       "O Vempreender recebe os novos clientes (e curiosos) no chat. E no seu Whatsapp você conversa com os potenciais clientes, sem perder tempo com curiosos..",
   },
