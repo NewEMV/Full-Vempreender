@@ -75,21 +75,6 @@ export default function NossoPlano() {
                 </CardDescription>
             </CardContent>
            </Card>
-          <Card className="flex flex-col border-2 border-chart-4 shadow-lg shadow-chart-4/20">
-            <CardHeader>
-              <Button className="w-full text-2xl font-bold">Concorrentes</Button>
-              <CardTitle className="font-medium">Mensalidade Vempreender</CardTitle>
-              <CardDescription>
-                 De <span className="line-through">R$ 579,00</span> por <span className="text-primary font-bold text-2xl">R$ 250,00/mês</span>
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1">
-                <p>Conquiste seu desconto permanente nas mensalidades. Basta indicar 3 amigos durante a criação do seu chatbot.</p>
-            </CardContent>
-            <CardFooter>
-              <Button className="w-full text-base font-bold">Quero meu Vempreender!</Button>
-            </CardFooter>
-          </Card>
           <Card className="flex flex-col border-2 border-chart-5">
             <CardHeader>
               <Button className="w-full text-2xl font-bold">Concorrentes</Button>
