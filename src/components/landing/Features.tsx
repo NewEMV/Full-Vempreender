@@ -19,7 +19,7 @@ const features = [
     icon: <Store className="h-8 w-8 text-primary" />,
     title: "Vender!",
     description:
-      "Divulgue o link do seu chatbot na Bio do Instagram, no seu Linktr.ee e onde mais quiser. Ao clicar no link, seu novo cliente vai conversar com um Agente IA que tem todo o conhecimento sobre o seu negócio.",
+      "Divulgue seu link na Bio do Instagram, no Linktr.ee e onde mais quiser. Ao clicar no link, seu novo cliente vai conversar com um Agente IA que sabe tudo sobre o seu negócio.",
   },
   {
     icon: <Clock className="h-8 w-8 text-primary" />,
