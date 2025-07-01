@@ -21,9 +21,9 @@ export default function NossoPlano() {
         </div>
 
         <div className="mx-auto mt-12 grid max-w-xl grid-cols-1 gap-8">
-          <Card className="flex flex-col border-2 border-primary">
+          <Card className="flex flex-col border-2 border-red-400 shadow-lg shadow-red-400/20">
             <CardHeader>
-              <Button className="w-full text-xl font-bold md:text-2xl">Concorrentes - Implantação 5.000,00</Button>
+              <Button className="w-full bg-red-400 hover:bg-red-500 text-white text-xl font-bold md:text-2xl">Concorrentes - Implantação 5.000,00</Button>
               <CardTitle className="font-medium">
                 Implantação nos Concorrentes
               </CardTitle>
@@ -35,9 +35,9 @@ export default function NossoPlano() {
               <p>Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que nem todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.</p>
             </CardContent>
           </Card>
-          <Card className="flex flex-col border-2 border-accent shadow-lg shadow-accent/20">
+          <Card className="flex flex-col border-2 border-orange-400 shadow-lg shadow-orange-400/20">
           <CardHeader>
-              <Button className="w-full text-xl font-bold md:text-2xl">Concorrentes - Mensalidade 3.000,00</Button>
+              <Button className="w-full bg-orange-400 hover:bg-orange-500 text-white text-xl font-bold md:text-2xl">Concorrentes - Mensalidade 3.000,00</Button>
               <CardTitle className="font-medium">Mensalidade nos Concorrentes</CardTitle>
               <CardDescription className="text-lg font-bold text-primary md:text-xl">
                 Podem custar de 900,00 a 3.000,00 por mês.
@@ -47,9 +47,9 @@ export default function NossoPlano() {
                 <p>A mensalidade dos nossos concorrentes é proporcional à quantidade de ferramentas e funções embutidas que podem ter muita utilidade se você tiver tempo e/ou habilidades para explorar todo esse potencial. Caso contrário você paga pra não usar.</p>
             </CardContent>
           </Card>
-          <Card className="flex flex-col border-2 border-chart-1">
+          <Card className="flex flex-col border-2 border-green-400 shadow-lg shadow-green-400/20">
             <CardHeader>
-              <Button className="w-full text-xl font-bold md:text-2xl">Vempreender - Implantação 400,00</Button>
+              <Button className="w-full bg-green-400 hover:bg-green-500 text-white text-xl font-bold md:text-2xl">Vempreender - Implantação 400,00</Button>
               <CardTitle className="font-medium">Implantação na Vempreender</CardTitle>
               <CardDescription className="text-lg font-bold text-primary md:text-xl">
                 Nossa implantação custa 800,00 fora da promoção.
@@ -62,9 +62,9 @@ export default function NossoPlano() {
               </CardDescription>
             </CardContent>
            </Card>
-           <Card className="flex flex-col border-2 border-chart-2">
+           <Card className="flex flex-col border-2 border-blue-400 shadow-lg shadow-blue-400/20">
             <CardHeader>
-              <Button className="w-full text-xl font-bold md:text-2xl">Vempreender - Mensalidade 250,00</Button>
+              <Button className="w-full bg-blue-400 hover:bg-blue-500 text-white text-xl font-bold md:text-2xl">Vempreender - Mensalidade 250,00</Button>
               <CardTitle className="font-medium">Mensalidade na Vempreender</CardTitle>
               <CardDescription className="text-lg font-bold text-primary md:text-xl">
                 Nossa mensalidade custa 579,00 fora da promoção.
