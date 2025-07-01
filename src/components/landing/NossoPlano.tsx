@@ -34,59 +34,50 @@ export default function NossoPlano() {
             </CardContent>
           </Card>
           <Card className="flex flex-col border-2 border-accent shadow-lg shadow-accent/20">
-            <CardHeader>
-              <CardTitle className="font-medium">Mensalidade Vempreender</CardTitle>
-              <CardDescription>
-                 De <span className="line-through">R$ 579,00</span> por <span className="text-primary font-bold text-2xl">R$ 250,00/mês</span>
+          <CardHeader>
+              <Button className="w-full text-2xl font-bold">Concorrentes</Button>
+              <CardTitle className="font-medium">Mensalidade nos Concorrentes</CardTitle>
+              <CardDescription className="text-xl font-bold text-primary">
+                Podem custar de 900,00 a 3.000,00 por mês.
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-1">
-                <p>Conquiste seu desconto permanente nas mensalidades. Basta indicar 3 amigos durante a criação do seu chatbot.</p>
+                <p>A mensalidade dos nossos concorrentes é proporcional à quantidade de ferramentas e funções embutidas que podem ter muita utilidade se você tiver tempo e/ou habilidades para explorar todo esse potencial. Caso contrário você paga pra não usar.</p>
             </CardContent>
-            <CardFooter>
-              <Button className="w-full text-base font-bold">Quero meu Vempreender!</Button>
-            </CardFooter>
           </Card>
           <Card className="flex flex-col border-2 border-chart-1">
             <CardHeader>
-              <Button className="w-full text-2xl font-bold">Concorrentes</Button>
-              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
+              <Button className="w-full text-2xl font-bold">Vempreender - Implantação 400,00</Button>
+              <CardTitle className="font-medium">Implantação na Vempreender</CardTitle>
               <CardDescription className="text-xl font-bold text-primary">
-                Podem custar de 1.200,00 a 5.000,00
+                Nossa implantação custa 800,00 fora da promoção.
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-1">
-              <p>Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.</p>
-            </CardContent>
-          </Card>
-          <Card className="flex flex-col border-2 border-chart-2 shadow-lg shadow-chart-2/20">
-            <CardHeader>
-              <CardTitle className="font-medium">Mensalidade Vempreender</CardTitle>
-              <CardDescription>
-                 De <span className="line-through">R$ 579,00</span> por <span className="text-primary font-bold text-2xl">R$ 250,00/mês</span>
+              <p>Nossa Promoção é muito simples. Basta baixar nosso post e publicar no Stories do seu Instagram marcando o @ai.vempreender e você terá 50% de desconto no valor da implantação. Você faz a indicação durante a criação do seu chatbot.</p>
+              <CardDescription className="mt-4 text-xl font-bold text-primary">
+                Na promoção a implantação custa apenas 400,00.
               </CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1">
-                <p>Conquiste seu desconto permanente nas mensalidades. Basta indicar 3 amigos durante a criação do seu chatbot.</p>
             </CardContent>
-            <CardFooter>
-              <Button className="w-full text-base font-bold">Quero meu Vempreender!</Button>
-            </CardFooter>
-          </Card>
-          <Card className="flex flex-col border-2 border-chart-3">
+           </Card>
+           <Card className="flex flex-col border-2 border-chart-2">
             <CardHeader>
-              <Button className="w-full text-2xl font-bold">Concorrentes</Button>
-              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
+              <Button className="w-full text-2xl font-bold">Vempreender - Mensalidade 250,00</Button>
+              <CardTitle className="font-medium">Mensalidade na Vempreender</CardTitle>
               <CardDescription className="text-xl font-bold text-primary">
-                Podem custar de 1.200,00 a 5.000,00
+                Nossa mensalidade custa 579,00 fora da promoção.
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-1">
-              <p>Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.</p>
+              <p>É muito simples. Basta indicar 3 contatos que precisam de um chatbot e já recebe o desconto. Você faz a indicação durante a criação do seu chatbot.</p>
+              <CardDescription className="mt-4 text-xl font-bold text-primary">
+                  Na promoção a mensalidade fica apenas 250,00.
+                </CardDescription>
             </CardContent>
-          </Card>
+           </Card>
           <Card className="flex flex-col border-2 border-chart-4 shadow-lg shadow-chart-4/20">
             <CardHeader>
+              <Button className="w-full text-2xl font-bold">Concorrentes</Button>
               <CardTitle className="font-medium">Mensalidade Vempreender</CardTitle>
               <CardDescription>
                  De <span className="line-through">R$ 579,00</span> por <span className="text-primary font-bold text-2xl">R$ 250,00/mês</span>
@@ -98,6 +89,18 @@ export default function NossoPlano() {
             <CardFooter>
               <Button className="w-full text-base font-bold">Quero meu Vempreender!</Button>
             </CardFooter>
+          </Card>
+          <Card className="flex flex-col border-2 border-chart-5">
+            <CardHeader>
+              <Button className="w-full text-2xl font-bold">Concorrentes</Button>
+              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
+              <CardDescription className="text-xl font-bold text-primary">
+                Podem custar de 1.200,00 a 5.000,00
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex-1">
+              <p>Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.</p>
+            </CardContent>
           </Card>
         </div>
       </div>
