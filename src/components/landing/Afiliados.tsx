@@ -3,7 +3,7 @@ import { Handshake } from "lucide-react";
 
 export default function Afiliados() {
   return (
-    <section id="afiliados" className="py-20 md:py-32 bg-background/50">
+    <section id="afiliados" className="py-10 md:py-16 bg-background/50">
       <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">

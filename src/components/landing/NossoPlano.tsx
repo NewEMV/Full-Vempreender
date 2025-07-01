@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 export default function NossoPlano() {
   return (
-    <section id="nosso-plano" className="py-20 md:py-32">
+    <section id="nosso-plano" className="py-10 md:py-16">
       <div className="container mx-auto px-4 md:px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
@@ -36,7 +36,7 @@ export default function NossoPlano() {
             </CardContent>
           </Card>
           <Card className="flex flex-col border-2 border-orange-400 shadow-lg shadow-orange-400/20">
-          <CardHeader>
+            <CardHeader>
               <Button className="w-full bg-orange-400 hover:bg-orange-500 text-white text-xl font-bold md:text-2xl">Concorrentes - Mensalidade 3.000,00</Button>
               <CardTitle className="font-medium">Mensalidade nos Concorrentes</CardTitle>
               <CardDescription className="text-lg font-bold text-primary md:text-xl">

@@ -42,7 +42,7 @@ const features = [
 
 export default function ComoFunciona() {
   return (
-    <section id="como-funciona" className="py-20 md:py-32 bg-background">
+    <section id="como-funciona" className="py-10 md:py-16 bg-background">
       <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">

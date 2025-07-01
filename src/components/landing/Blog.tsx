@@ -22,7 +22,7 @@ const blogPosts = [
 
 export default function Blog() {
   return (
-    <section id="blog" className="py-20 md:py-32">
+    <section id="blog" className="py-10 md:py-16">
       <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
