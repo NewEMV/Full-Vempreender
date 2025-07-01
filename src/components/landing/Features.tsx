@@ -37,7 +37,7 @@ const features = [
     icon: <DollarSign className="h-8 w-8 text-primary" />,
     title: "Custo Benefício Excelente",
     description:
-      "Atendimento contínuo, inclusive em madrugadas e férias, por uma fração do custo de um atendente humano. Economia real para seu negócio.",
+      "O Vempreender recebe os novos clientes (e curiosos) no chat. E no seu Whatsapp você conversa com os potenciais clientes, sem perder tempo com curiosos..",
   },
 ];
 
