@@ -24,7 +24,9 @@ export default function NossoPlano() {
           <Card className="flex flex-col border-2 border-primary">
             <CardHeader>
               <Button className="w-full text-2xl font-bold">Concorrentes</Button>
-              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
+              <CardTitle className="font-medium">
+                Implantação nos Concorrentes
+              </CardTitle>
               <CardDescription className="text-xl font-bold text-primary">
                 Podem custar de 1.200,00 a 5.000,00
               </CardDescription>
@@ -75,18 +77,6 @@ export default function NossoPlano() {
                 </CardDescription>
             </CardContent>
            </Card>
-          <Card className="flex flex-col border-2 border-chart-5">
-            <CardHeader>
-              <Button className="w-full text-2xl font-bold">Concorrentes</Button>
-              <CardTitle className="font-medium">Implantação nos Concorrentes</CardTitle>
-              <CardDescription className="text-xl font-bold text-primary">
-                Podem custar de 1.200,00 a 5.000,00
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1">
-              <p>Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.</p>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>
