@@ -1,3 +1,4 @@
+
 import { BrainCircuit, Copy, Store, Clock, CalendarClock, DollarSign } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -12,7 +13,7 @@ const features = [
     icon: <Copy className="h-8 w-8 text-primary" />,
     title: "Seu clone digital",
     description:
-      "Nossa IA aprende com você para atender com seu conhecimento, através de conversas inteligentes, construindo confiança. Faça do atendimento seu melhor vendedor.",
+      "Nossa IA aprende com você para atender usando seu conhecimento, gerando confiança com conversas humanizadas. Faça do atendimento seu melhor vendedor.",
   },
   {
     icon: <Store className="h-8 w-8 text-primary" />,
