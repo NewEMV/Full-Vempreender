@@ -7,7 +7,7 @@ const features = [
     icon: <BrainCircuit className="h-8 w-8 text-primary" />,
     title: "Foque no Seu Trabalho!",
     description:
-      "Deixe o Vempreender conversar e tirar dúvidas dos seus clientes. Você foca no que realmente importa e retorna o contato no seu tempo.",
+      "Deixe o Vempreender conversar e tirar dúvidas dos seus clientes. Você foca no que realmente importa, que é o seu trabalho. E você retorna o contato no seu tempo.",
   },
   {
     icon: <Copy className="h-8 w-8 text-primary" />,
