@@ -16,7 +16,7 @@ const features = [
       "Nossa IA aprende com você para atender usando seu conhecimento, gerando confiança com conversas humanizadas. Faça do atendimento seu melhor vendedor.",
   },
   {
-    icon: <Store className="h-8 w-8 text-primary" />,
+    icon: <Rocket className="h-8 w-8 text-primary" />,
     title: "Vender!",
     description:
       "Divulgue seu link na Bio do Instagram, no Linktr.ee e onde mais quiser. Ao clicar no link, seu novo cliente vai conversar com um Agente IA que sabe tudo sobre o seu negócio.",
