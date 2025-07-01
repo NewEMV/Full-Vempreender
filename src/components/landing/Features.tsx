@@ -18,7 +18,7 @@ const features = [
     icon: <Store className="h-8 w-8 text-primary" />,
     title: "Vender!",
     description:
-      "Divulgue o link do seu chatbot na Bio do Instagram, no seu Perfil do Google Maps e onde mais quiser. Ao clicar no link, seu novo cliente vai conversar com um Agente IA que tem todo o conhecimento sobre o seu negócio.",
+      "Divulgue o link do seu chatbot na Bio do Instagram, no seu Linktr.ee e onde mais quiser. Ao clicar no link, seu novo cliente vai conversar com um Agente IA que tem todo o conhecimento sobre o seu negócio.",
   },
   {
     icon: <Clock className="h-8 w-8 text-primary" />,
@@ -42,7 +42,7 @@ const features = [
 
 export default function ComoFunciona() {
   return (
-    <section id="como-funciona" className="py-10 md:py-16 bg-background">
+    <section id="como-funciona" className="py-5 md:py-8 bg-background">
       <div className="container mx-auto px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
