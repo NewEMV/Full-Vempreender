@@ -55,7 +55,7 @@ export default function NossoPlano() {
         aria-hidden="true"
         className="absolute inset-0 -z-20 bg-cover bg-center bg-fixed bg-no-repeat"
         style={{
-          backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/profile_pictures%2FhyP1f247eFPotrOgqnW8OpQuyz23%2F1750901975436_Fernanda_vmp.jpeg?alt=media&token=173a615f-0c8f-4fd0-ae7f-e3eadd9737df')",
+          backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2FHero%20Chatbot%20Vempreender.webp?alt=media&token=cf25148f-5399-4976-bb7e-f9347ba1428f')",
         }}
       ></div>
       <div
