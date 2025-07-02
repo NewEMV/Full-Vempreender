@@ -1,14 +1,11 @@
 
+"use client";
+
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
@@ -43,10 +40,29 @@ const testimonials = [
   },
 ];
 
+const duplicatedTestimonials = [...testimonials, ...testimonials];
+
 export default function Depoimentos() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true })
-  );
+  const [isPaused, setIsPaused] = React.useState(false);
+  const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  const handleInteraction = () => {
+    setIsPaused(true);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = setTimeout(() => {
+      setIsPaused(false);
+    }, 5000); // Resume after 5 seconds
+  };
+
+  React.useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section id="depoimentos" className="py-10 md:py-16 bg-background/50">
@@ -60,39 +76,41 @@ export default function Depoimentos() {
           </p>
         </div>
 
-        <Carousel
-          plugins={[plugin.current]}
-          className="w-full max-w-6xl mx-auto mt-12"
-          opts={{
-            align: "start",
-            loop: true,
-          }}
+        <div
+          className="relative mt-12 w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
         >
-          <CarouselContent className="-ml-4">
-            {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <div className="h-full p-1">
-                  <Card className="bg-card flex flex-col h-full">
-                    <CardContent className="p-6 flex flex-col flex-1">
-                      <Quote className="h-8 w-8 text-primary mb-6" />
-                      <p className="text-muted-foreground mb-6 flex-1">“{testimonial.quote}”</p>
-                      <div className="flex items-center gap-4 mt-auto">
-                          <Avatar>
-                              <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
-                              <AvatarFallback>{testimonial.name.split(" ")[0][0]}{testimonial.name.split(" ")[1][0]}</AvatarFallback>
-                          </Avatar>
-                          <div>
-                              <p className="font-bold text-foreground">{testimonial.name.split(",")[0]}</p>
-                              <p className="text-sm text-muted-foreground">{testimonial.name.split(",")[1].trim()}</p>
-                          </div>
+          <div
+            className={cn(
+              "flex min-w-full shrink-0 gap-4 py-4 animate-marquee",
+              isPaused && "pause-animation"
+            )}
+          >
+            {duplicatedTestimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="w-[350px] md:w-[400px] flex-shrink-0"
+                onClick={handleInteraction}
+              >
+                <Card className="bg-card flex flex-col h-full cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                  <CardContent className="p-6 flex flex-col flex-1">
+                    <Quote className="h-8 w-8 text-primary mb-6" />
+                    <p className="text-muted-foreground mb-6 flex-1">“{testimonial.quote}”</p>
+                    <div className="flex items-center gap-4 mt-auto">
+                      <Avatar>
+                        <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
+                        <AvatarFallback>{testimonial.name.split(" ")[0][0]}{testimonial.name.split(" ")[1][0]}</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="font-bold text-foreground">{testimonial.name.split(",")[0]}</p>
+                        <p className="text-sm text-muted-foreground">{testimonial.name.split(",")[1].trim()}</p>
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
-          </CarouselContent>
-        </Carousel>
+          </div>
+        </div>
       </div>
     </section>
   );
