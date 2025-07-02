@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { MessageCircle, Rocket } from "lucide-react";
 
 const plansData = [
   {
@@ -8,10 +9,9 @@ const plansData = [
     title: "Implantação nos Concorrentes",
     price: "Podem custar de 1.200,00 a 5.000,00",
     description: "Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que nem todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.",
-    colors: "border-red-900 shadow-red-900/20",
-    buttonColors: "bg-red-900 hover:bg-red-800 text-white",
+    colors: "border-red-900/80 shadow-red-900/30",
+    buttonColors: "bg-red-900/80 hover:bg-red-900 text-white",
     topClass: "top-20",
-    zIndex: "z-10",
   },
   {
     id: 2,
@@ -19,10 +19,9 @@ const plansData = [
     title: "Mensalidade nos Concorrentes",
     price: "Podem custar de 900,00 a 3.000,00 por mês.",
     description: "A mensalidade dos nossos concorrentes é proporcional à quantidade de ferramentas e funções embutidas que podem ter muita utilidade se você tiver tempo e/ou habilidades para explorar todo esse potencial. Caso contrário você paga pra não usar.",
-    colors: "border-orange-400 shadow-orange-400/20",
-    buttonColors: "bg-orange-400 hover:bg-orange-500 text-white",
+    colors: "border-orange-400/80 shadow-orange-400/30",
+    buttonColors: "bg-orange-400/80 hover:bg-orange-500 text-white",
     topClass: "top-40",
-    zIndex: "z-20",
   },
   {
     id: 3,
@@ -31,10 +30,9 @@ const plansData = [
     price: "Nossa implantação custa 800,00 fora da promoção.",
     description: "Nossa Promoção é muito simples. Basta baixar nosso post e publicar no Stories do seu Instagram marcando o @ai.vempreender e você terá 50% de desconto no valor da implantação. Você faz a indicação durante a criação do seu chatbot.",
     promoPrice: "Na promoção a implantação custa apenas 400,00.",
-    colors: "border-green-900 shadow-green-900/20",
-    buttonColors: "bg-green-900 hover:bg-green-800 text-white",
+    colors: "border-green-900/80 shadow-green-900/30",
+    buttonColors: "bg-green-900/80 hover:bg-green-900 text-white",
     topClass: "top-60",
-    zIndex: "z-30",
   },
   {
     id: 4,
@@ -43,10 +41,9 @@ const plansData = [
     price: "Nossa mensalidade custa 579,00 fora da promoção.",
     description: "É muito simples. Basta indicar 3 contatos que precisam de um chatbot e já recebe o desconto. Você faz a indicação durante a criação do seu chatbot.",
     promoPrice: "Na promoção a mensalidade fica apenas 250,00.",
-    colors: "border-blue-900 shadow-blue-900/20",
-    buttonColors: "bg-blue-900 hover:bg-blue-800 text-white",
+    colors: "border-blue-900/80 shadow-blue-900/30",
+    buttonColors: "bg-blue-900/80 hover:bg-blue-900 text-white",
     topClass: "top-80",
-    zIndex: "z-40",
   }
 ];
 
@@ -70,12 +67,12 @@ export default function NossoPlano() {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-12 max-w-2xl pb-[85vh]">
+        <div className="relative mx-auto mt-12 max-w-2xl">
           {plansData.map((plan, index) => (
              <div 
                 key={plan.id}
-                className={`sticky ${plan.topClass} ${plan.zIndex} ${
-                    index > 0 ? "mt-[85vh]" : ""
+                className={`sticky ${plan.topClass} ${
+                    index > 0 ? "mt-[110vh]" : ""
                 }`}
             >
                 <Card className={`flex flex-col border-2 ${plan.colors}`}>
@@ -101,6 +98,7 @@ export default function NossoPlano() {
                 </Card>
             </div>
           ))}
+          <div className="h-[110vh]" />
         </div>
       </div>
     </section>
