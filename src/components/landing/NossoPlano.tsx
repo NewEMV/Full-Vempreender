@@ -1,9 +1,59 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+const plansData = [
+  {
+    id: 1,
+    buttonText: "Concorrentes - Implantação 5.000,00",
+    title: "Implantação nos Concorrentes",
+    price: "Podem custar de 1.200,00 a 5.000,00",
+    description: "Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que nem todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.",
+    colors: "border-red-600 shadow-red-600/20",
+    buttonColors: "bg-red-600 hover:bg-red-700 text-white",
+    topClass: "top-24", // Sticks at 6rem from the top
+    zIndex: "z-10",
+  },
+  {
+    id: 2,
+    buttonText: "Concorrentes - Mensalidade 3.000,00",
+    title: "Mensalidade nos Concorrentes",
+    price: "Podem custar de 900,00 a 3.000,00 por mês.",
+    description: "A mensalidade dos nossos concorrentes é proporcional à quantidade de ferramentas e funções embutidas que podem ter muita utilidade se você tiver tempo e/ou habilidades para explorar todo esse potencial. Caso contrário você paga pra não usar.",
+    colors: "border-orange-400 shadow-orange-400/20",
+    buttonColors: "bg-orange-400 hover:bg-orange-500 text-white",
+    topClass: "top-36", // Sticks at 9rem, offset of 3rem
+    zIndex: "z-20",
+  },
+  {
+    id: 3,
+    buttonText: "Vempreender - Implantação 400,00",
+    title: "Implantação na Vempreender",
+    price: "Nossa implantação custa 800,00 fora da promoção.",
+    description: "Nossa Promoção é muito simples. Basta baixar nosso post e publicar no Stories do seu Instagram marcando o @ai.vempreender e você terá 50% de desconto no valor da implantação. Você faz a indicação durante a criação do seu chatbot.",
+    promoPrice: "Na promoção a implantação custa apenas 400,00.",
+    colors: "border-green-600 shadow-green-600/20",
+    buttonColors: "bg-green-600 hover:bg-green-700 text-white",
+    topClass: "top-48", // Sticks at 12rem, offset of 3rem
+    zIndex: "z-30",
+  },
+  {
+    id: 4,
+    buttonText: "Vempreender - Mensalidade 250,00",
+    title: "Mensalidade na Vempreender",
+    price: "Nossa mensalidade custa 579,00 fora da promoção.",
+    description: "É muito simples. Basta indicar 3 contatos que precisam de um chatbot e já recebe o desconto. Você faz a indicação durante a criação do seu chatbot.",
+    promoPrice: "Na promoção a mensalidade fica apenas 250,00.",
+    colors: "border-blue-600 shadow-blue-600/20",
+    buttonColors: "bg-blue-600 hover:bg-blue-700 text-white",
+    topClass: "top-60", // Sticks at 15rem, offset of 3rem
+    zIndex: "z-40",
+  }
+];
+
 
 export default function NossoPlano() {
   return (
-    <section id="nosso-plano" className="py-10 md:py-16">
+    <section id="nosso-plano" className="py-5 md:py-8">
       <div className="container mx-auto px-4 md:px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
@@ -20,63 +70,32 @@ export default function NossoPlano() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-xl grid-cols-1 gap-8 md:grid-cols-1">
-          <Card className="flex flex-col border-2 border-red-500 shadow-lg shadow-red-500/20">
-            <CardHeader>
-              <Button className="w-full bg-red-500 hover:bg-red-600 text-white text-xl font-bold md:text-2xl">Concorrentes - Implantação 5.000,00</Button>
-              <CardTitle className="font-medium">
-                Implantação nos Concorrentes
-              </CardTitle>
-              <CardDescription className="text-lg font-bold text-primary md:text-xl">
-                Podem custar de 1.200,00 a 5.000,00
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1">
-              <p>Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que nem todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.</p>
-            </CardContent>
-          </Card>
-          <Card className="flex flex-col border-2 border-orange-400 shadow-lg shadow-orange-400/20">
-            <CardHeader>
-              <Button className="w-full bg-orange-400 hover:bg-orange-500 text-white text-xl font-bold md:text-2xl">Concorrentes - Mensalidade 3.000,00</Button>
-              <CardTitle className="font-medium">Mensalidade nos Concorrentes</CardTitle>
-              <CardDescription className="text-lg font-bold text-primary md:text-xl">
-                Podem custar de 900,00 a 3.000,00 por mês.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1">
-                <p>A mensalidade dos nossos concorrentes é proporcional à quantidade de ferramentas e funções embutidas que podem ter muita utilidade se você tiver tempo e/ou habilidades para explorar todo esse potencial. Caso contrário você paga pra não usar.</p>
-            </CardContent>
-          </Card>
-          <Card className="flex flex-col border-2 border-green-500 shadow-lg shadow-green-500/20">
-            <CardHeader>
-              <Button className="w-full bg-green-500 hover:bg-green-600 text-white text-xl font-bold md:text-2xl">Vempreender - Implantação 400,00</Button>
-              <CardTitle className="font-medium">Implantação na Vempreender</CardTitle>
-              <CardDescription className="text-lg font-bold text-primary md:text-xl">
-                Nossa implantação custa 800,00 fora da promoção.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1">
-              <p>Nossa Promoção é muito simples. Basta baixar nosso post e publicar no Stories do seu Instagram marcando o @ai.vempreender e você terá 50% de desconto no valor da implantação. Você faz a indicação durante a criação do seu chatbot.</p>
-              <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
-                Na promoção a implantação custa apenas 400,00.
-              </CardDescription>
-            </CardContent>
-           </Card>
-           <Card className="flex flex-col border-2 border-blue-500 shadow-lg shadow-blue-500/20">
-            <CardHeader>
-              <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold md:text-2xl">Vempreender - Mensalidade 250,00</Button>
-              <CardTitle className="font-medium">Mensalidade na Vempreender</CardTitle>
-              <CardDescription className="text-lg font-bold text-primary md:text-xl">
-                Nossa mensalidade custa 579,00 fora da promoção.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1">
-              <p>É muito simples. Basta indicar 3 contatos que precisam de um chatbot e já recebe o desconto. Você faz a indicação durante a criação do seu chatbot.</p>
-              <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
-                  Na promoção a mensalidade fica apenas 250,00.
-                </CardDescription>
-            </CardContent>
-           </Card>
+        <div className="relative mx-auto mt-12 h-[300vh] max-w-2xl">
+          {plansData.map((plan) => (
+             <div key={plan.id} className={`sticky ${plan.topClass} ${plan.zIndex}`}>
+                <Card className={`flex flex-col border-2 ${plan.colors}`}>
+                  <CardHeader>
+                    <Button className={`w-full text-lg font-bold md:text-xl ${plan.buttonColors}`}>
+                      {plan.buttonText}
+                    </Button>
+                    <CardTitle className="pt-2 font-medium">
+                      {plan.title}
+                    </CardTitle>
+                    <CardDescription className="text-lg font-bold text-primary md:text-xl">
+                      {plan.price}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <p>{plan.description}</p>
+                    {plan.promoPrice && (
+                       <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
+                        {plan.promoPrice}
+                      </CardDescription>
+                    )}
+                  </CardContent>
+                </Card>
+            </div>
+          ))}
         </div>
       </div>
     </section>
