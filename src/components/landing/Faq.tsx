@@ -42,25 +42,6 @@ const testimonials = [
 
 export default function Depoimentos() {
   const [isPaused, setIsPaused] = React.useState(false);
-  const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
-
-  const handleInteraction = () => {
-    setIsPaused(true);
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    timeoutRef.current = setTimeout(() => {
-      setIsPaused(false);
-    }, 5000); // Resume after 5 seconds
-  };
-
-  React.useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
 
   return (
     <section id="depoimentos" className="py-10 md:py-16 bg-background/50">
@@ -76,6 +57,8 @@ export default function Depoimentos() {
 
         <div
           className="relative mt-12 w-full overflow-hidden [mask-image:_linear_gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
           <div
             className={cn(
@@ -87,7 +70,6 @@ export default function Depoimentos() {
               <div
                 key={`testimonial-1-${index}`}
                 className="w-[350px] md:w-[400px] flex-shrink-0"
-                onClick={handleInteraction}
               >
                 <Card className="bg-card flex flex-col h-full cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                   <CardContent className="p-6 flex flex-col flex-1">
@@ -111,7 +93,6 @@ export default function Depoimentos() {
               <div
                 key={`testimonial-2-${index}`}
                 className="w-[350px] md:w-[400px] flex-shrink-0"
-                onClick={handleInteraction}
               >
                 <Card className="bg-card flex flex-col h-full cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                   <CardContent className="p-6 flex flex-col flex-1">
