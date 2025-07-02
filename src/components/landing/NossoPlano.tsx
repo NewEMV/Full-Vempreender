@@ -79,7 +79,7 @@ export default function NossoPlano() {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-12 max-w-2xl pb-[110vh]">
+        <div className="relative mx-auto mt-12 max-w-2xl pb-[150vh]">
           {plansData.map((plan, index) => (
              <div 
                 key={plan.id}
