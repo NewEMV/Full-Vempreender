@@ -11,8 +11,9 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute inset-0 -z-20 bg-cover bg-center bg-fixed bg-no-repeat"
         style={{
-          backgroundImage: "url('/Imagens/Hero%20Chatbot%20Vempreender.webp')",
+          backgroundImage: "url('https://placehold.co/1920x1280.png')",
         }}
+        data-ai-hint="abstract background"
       ></div>
       <div
         aria-hidden="true"
