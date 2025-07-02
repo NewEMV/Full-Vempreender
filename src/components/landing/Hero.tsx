@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -7,6 +8,11 @@ export default function Hero() {
       id="inicio"
       className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden"
     >
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-20 bg-[url('https://placehold.co/1920x1280.png')] bg-cover bg-center bg-fixed bg-no-repeat"
+        data-ai-hint="abstract background"
+      ></div>
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 overflow-hidden"

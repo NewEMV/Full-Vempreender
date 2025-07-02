@@ -50,7 +50,12 @@ const plansData = [
 
 export default function NossoPlano() {
   return (
-    <section id="nosso-plano" className="py-5 md:py-8">
+    <section id="nosso-plano" className="relative py-5 md:py-8">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-[url('https://placehold.co/1920x1280.png')] bg-cover bg-center bg-fixed bg-no-repeat"
+        data-ai-hint="abstract background"
+      ></div>
       <div className="container mx-auto px-4 md:px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
@@ -67,12 +72,12 @@ export default function NossoPlano() {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-12 max-w-2xl">
+        <div className="relative mx-auto mt-12 max-w-2xl pb-[110vh]">
           {plansData.map((plan, index) => (
              <div 
                 key={plan.id}
                 className={`sticky ${plan.topClass} ${
-                    index > 0 ? "mt-[110vh]" : ""
+                    index > 0 ? "mt-4" : ""
                 }`}
             >
                 <Card className={`flex flex-col border-2 ${plan.colors}`}>
@@ -98,7 +103,6 @@ export default function NossoPlano() {
                 </Card>
             </div>
           ))}
-          <div className="h-[110vh]" />
         </div>
       </div>
     </section>
