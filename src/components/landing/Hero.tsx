@@ -10,8 +10,7 @@ export default function Hero() {
     >
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-[url('https://placehold.co/1920x1280.png')] bg-cover bg-center bg-fixed bg-no-repeat"
-        data-ai-hint="abstract background"
+        className="absolute inset-0 -z-20 bg-[url('/Hero-Chatbot-Vempreender.webp')] bg-cover bg-center bg-fixed bg-no-repeat"
       ></div>
       <div
         aria-hidden="true"
