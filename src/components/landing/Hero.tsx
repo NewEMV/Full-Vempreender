@@ -14,18 +14,8 @@ export default function Hero() {
       ></div>
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 overflow-hidden"
-      >
-        <div
-          className="absolute -top-40 -left-20 h-[30rem] w-[30rem] rounded-full bg-gradient-to-br from-purple-900 to-transparent opacity-25 blur-[100px]"
-        ></div>
-        <div
-          className="absolute -bottom-40 -right-20 h-[30rem] w-[30rem] rounded-full bg-gradient-to-tl from-emerald-800 to-transparent opacity-25 blur-[100px]"
-        ></div>
-        <div
-          className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-rose-700 to-transparent opacity-15 blur-[80px]"
-        ></div>
-      </div>
+        className="absolute inset-0 -z-10 bg-background/80"
+      ></div>
       <div className="container relative mx-auto flex h-full flex-grow items-center px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="font-headline text-4xl font-semibold tracking-tight text-foreground sm:text-6xl">
