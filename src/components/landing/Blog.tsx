@@ -5,17 +5,17 @@ import Image from "next/image";
 const blogPosts = [
   {
     title: "Impulsionamento no Instagram: O Guia Básico para o Empreendedor Solo",
-    image: "https://placehold.co/600x400.png",
+    image: "https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Blog-Imagens%2Fpost-instagram.webp?alt=media&token=75622abb-f783-44c3-abf1-029087d77d52",
     aiHint: "social media marketing"
   },
   {
     title: "Tráfego Pago Descomplicado: Multiplique Clientes sem Perder Dinheiro",
-    image: "https://placehold.co/600x400.png",
+    image: "https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Blog-Imagens%2Fpost-trafego.webp?alt=media&token=49681585-9be3-45ed-aa2c-6f56785cbabc",
     aiHint: "online advertising"
   },
   {
     title: "5 Gatilhos Mentais para Encantar Seu Cliente no Primeiro Contato",
-    image: "https://placehold.co/600x400.png",
+    image: "https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Blog-Imagens%2Fpost-gatilhos-imagem.webp?alt=media&token=a036cc19-90ce-4ee9-856a-c68204427fe8",
     aiHint: "customer psychology"
   },
 ];
