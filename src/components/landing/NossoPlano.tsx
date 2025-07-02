@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, Rocket } from "lucide-react";
+import * as React from "react";
 
 const plansData = [
   {
@@ -22,7 +23,7 @@ const plansData = [
     description: "A mensalidade dos nossos concorrentes é proporcional à quantidade de ferramentas e funções embutidas que podem ter muita utilidade se você tiver tempo e/ou habilidades para explorar todo esse potencial. Caso contrário você paga pra não usar.",
     colors: "border-orange-400/80 shadow-orange-400/30",
     buttonColors: "bg-orange-400/80 hover:bg-orange-500 text-white",
-    topClass: "top-[14rem]",
+    topClass: "top-[11rem]",
   },
   {
     id: 3,
@@ -33,7 +34,7 @@ const plansData = [
     promoPrice: "Na promoção a implantação custa apenas 400,00.",
     colors: "border-green-900/80 shadow-green-900/30",
     buttonColors: "bg-green-900/80 hover:bg-green-900 text-white",
-    topClass: "top-[22rem]",
+    topClass: "top-[16rem]",
   },
   {
     id: 4,
@@ -44,7 +45,7 @@ const plansData = [
     promoPrice: "Na promoção a mensalidade fica apenas 250,00.",
     colors: "border-blue-900/80 shadow-blue-900/30",
     buttonColors: "bg-blue-900/80 hover:bg-blue-900 text-white",
-    topClass: "top-[30rem]",
+    topClass: "top-[21rem]",
   }
 ];
 
@@ -80,35 +81,33 @@ export default function NossoPlano() {
         </div>
 
         <div className="relative mx-auto mt-12 max-w-2xl">
-          {plansData.map((plan, index) => (
-             <div 
-                key={plan.id}
-                className={`sticky ${plan.topClass} ${
-                    index > 0 ? "mt-4" : ""
-                }`}
-            >
+          {plansData.flatMap((plan, index) => (
+            <React.Fragment key={plan.id}>
+              <div className={`sticky ${plan.topClass}`}>
                 <Card className={`flex flex-col border-2 ${plan.colors}`}>
-                <CardHeader>
-                    <Button className={`w-full text-lg font-bold md:text-xl ${plan.buttonColors}`}>
-                    {plan.buttonText}
-                    </Button>
-                    <CardTitle className="pt-2 font-medium">
-                    {plan.title}
-                    </CardTitle>
-                    <CardDescription className="text-lg font-bold text-primary md:text-xl">
-                    {plan.price}
-                    </CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1">
-                    <p>{plan.description}</p>
-                    {plan.promoPrice && (
-                    <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
-                        {plan.promoPrice}
-                    </CardDescription>
-                    )}
-                </CardContent>
+                  <CardHeader>
+                      <Button className={`w-full text-lg font-bold md:text-xl ${plan.buttonColors}`}>
+                      {plan.buttonText}
+                      </Button>
+                      <CardTitle className="pt-2 font-medium">
+                      {plan.title}
+                      </CardTitle>
+                      <CardDescription className="text-lg font-bold text-primary md:text-xl">
+                      {plan.price}
+                      </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                      <p>{plan.description}</p>
+                      {plan.promoPrice && (
+                      <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
+                          {plan.promoPrice}
+                      </CardDescription>
+                      )}
+                  </CardContent>
                 </Card>
-            </div>
+              </div>
+              {index < plansData.length - 1 && <div className="h-64" />}
+            </React.Fragment>
           ))}
           <div className="h-[100vh]" aria-hidden="true" />
         </div>
