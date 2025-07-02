@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -79,8 +80,13 @@
     transition-delay: 0.3s;
   }
   
-  .feature-row.is-visible .feature-card {
+  .feature-row.is-visible .feature-card-left,
+  .feature-row.is-visible .feature-card-right {
     transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .feature-row.is-visible .feature-card-center {
     opacity: 1;
   }
 }
