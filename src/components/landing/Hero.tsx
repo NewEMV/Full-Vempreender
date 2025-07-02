@@ -10,7 +10,7 @@ export default function Hero() {
     >
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-[url('/Hero-Chatbot-Vempreender.webp')] bg-cover bg-center bg-fixed bg-no-repeat"
+        className="absolute inset-0 -z-20 bg-[url('/Imagens/Hero Chatbot Vempreender.webp')] bg-cover bg-center bg-fixed bg-no-repeat"
       ></div>
       <div
         aria-hidden="true"

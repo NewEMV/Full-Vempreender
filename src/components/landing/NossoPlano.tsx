@@ -53,7 +53,7 @@ export default function NossoPlano() {
     <section id="nosso-plano" className="relative py-5 md:py-8">
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[url('/Hero-Chatbot-Vempreender.webp')] bg-cover bg-center bg-fixed bg-no-repeat"
+        className="absolute inset-0 -z-10 bg-[url('/Imagens/Hero Chatbot Vempreender.webp')] bg-cover bg-center bg-fixed bg-no-repeat"
       ></div>
       <div className="container mx-auto px-4 md:px-24">
         <div className="mx-auto max-w-3xl text-center">
