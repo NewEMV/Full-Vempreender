@@ -43,7 +43,7 @@ export default function Hero() {
               Se um novo cliente não é bem atendido, a venda vai embora. Simples
               assim. Com Vempreender você tem um Atendente com Inteligência
               Artificial que conversa com todo novo cliente como se fosse você. Ele
-              responde, explica seus serviços e ajuda a separar curiosos de clientes.
+              explica seus serviços e ajuda a separar curiosos de clientes.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button
