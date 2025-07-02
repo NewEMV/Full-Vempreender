@@ -18,7 +18,7 @@ const faqData = [
   },
   {
     question: "Posso cancelar quando quiser?",
-    answer: "Sim. Sem contratos longos ou burocracia. Total liberdade.",
+    answer: "Sim. Essa é uma assinatura mensal, sem burocracia. Total liberdade.",
   },
   {
     question: "Funciona em redes sociais como Instagram?",
