@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, Rocket } from "lucide-react";
@@ -11,7 +12,7 @@ const plansData = [
     description: "Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que nem todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.",
     colors: "border-red-900/80 shadow-red-900/30",
     buttonColors: "bg-red-900/80 hover:bg-red-900 text-white",
-    topClass: "top-20",
+    topClass: "top-24",
   },
   {
     id: 2,
@@ -21,7 +22,7 @@ const plansData = [
     description: "A mensalidade dos nossos concorrentes é proporcional à quantidade de ferramentas e funções embutidas que podem ter muita utilidade se você tiver tempo e/ou habilidades para explorar todo esse potencial. Caso contrário você paga pra não usar.",
     colors: "border-orange-400/80 shadow-orange-400/30",
     buttonColors: "bg-orange-400/80 hover:bg-orange-500 text-white",
-    topClass: "top-40",
+    topClass: "top-48",
   },
   {
     id: 3,
@@ -32,7 +33,7 @@ const plansData = [
     promoPrice: "Na promoção a implantação custa apenas 400,00.",
     colors: "border-green-900/80 shadow-green-900/30",
     buttonColors: "bg-green-900/80 hover:bg-green-900 text-white",
-    topClass: "top-60",
+    topClass: "top-72",
   },
   {
     id: 4,
@@ -43,7 +44,7 @@ const plansData = [
     promoPrice: "Na promoção a mensalidade fica apenas 250,00.",
     colors: "border-blue-900/80 shadow-blue-900/30",
     buttonColors: "bg-blue-900/80 hover:bg-blue-900 text-white",
-    topClass: "top-80",
+    topClass: "top-96",
   }
 ];
 
