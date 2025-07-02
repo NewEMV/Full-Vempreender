@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -10,11 +9,14 @@ export default function Hero() {
     >
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-background/70"
+        className="absolute inset-0 -z-20 bg-cover bg-center bg-fixed bg-no-repeat"
+        style={{
+          backgroundImage: "url('/Imagens/Hero Chatbot Vempreender.webp')",
+        }}
       ></div>
       <div
         aria-hidden="true"
-        className="absolute inset-0 z-50 bg-[url('/Imagens/Hero%20Chatbot%20Vempreender.webp')] bg-cover bg-center bg-fixed bg-no-repeat"
+        className="absolute inset-0 -z-10 bg-background/70"
       ></div>
       <div className="container relative mx-auto flex h-full flex-grow items-center px-24">
         <div className="mx-auto max-w-3xl text-center">
