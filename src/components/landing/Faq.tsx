@@ -40,8 +40,6 @@ const testimonials = [
   },
 ];
 
-const duplicatedTestimonials = [...testimonials, ...testimonials];
-
 export default function Depoimentos() {
   const [isPaused, setIsPaused] = React.useState(false);
   const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
@@ -77,17 +75,41 @@ export default function Depoimentos() {
         </div>
 
         <div
-          className="relative mt-12 w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+          className="relative mt-12 w-full overflow-hidden [mask-image:_linear_gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
         >
           <div
             className={cn(
-              "flex min-w-full shrink-0 gap-4 py-4 animate-marquee",
+              "flex w-max shrink-0 gap-4 py-4 animate-marquee",
               isPaused && "pause-animation"
             )}
           >
-            {duplicatedTestimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial, index) => (
               <div
-                key={index}
+                key={`testimonial-1-${index}`}
+                className="w-[350px] md:w-[400px] flex-shrink-0"
+                onClick={handleInteraction}
+              >
+                <Card className="bg-card flex flex-col h-full cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                  <CardContent className="p-6 flex flex-col flex-1">
+                    <Quote className="h-8 w-8 text-primary mb-6" />
+                    <p className="text-muted-foreground mb-6 flex-1">“{testimonial.quote}”</p>
+                    <div className="flex items-center gap-4 mt-auto">
+                      <Avatar>
+                        <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
+                        <AvatarFallback>{testimonial.name.split(" ")[0][0]}{testimonial.name.split(" ")[1][0]}</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="font-bold text-foreground">{testimonial.name.split(",")[0]}</p>
+                        <p className="text-sm text-muted-foreground">{testimonial.name.split(",")[1].trim()}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={`testimonial-2-${index}`}
                 className="w-[350px] md:w-[400px] flex-shrink-0"
                 onClick={handleInteraction}
               >
