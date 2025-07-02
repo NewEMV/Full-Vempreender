@@ -70,31 +70,33 @@ export default function NossoPlano() {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-12 h-[300vh] max-w-2xl">
+        <div className="relative mx-auto mt-12 max-w-2xl">
           {plansData.map((plan) => (
-             <div key={plan.id} className={`sticky ${plan.topClass} ${plan.zIndex} mb-16`}>
-                <Card className={`flex flex-col border-2 ${plan.colors}`}>
-                  <CardHeader>
-                    <Button className={`w-full text-lg font-bold md:text-xl ${plan.buttonColors}`}>
-                      {plan.buttonText}
-                    </Button>
-                    <CardTitle className="pt-2 font-medium">
-                      {plan.title}
-                    </CardTitle>
-                    <CardDescription className="text-lg font-bold text-primary md:text-xl">
-                      {plan.price}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-1">
-                    <p>{plan.description}</p>
-                    {plan.promoPrice && (
-                       <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
-                        {plan.promoPrice}
-                      </CardDescription>
-                    )}
-                  </CardContent>
-                </Card>
-            </div>
+             <div key={plan.id} className="h-[110vh]">
+                <div className={`sticky ${plan.topClass} ${plan.zIndex}`}>
+                    <Card className={`flex flex-col border-2 ${plan.colors}`}>
+                    <CardHeader>
+                        <Button className={`w-full text-lg font-bold md:text-xl ${plan.buttonColors}`}>
+                        {plan.buttonText}
+                        </Button>
+                        <CardTitle className="pt-2 font-medium">
+                        {plan.title}
+                        </CardTitle>
+                        <CardDescription className="text-lg font-bold text-primary md:text-xl">
+                        {plan.price}
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-1">
+                        <p>{plan.description}</p>
+                        {plan.promoPrice && (
+                        <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
+                            {plan.promoPrice}
+                        </CardDescription>
+                        )}
+                    </CardContent>
+                    </Card>
+                </div>
+             </div>
           ))}
         </div>
       </div>
