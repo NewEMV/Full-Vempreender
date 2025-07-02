@@ -8,9 +8,9 @@ const plansData = [
     title: "Implantação nos Concorrentes",
     price: "Podem custar de 1.200,00 a 5.000,00",
     description: "Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que nem todo pequeno empreendedor tem tempo ou habilidade para utilizar, ou seja, você acaba pagando por soluções que não consegue usar.",
-    colors: "border-red-700 shadow-red-700/20",
-    buttonColors: "bg-red-700 hover:bg-red-800 text-white",
-    topClass: "top-24",
+    colors: "border-red-900 shadow-red-900/20",
+    buttonColors: "bg-red-900 hover:bg-red-800 text-white",
+    topClass: "top-20",
     zIndex: "z-10",
   },
   {
@@ -21,7 +21,7 @@ const plansData = [
     description: "A mensalidade dos nossos concorrentes é proporcional à quantidade de ferramentas e funções embutidas que podem ter muita utilidade se você tiver tempo e/ou habilidades para explorar todo esse potencial. Caso contrário você paga pra não usar.",
     colors: "border-orange-400 shadow-orange-400/20",
     buttonColors: "bg-orange-400 hover:bg-orange-500 text-white",
-    topClass: "top-40",
+    topClass: "top-32",
     zIndex: "z-20",
   },
   {
@@ -31,9 +31,9 @@ const plansData = [
     price: "Nossa implantação custa 800,00 fora da promoção.",
     description: "Nossa Promoção é muito simples. Basta baixar nosso post e publicar no Stories do seu Instagram marcando o @ai.vempreender e você terá 50% de desconto no valor da implantação. Você faz a indicação durante a criação do seu chatbot.",
     promoPrice: "Na promoção a implantação custa apenas 400,00.",
-    colors: "border-green-700 shadow-green-700/20",
-    buttonColors: "bg-green-700 hover:bg-green-800 text-white",
-    topClass: "top-56",
+    colors: "border-green-900 shadow-green-900/20",
+    buttonColors: "bg-green-900 hover:bg-green-800 text-white",
+    topClass: "top-44",
     zIndex: "z-30",
   },
   {
@@ -43,9 +43,9 @@ const plansData = [
     price: "Nossa mensalidade custa 579,00 fora da promoção.",
     description: "É muito simples. Basta indicar 3 contatos que precisam de um chatbot e já recebe o desconto. Você faz a indicação durante a criação do seu chatbot.",
     promoPrice: "Na promoção a mensalidade fica apenas 250,00.",
-    colors: "border-blue-700 shadow-blue-700/20",
-    buttonColors: "bg-blue-700 hover:bg-blue-800 text-white",
-    topClass: "top-72",
+    colors: "border-blue-900 shadow-blue-900/20",
+    buttonColors: "bg-blue-900 hover:bg-blue-800 text-white",
+    topClass: "top-56",
     zIndex: "z-40",
   }
 ];
@@ -71,32 +71,37 @@ export default function NossoPlano() {
         </div>
 
         <div className="relative mx-auto mt-12 max-w-2xl">
-          {plansData.map((plan) => (
-             <div key={plan.id} className="h-[110vh]">
-                <div className={`sticky ${plan.topClass} ${plan.zIndex}`}>
-                    <Card className={`flex flex-col border-2 ${plan.colors}`}>
-                    <CardHeader>
-                        <Button className={`w-full text-lg font-bold md:text-xl ${plan.buttonColors}`}>
-                        {plan.buttonText}
-                        </Button>
-                        <CardTitle className="pt-2 font-medium">
-                        {plan.title}
-                        </CardTitle>
-                        <CardDescription className="text-lg font-bold text-primary md:text-xl">
-                        {plan.price}
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-1">
-                        <p>{plan.description}</p>
-                        {plan.promoPrice && (
-                        <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
-                            {plan.promoPrice}
-                        </CardDescription>
-                        )}
-                    </CardContent>
-                    </Card>
-                </div>
-             </div>
+          {plansData.map((plan, index) => (
+             <div 
+                key={plan.id}
+                className={`sticky ${plan.topClass} ${plan.zIndex} ${
+                    // This margin creates the "scroll gap" to allow reading the card
+                    // before the next one overlaps. It applies to all cards except the first.
+                    index > 0 ? "mt-[85vh]" : ""
+                }`}
+            >
+                <Card className={`flex flex-col border-2 ${plan.colors}`}>
+                <CardHeader>
+                    <Button className={`w-full text-lg font-bold md:text-xl ${plan.buttonColors}`}>
+                    {plan.buttonText}
+                    </Button>
+                    <CardTitle className="pt-2 font-medium">
+                    {plan.title}
+                    </CardTitle>
+                    <CardDescription className="text-lg font-bold text-primary md:text-xl">
+                    {plan.price}
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1">
+                    <p>{plan.description}</p>
+                    {plan.promoPrice && (
+                    <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
+                        {plan.promoPrice}
+                    </CardDescription>
+                    )}
+                </CardContent>
+                </Card>
+            </div>
           ))}
         </div>
       </div>
