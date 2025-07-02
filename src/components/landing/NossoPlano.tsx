@@ -21,7 +21,7 @@ const plansData = [
     description: "A mensalidade dos nossos concorrentes é proporcional à quantidade de ferramentas e funções embutidas que podem ter muita utilidade se você tiver tempo e/ou habilidades para explorar todo esse potencial. Caso contrário você paga pra não usar.",
     colors: "border-orange-400 shadow-orange-400/20",
     buttonColors: "bg-orange-400 hover:bg-orange-500 text-white",
-    topClass: "top-32",
+    topClass: "top-40",
     zIndex: "z-20",
   },
   {
@@ -33,7 +33,7 @@ const plansData = [
     promoPrice: "Na promoção a implantação custa apenas 400,00.",
     colors: "border-green-900 shadow-green-900/20",
     buttonColors: "bg-green-900 hover:bg-green-800 text-white",
-    topClass: "top-44",
+    topClass: "top-60",
     zIndex: "z-30",
   },
   {
@@ -45,7 +45,7 @@ const plansData = [
     promoPrice: "Na promoção a mensalidade fica apenas 250,00.",
     colors: "border-blue-900 shadow-blue-900/20",
     buttonColors: "bg-blue-900 hover:bg-blue-800 text-white",
-    topClass: "top-56",
+    topClass: "top-80",
     zIndex: "z-40",
   }
 ];
@@ -70,13 +70,11 @@ export default function NossoPlano() {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-12 max-w-2xl">
+        <div className="relative mx-auto mt-12 max-w-2xl pb-[85vh]">
           {plansData.map((plan, index) => (
              <div 
                 key={plan.id}
                 className={`sticky ${plan.topClass} ${plan.zIndex} ${
-                    // This margin creates the "scroll gap" to allow reading the card
-                    // before the next one overlaps. It applies to all cards except the first.
                     index > 0 ? "mt-[85vh]" : ""
                 }`}
             >
