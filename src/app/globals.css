@@ -51,6 +51,40 @@
   }
 }
 
+@layer components {
+  .feature-row {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+  }
+  .feature-row.is-visible {
+    opacity: 1;
+  }
+
+  .feature-card {
+    transition: transform 1s ease-out, opacity 1s ease-out;
+  }
+
+  .feature-row .feature-card-left {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  .feature-row .feature-card-right {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  
+  .feature-row .feature-card-center {
+    opacity: 0;
+    transition-delay: 0.3s;
+  }
+  
+  .feature-row.is-visible .feature-card {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 @layer utilities {
   @keyframes marquee {
     from {
