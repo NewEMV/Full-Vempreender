@@ -28,7 +28,7 @@ const plansData = [
     buttonText: "Vempreender - Implantação 400,00",
     title: "Implantação na Vempreender",
     price: "Nossa implantação custa 800,00 fora da promoção.",
-    description: "Nossa Promoção é muito simples. Basta baixar nosso post e publicar no Stories do seu Instagram marcando o @ai.vempreender e você terá 50% de desconto no valor da implantação. Você faz a indicação durante a criação do seu chatbot.",
+    description: "Nossa promoção é muito simples. Basta baixar nosso post e publicar no Stories do seu Instagram marcando o @ai.vempreender e você terá 50% de desconto no valor da implantação. Você faz a indicação durante a criação do seu chatbot.",
     promoPrice: "Na promoção a implantação custa apenas 400,00.",
     colors: "border-green-900/80 shadow-green-900/30",
     buttonColors: "bg-green-900/80 hover:bg-green-900 text-white",
