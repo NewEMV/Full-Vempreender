@@ -11,9 +11,8 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute inset-0 -z-20 bg-cover bg-center bg-fixed bg-no-repeat"
         style={{
-          backgroundImage: "url('https://placehold.co/1920x1280.png')",
+          backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/profile_pictures%2FhyP1f247eFPotrOgqnW8OpQuyz23%2F1750901975436_Fernanda_vmp.jpeg?alt=media&token=173a615f-0c8f-4fd0-ae7f-e3eadd9737df')",
         }}
-        data-ai-hint="abstract background"
       ></div>
       <div
         aria-hidden="true"
