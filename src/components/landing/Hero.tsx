@@ -11,7 +11,8 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute inset-0 -z-20 bg-cover bg-center bg-fixed bg-no-repeat"
         style={{
-          backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2FHero%20Chatbot%20Vempreender.webp?alt=media&token=cf25148f-5399-4976-bb7e-f9347ba1428f')",
+          backgroundImage:
+            "url('https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2FHero%20Chatbot%20Vempreender.webp?alt=media&token=cf25148f-5399-4976-bb7e-f9347ba1428f')",
         }}
       ></div>
       <div
@@ -19,14 +20,14 @@ export default function Hero() {
         className="absolute inset-0 -z-10 bg-background/70"
       ></div>
       <div className="container relative mx-auto flex h-full flex-grow items-center px-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="font-headline text-4xl font-semibold tracking-tight text-foreground sm:text-6xl">
+        <div className="mx-auto max-w-3xl text-center bg-background/80 p-8 rounded-xl backdrop-blur-sm border border-white/10">
+          <h1 className="font-headline text-4xl font-semibold tracking-tight text-white sm:text-6xl">
             Atender bem vende mais.
           </h1>
-          <p className="mt-10 text-2xl font-medium leading-tight text-muted-foreground sm:text-4xl">
+          <p className="mt-10 text-2xl font-medium leading-tight text-neutral-200 sm:text-4xl">
             Transforme um bom atendimento em vendas.
           </p>
-          <p className="mt-10 text-lg font-normal text-muted-foreground/80 sm:text-[22px]">
+          <p className="mt-10 text-lg font-normal text-neutral-300 sm:text-[22px]">
             Se um novo cliente não é bem atendido, a venda vai embora. Simples
             assim. Com Vempreender você tem um Atendente com Inteligência
             Artificial que conversa com todo novo cliente como se fosse você. Ele
@@ -43,7 +44,7 @@ export default function Hero() {
             <Button
               variant="ghost"
               size="lg"
-              className="group border-[1.5px] border-primary font-bold transition-all"
+              className="group border-[1.5px] border-primary font-bold text-white transition-all"
             >
               Saiba Mais{" "}
               <span
