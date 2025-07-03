@@ -21,10 +21,16 @@ export async function getPosts(postLimit?: number): Promise<Post[]> {
     if (snapshot.empty) {
       return [];
     }
-    return snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    })) as Post[];
+    return snapshot.docs.map((doc) => {
+      const data = doc.data();
+      return {
+        id: doc.id,
+        title: data.title || "Título não encontrado",
+        image: data.image || data.imageURL || "",
+        aiHint: data.aiHint || "",
+        content: data.content || "",
+      };
+    }) as Post[];
   } catch (error) {
     console.error("Error fetching posts: ", error);
     return [];
@@ -39,10 +45,14 @@ export async function getPost(id: string): Promise<Post | null> {
     if (!snapshot.exists()) {
       return null;
     }
-
+    
+    const data = snapshot.data();
     return {
       id: snapshot.id,
-      ...snapshot.data(),
+      title: data.title || "Título não encontrado",
+      image: data.image || data.imageURL || "",
+      aiHint: data.aiHint || "",
+      content: data.content || "",
     } as Post;
   } catch (error) {
     console.error("Error fetching post: ", error);

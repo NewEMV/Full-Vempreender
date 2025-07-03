@@ -9,6 +9,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 export const revalidate = 60; // Revalidate data every 60 seconds
 
@@ -21,6 +23,15 @@ export default async function BlogPage() {
       <main className="flex-1">
         <section id="blog" className="py-10 md:py-16">
           <div className="container mx-auto px-24">
+            <div className="mb-8">
+                <Button variant="ghost" asChild>
+                    <Link href="/">
+                        <ArrowLeft className="mr-2 h-4 w-4" />
+                        Voltar para o Início
+                    </Link>
+                </Button>
+            </div>
+
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="font-headline text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
                 Blog Vempreender
