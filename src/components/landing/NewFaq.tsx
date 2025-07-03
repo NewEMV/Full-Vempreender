@@ -26,7 +26,7 @@ const faqData = [
   },
   {
     question: "Como funciona o Teste Grátis?",
-    answer: "Após o preenchimento do formulário, você terá 7 dias de uso gratuito para testar tudo.",
+    answer: "Após o preenchimento do formulário, você terá 7 dias de uso gratuito para testar tudo e fazer os ajustes que achar necessário.",
   },
 ];
 
