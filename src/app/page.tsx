@@ -1,9 +1,5 @@
 
-"use client";
-
-import { Suspense, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
-import { useToast } from "@/hooks/use-toast";
+import { Suspense } from "react";
 
 import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
@@ -16,26 +12,13 @@ import Afiliados from "@/components/landing/Afiliados";
 import NewFaq from "@/components/landing/NewFaq";
 import Footer from "@/components/landing/Footer";
 import Chatbot from "@/components/chatbot/Chatbot";
+import ReferralHandler from "@/components/landing/ReferralHandler";
+import { getPosts } from "@/services/posts";
+import type { Post } from "@/types/post";
 
-function ReferralHandler() {
-  const searchParams = useSearchParams();
-  const { toast } = useToast();
+export default async function Home() {
+  const posts: Post[] = await getPosts(3);
 
-  useEffect(() => {
-    const ref = searchParams.get("ref");
-    if (ref) {
-      toast({
-        title: "Indicação Aplicada!",
-        description: `Bem-vindo! Seu código de indicação "${ref}" foi aplicado com sucesso.`,
-        duration: 5000,
-      });
-    }
-  }, [searchParams, toast]);
-
-  return null;
-}
-
-export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <Suspense fallback={null}>
@@ -48,7 +31,7 @@ export default function Home() {
         <AtraiaClientes />
         <NossoPlano />
         <Depoimentos />
-        <Blog />
+        <Blog posts={posts} />
         <Afiliados />
         <NewFaq />
       </main>
