@@ -35,14 +35,18 @@ export default function Blog({ posts }: BlogProps) {
                 >
                   <Card className="overflow-hidden flex flex-col w-full h-full transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
                     <div className="relative w-full h-48">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        data-ai-hint={post.aiHint}
-                        className="object-cover"
-                      />
+                      {post.image ? (
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          data-ai-hint={post.aiHint}
+                          className="object-cover"
+                        />
+                      ) : (
+                        <Skeleton className="h-full w-full" />
+                      )}
                     </div>
                     <CardHeader className="flex-1">
                       <CardTitle className="text-lg font-bold">

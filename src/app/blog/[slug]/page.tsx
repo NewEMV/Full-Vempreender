@@ -6,6 +6,7 @@ import Footer from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const revalidate = 60; // Revalidate data every 60 seconds
 
@@ -36,15 +37,19 @@ export default async function PostPage({
             {post.title}
           </h1>
           <div className="relative mb-8 h-64 w-full overflow-hidden rounded-lg md:h-96">
-            <Image
-              src={post.image}
-              alt={post.title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover"
-              data-ai-hint={post.aiHint}
-              priority
-            />
+            {post.image ? (
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+                data-ai-hint={post.aiHint}
+                priority
+              />
+            ) : (
+              <Skeleton className="h-full w-full" />
+            )}
           </div>
           <div className="max-w-none text-lg leading-relaxed text-foreground/90">
             <p className="whitespace-pre-wrap">{post.content}</p>
