@@ -22,7 +22,7 @@ const faqData = [
   },
   {
     question: "Funciona em redes sociais como Instagram?",
-    answer: "Sim. Você pode divulgar o link do seu Vempreender em bios, anúncios e no WhatsApp.",
+    answer: "Sim. Você pode divulgar o link do seu Vempreender na Bio, anúncios e no Linktr.ee.",
   },
   {
     question: "Como funciona o Teste Grátis?",
