@@ -26,7 +26,7 @@ export async function getPosts(postLimit?: number): Promise<Post[]> {
       return {
         id: doc.id,
         title: data.title || "Título não encontrado",
-        image: data.image || data.imageURL || "",
+        image: data.image || data.imageUrl || "",
         aiHint: data.aiHint || "",
         content: data.content || "",
       };
@@ -50,7 +50,7 @@ export async function getPost(id: string): Promise<Post | null> {
     return {
       id: snapshot.id,
       title: data.title || "Título não encontrado",
-      image: data.image || data.imageURL || "",
+      image: data.image || data.imageUrl || "",
       aiHint: data.aiHint || "",
       content: data.content || "",
     } as Post;
