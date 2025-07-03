@@ -17,13 +17,13 @@ const navLinks = [
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/60 backdrop-blur-lg">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-24">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/">
           <Logo />
         </Link>
         
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-8">
+        {/* Desktop Navigation - Changed lg to md */}
+        <div className="hidden md:flex items-center gap-8">
             <nav className="flex items-center space-x-4 text-base font-medium">
               {navLinks.map((link) => (
                 <Link
@@ -43,8 +43,8 @@ export default function Header() {
             </Button>
         </div>
 
-        {/* Mobile Navigation */}
-        <div className="flex lg:hidden">
+        {/* Mobile Navigation - Changed lg to md */}
+        <div className="flex md:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
