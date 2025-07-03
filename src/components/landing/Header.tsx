@@ -23,29 +23,28 @@ export default function Header() {
         </Link>
         
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-4 text-base font-medium">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-muted-foreground transition-colors hover:text-foreground"
+        <div className="hidden lg:flex items-center gap-8">
+            <nav className="flex items-center space-x-4 text-base font-medium">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+            <Button
+                variant="ghost"
+                className="text-muted-foreground hover:bg-accent/20 hover:text-foreground"
             >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="hidden lg:flex items-center gap-4">
-          <Button
-            variant="ghost"
-            className="text-muted-foreground hover:bg-accent/20 hover:text-foreground"
-          >
-            Login
-          </Button>
+                Login
+            </Button>
         </div>
 
         {/* Mobile Navigation */}
-        <div className="lg:hidden">
+        <div className="flex lg:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
