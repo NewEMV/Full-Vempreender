@@ -23,7 +23,7 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-background/70"
       ></div>
-      <div className="container relative mx-auto flex h-full flex-grow items-center justify-center px-24">
+      <div className="container relative mx-auto flex h-full flex-grow items-center justify-center px-4 md:px-24">
         <div className="relative mx-auto max-w-3xl text-center">
           <div
             aria-hidden="true"

@@ -22,7 +22,7 @@ export default async function BlogPage() {
       <Header />
       <main className="flex-1">
         <section id="blog" className="py-10 md:py-16">
-          <div className="container mx-auto px-24">
+          <div className="container mx-auto px-4 md:px-24">
             <div className="mb-8">
                 <Button variant="ghost" asChild>
                     <Link href="/">

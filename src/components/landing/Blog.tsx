@@ -13,7 +13,7 @@ type BlogProps = {
 export default function Blog({ posts }: BlogProps) {
   return (
     <section id="blog" className="py-10 md:py-16">
-      <div className="container mx-auto px-24">
+      <div className="container mx-auto px-4 md:px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Blog Vempreender: Dicas e Estratégias para sua Empresa Crescer
