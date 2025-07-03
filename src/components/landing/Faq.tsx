@@ -21,7 +21,7 @@ const testimonials = [
     aiHint: "man portrait",
   },
   {
-    quote: "Meu direct vivia lotado de 'quanto custa?'. Era impossível dar atenção de qualidade pra todo mundo. Com o Vempreender, o pessoal já tira as dúvidas iniciais pelo link na bio e quem me chama no WhatsApp já vem decidido. Fechei 5 novos alunos na primeira semana!",
+    quote: "Meu direct vivia lotado de 'quanto custa?'. Era impossível dar atenção de qualidade pra todo mundo. Com o Vempreender, o pessoal já tira as dúvidas iniciais pelo link na bio e chamo no WhatsApp clientes qualificados. Fechei 5 novos alunos na primeira semana!",
     name: "Fernando G., Personal Trainer",
     avatar: "https://placehold.co/100x100.png",
     aiHint: "man smiling",
