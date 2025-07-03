@@ -12,6 +12,7 @@ const navLinks = [
     { href: "/#depoimentos", label: "Depoimentos" },
     { href: "/blog", label: "Blog" },
     { href: "/#afiliados", label: "Afiliados" },
+    { href: "/#faq", label: "FAQ" },
 ];
 
 export default function Header() {
