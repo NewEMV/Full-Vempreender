@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, Rocket } from "lucide-react";
@@ -115,7 +114,7 @@ export default function NossoPlano() {
         <div className="mt-16 text-center">
             <Button
                 size="lg"
-                className="text-base font-bold transition-all hover:scale-105 shadow-[0_0_15px_hsl(var(--primary))] hover:shadow-[0_0_25px_hsl(var(--primary))]"
+                className="text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30"
             >
                 Teste Grátis por 7 dias
             </Button>
