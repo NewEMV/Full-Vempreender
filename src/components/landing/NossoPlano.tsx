@@ -23,7 +23,7 @@ const plansData = [
     description: "A mensalidade dos nossos concorrentes é proporcional à quantidade de ferramentas e funções embutidas que podem ter muita utilidade se você tiver tempo e/ou habilidades para explorar todo esse potencial. Caso contrário você paga pra não usar.",
     colors: "border-orange-400/80 shadow-orange-400/30",
     buttonColors: "bg-orange-400/80 hover:bg-orange-500 text-white",
-    topClass: "top-[16rem]",
+    topClass: "top-[28rem]",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const plansData = [
     promoPrice: "Na promoção a implantação custa apenas 400,00.",
     colors: "border-green-900/80 shadow-green-900/30",
     buttonColors: "bg-green-900/80 hover:bg-green-900 text-white",
-    topClass: "top-[28rem]",
+    topClass: "top-[52rem]",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const plansData = [
     promoPrice: "Na promoção a mensalidade fica apenas 250,00.",
     colors: "border-blue-900/80 shadow-blue-900/30",
     buttonColors: "bg-blue-900/80 hover:bg-blue-900 text-white",
-    topClass: "top-[40rem]",
+    topClass: "top-[76rem]",
   }
 ];
 
@@ -106,7 +106,7 @@ export default function NossoPlano() {
                   </CardContent>
                 </Card>
               </div>
-              {index < plansData.length - 1 && <div className="h-64" />}
+              {index < plansData.length - 1 && <div className="h-96" />}
             </React.Fragment>
           ))}
           <div className="h-[100vh]" aria-hidden="true" />
@@ -115,7 +115,7 @@ export default function NossoPlano() {
         <div className="mt-16 text-center">
             <Button
                 size="lg"
-                className="text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30"
+                className="text-base font-bold transition-all hover:scale-105 shadow-[0_0_15px_hsl(var(--primary))] hover:shadow-[0_0_25px_hsl(var(--primary))]"
             >
                 Teste Grátis por 7 dias
             </Button>
