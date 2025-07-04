@@ -1,5 +1,6 @@
 
 import Logo from "@/components/icons/Logo";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -7,9 +8,9 @@ export default function Footer() {
       <div className="container mx-auto flex flex-col items-center justify-between gap-6 px-4 md:px-24 sm:flex-row">
         <Logo />
         <div className="text-sm text-muted-foreground flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
-            <a href="#" className="hover:text-foreground">Política de Privacidade</a>
+            <Link href="/politica-de-privacidade" className="hover:text-foreground">Política de Privacidade</Link>
             <span className="hidden sm:inline">|</span>
-            <a href="#" className="hover:text-foreground">Termos de Uso</a>
+            <Link href="/termos-de-uso" className="hover:text-foreground">Termos de Uso</Link>
         </div>
         <p className="text-sm text-muted-foreground">
           &copy; Vempreender {new Date().getFullYear()}
