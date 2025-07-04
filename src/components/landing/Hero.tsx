@@ -1,6 +1,5 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
@@ -54,8 +53,7 @@ export default function Hero() {
                 className="text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30"
               >
                 <Link href="/auth.html">
-                  Teste Grátis Agora
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  Teste Grátis por 7 Dias
                 </Link>
               </Button>
               <Button
