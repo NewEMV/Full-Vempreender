@@ -61,13 +61,7 @@ export default function Hero() {
                 size="lg"
                 className="group border-[1.5px] border-primary font-bold text-white transition-all"
               >
-                Saiba Mais{" "}
-                <span
-                  aria-hidden="true"
-                  className="ml-2 transition-transform group-hover:translate-x-1"
-                >
-                  →
-                </span>
+                Saiba Mais
               </Button>
             </div>
           </div>
