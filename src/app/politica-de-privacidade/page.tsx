@@ -185,7 +185,7 @@ export default function PoliticaDePrivacidadePage() {
                     <li>Obter informações sobre as entidades com as quais compartilhamos seus dados.</li>
                     <li>Revogar seu consentimento a qualquer momento.</li>
                 </ul>
-                <p>Para exercer seus direitos, entre em contato conosco através do e-mail: <a href="mailto:vempreender.ia@gmail.com" className="text-primary hover:underline">vempreender.ia@gmail.com</a>.</p>
+                <p>Para exercer seus direitos, entre em contato conosco através do e-mail: <a href="mailto:contato@vempreender.com.br" className="text-primary hover:underline">vempreender.ia@gmail.com</a>.</p>
               </section>
 
               <section className="space-y-4">
