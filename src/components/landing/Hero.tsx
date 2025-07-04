@@ -1,5 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -47,11 +49,14 @@ export default function Hero() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button
+                asChild
                 size="lg"
                 className="text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30"
               >
-                Teste Grátis Agora
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <Link href="/auth.html">
+                  Teste Grátis Agora
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
               <Button
                 variant="ghost"

@@ -1,5 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { Handshake } from "lucide-react";
+import Link from "next/link";
 
 export default function Afiliados() {
   return (
@@ -28,7 +30,9 @@ export default function Afiliados() {
               Pagamento transparente 30 dias após a confirmação do cliente.
             </p>
           </div>
-          <Button size="lg" className="text-base font-bold">Quero Ser Afiliado!</Button>
+          <Button asChild size="lg" className="text-base font-bold">
+            <Link href="/auth.html">Quero Ser Afiliado!</Link>
+          </Button>
         </div>
       </div>
     </section>
