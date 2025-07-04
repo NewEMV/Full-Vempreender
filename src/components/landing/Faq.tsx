@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
-    quote: "Eu não aguentava mais passar o dia todo respondendo as mesmas perguntas no WhatsApp. O Vempreender faz isso por mim, 24 horas por dia. Meus agendamentos aumentaram e finalmente consigo focar no que eu amo, que é atender minhas clientes. Salvou minha sanidade!",
+    quote: "Eu não aguentava mais passar o dia todo respondendo as mesmas perguntas no WhatsApp. O Vempreender faz isso por mim. Meus agendamentos aumentaram e finalmente consigo focar no que eu amo, que é atender minhas clientes. Salvou minha sanidade!",
     name: "Jéssica M., Esteticista",
     avatar: "https://placehold.co/100x100.png",
     aiHint: "woman portrait",
