@@ -18,12 +18,12 @@ const navLinks = [
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/60 backdrop-blur-lg">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-24">
         <Link href="/">
           <Logo />
         </Link>
         
-        {/* Desktop Navigation - Changed lg to md */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
             <nav className="flex items-center space-x-4 text-base font-medium">
               {navLinks.map((link) => (
@@ -39,12 +39,13 @@ export default function Header() {
             <Button
                 variant="ghost"
                 className="text-muted-foreground hover:bg-accent/20 hover:text-foreground"
+                asChild
             >
-                Login
+                <Link href="/auth.html">Login</Link>
             </Button>
         </div>
 
-        {/* Mobile Navigation - Changed lg to md */}
+        {/* Mobile Navigation */}
         <div className="flex md:hidden">
           <Sheet>
             <SheetTrigger asChild>
@@ -75,8 +76,9 @@ export default function Header() {
                    <Button
                       variant="ghost"
                       className="w-full justify-start text-muted-foreground hover:bg-accent/20 hover:text-foreground text-lg"
+                      asChild
                     >
-                      Login
+                      <Link href="/auth.html">Login</Link>
                     </Button>
                 </div>
               </div>
