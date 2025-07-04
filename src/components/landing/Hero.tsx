@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Hero() {
+  const chatbotUrl = process.env.NEXT_PUBLIC_CHATBOT_URL || "/#como-funciona";
+
   return (
     <section
       id="inicio"
@@ -37,16 +39,16 @@ export default function Hero() {
             <h1 className="font-headline text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Atender bem vende mais.
             </h1>
-            <p className="mt-6 sm:mt-10 text-xl font-medium leading-tight text-white sm:text-3xl lg:text-4xl">
+            <p className="mt-6 text-2xl font-medium leading-tight text-white sm:text-3xl lg:text-4xl">
               Transforme um bom atendimento em vendas.
             </p>
-            <p className="mt-6 sm:mt-10 text-base font-normal text-white sm:text-xl">
+            <p className="mt-6 text-base font-normal text-white sm:text-xl">
               Quando um novo cliente não é bem atendido, sua chance de venda vai embora. Simples
               assim. Com Vempreender você tem um Atendente com Inteligência
               Artificial que conversa com todo novo cliente como se fosse você. Ele
               explica seus serviços, tira as dúvidas e ajuda a separar curiosos de clientes.
             </p>
-            <div className="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6">
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6">
               <Button
                 asChild
                 size="lg"
@@ -60,8 +62,11 @@ export default function Hero() {
                 variant="ghost"
                 size="lg"
                 className="group w-full border-[1.5px] border-primary font-bold text-white transition-all sm:w-auto"
+                asChild
               >
-                Saiba Mais
+                <Link href={chatbotUrl} target="_blank" rel="noopener noreferrer">
+                  Saiba Mais
+                </Link>
               </Button>
             </div>
           </div>
