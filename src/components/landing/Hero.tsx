@@ -33,24 +33,24 @@ export default function Hero() {
             <div className="h-full w-full rounded-full bg-background/70 blur-3xl" />
           </div>
 
-          <div className="relative z-10 p-8">
-            <h1 className="font-headline text-4xl font-semibold tracking-tight text-white sm:text-6xl">
+          <div className="relative z-10 p-4 sm:p-8">
+            <h1 className="font-headline text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Atender bem vende mais.
             </h1>
-            <p className="mt-10 text-2xl font-medium leading-tight text-white sm:text-4xl">
+            <p className="mt-6 sm:mt-10 text-xl font-medium leading-tight text-white sm:text-3xl lg:text-4xl">
               Transforme um bom atendimento em vendas.
             </p>
-            <p className="mt-10 text-lg font-normal text-white sm:text-[22px]">
+            <p className="mt-6 sm:mt-10 text-base font-normal text-white sm:text-xl">
               Se um novo cliente não é bem atendido, a venda vai embora. Simples
               assim. Com Vempreender você tem um Atendente com Inteligência
               Artificial que conversa com todo novo cliente como se fosse você. Ele
               explica seus serviços e ajuda a separar curiosos de clientes.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6">
               <Button
                 asChild
                 size="lg"
-                className="text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30"
+                className="w-full text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30 sm:w-auto"
               >
                 <Link href="/auth.html">
                   Teste Grátis por 7 Dias
@@ -59,7 +59,7 @@ export default function Hero() {
               <Button
                 variant="ghost"
                 size="lg"
-                className="group border-[1.5px] border-primary font-bold text-white transition-all"
+                className="group w-full border-[1.5px] border-primary font-bold text-white transition-all sm:w-auto"
               >
                 Saiba Mais
               </Button>
