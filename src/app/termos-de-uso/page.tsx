@@ -260,10 +260,10 @@ export default function TermosDeUsoPage() {
                   Para qualquer dúvida sobre estes Termos de Uso, entre em
                   contato através do e-mail:{" "}
                   <a
-                    href="mailto:vempreender.ia@gmail.com"
+                    href="mailto:contato@vempreender.com.br"
                     className="text-primary hover:underline"
                   >
-                    vempreender.ia@gmail.com
+                    contato@vempreender.com.br
                   </a>
                   .
                 </p>

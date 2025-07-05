@@ -185,7 +185,7 @@ export default function PoliticaDePrivacidadePage() {
                     <li>Obter informações sobre as entidades com as quais compartilhamos seus dados.</li>
                     <li>Revogar seu consentimento a qualquer momento.</li>
                 </ul>
-                <p>Para exercer seus direitos, entre em contato conosco através do e-mail: <a href="mailto:contato@vempreender.com.br" className="text-primary hover:underline">vempreender.ia@gmail.com</a>.</p>
+                <p>Para exercer seus direitos, entre em contato conosco através do e-mail: <a href="mailto:contato@vempreender.com.br" className="text-primary hover:underline">contato@vempreender.com.br</a>.</p>
               </section>
 
               <section className="space-y-4">
@@ -204,10 +204,10 @@ export default function PoliticaDePrivacidadePage() {
                   com o Controlador de Dados: [Nome da Sua Empresa ou Seu Nome
                   Completo] CNPJ/CPF: 135.499.508-29 E-mail:{" "}
                   <a
-                    href="mailto:vempreender.ia@gmail.com"
+                    href="mailto:contato@vempreender.com.br"
                     className="text-primary hover:underline"
                   >
-                    vempreender.ia@gmail.com
+                    contato@vempreender.com.br
                   </a>
                 </p>
               </section>

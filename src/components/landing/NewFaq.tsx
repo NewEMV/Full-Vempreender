@@ -10,23 +10,23 @@ import { Card, CardContent } from "@/components/ui/card";
 const faqData = [
   {
     question: "O que é o Vempreender?",
-    answer: "É um atendente com IA que responde seus clientes automaticamente com seu estilo e conhecimento.",
+    answer: "É um atendente com IA que responde seus clientes automaticamente com seu estilo, baseado no seu conhecimento.",
   },
   {
     question: "Preciso entender de tecnologia para usar?",
-    answer: "Não. Nós configuramos tudo para você. É só responder um breve formulário.",
+    answer: "Não. Nós configuramos tudo para você. Sua função é fornecer o máximo de informações sobre o seu serviço, principalmente com um FAQ (Perguntas Frequentes) bem extenso que você preenche no formulário de criação do seu chatbot. Existe um botão de ajuda onde você pode copiar um prompt e pedir ajuda ao ChatGPT pra te ajudar a criar as Perguntas e Respostas mais frequentes.",
   },
   {
     question: "Posso cancelar quando quiser?",
-    answer: "Sim. Essa é uma assinatura mensal, sem burocracia.",
+    answer: "Sim. Essa é uma assinatura mensal pré paga. Basta parar de pagar ou enviar uma mensagem solicitando o cancelamento para contato@vempreender.com.br",
   },
   {
     question: "Funciona em redes sociais como Instagram?",
-    answer: "Sim. Você pode divulgar o link do seu Vempreender na Bio, anúncios e no Linktr.ee.",
+    answer: "O Vempreender gera um link que você pode divulgar na Bio do Instagram, anúncios, no Linktr.ee e onde mais desejar",
   },
   {
     question: "Como funciona o Teste Grátis?",
-    answer: "Após o preenchimento do formulário, você terá 7 dias de uso gratuito para testar tudo e fazer os ajustes que achar necessário.",
+    answer: "Após o preenchimento do formulário, você recebe o link do seu chatbot e terá 7 dias de uso gratuito para testar tudo e fazer os ajustes que achar necessário.",
   },
 ];
 
