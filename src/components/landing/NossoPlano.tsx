@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, Rocket } from "lucide-react";
@@ -52,6 +51,8 @@ const plansData = [
 
 
 export default function NossoPlano() {
+  const authUrl = process.env.NEXT_PUBLIC_AUTH_URL || "#";
+
   return (
     <section id="nosso-plano" className="relative py-5 md:py-8">
       <div
@@ -119,7 +120,7 @@ export default function NossoPlano() {
                 size="lg"
                 className="text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30"
             >
-                <Link href="/auth.html">Teste Grátis por 7 dias</Link>
+                <Link href={authUrl}>Teste Grátis por 7 dias</Link>
             </Button>
         </div>
       </div>

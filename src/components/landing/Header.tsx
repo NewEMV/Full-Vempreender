@@ -16,6 +16,8 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const authUrl = process.env.NEXT_PUBLIC_AUTH_URL || "#";
+
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/60 backdrop-blur-lg">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-24">
@@ -24,26 +26,26 @@ export default function Header() {
         </Link>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-            <nav className="flex items-center space-x-4 text-base font-medium">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-            <Button
-                variant="ghost"
-                className="text-muted-foreground hover:bg-accent/20 hover:text-foreground"
-                asChild
-            >
-                <Link href="/auth.html">Login</Link>
-            </Button>
-        </div>
+        <nav className="hidden md:flex items-center gap-8">
+          <div className="flex items-center space-x-4 text-base font-medium">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <Button
+              variant="ghost"
+              className="text-muted-foreground hover:bg-accent/20 hover:text-foreground"
+              asChild
+          >
+              <Link href={authUrl}>Login</Link>
+          </Button>
+        </nav>
 
         {/* Mobile Navigation */}
         <div className="flex md:hidden">
@@ -78,7 +80,7 @@ export default function Header() {
                       className="w-full justify-start text-muted-foreground hover:bg-accent/20 hover:text-foreground text-lg"
                       asChild
                     >
-                      <Link href="/auth.html">Login</Link>
+                      <Link href={authUrl}>Login</Link>
                     </Button>
                 </div>
               </div>

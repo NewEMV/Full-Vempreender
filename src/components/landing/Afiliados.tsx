@@ -1,9 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Handshake } from "lucide-react";
 import Link from "next/link";
 
 export default function Afiliados() {
+  const authUrl = process.env.NEXT_PUBLIC_AUTH_URL || "#";
+
   return (
     <section id="afiliados" className="py-10 md:py-16 bg-background/50">
       <div className="container mx-auto px-4 md:px-24">
@@ -31,7 +32,7 @@ export default function Afiliados() {
             </p>
           </div>
           <Button asChild size="lg" className="text-base font-bold">
-            <Link href="/auth.html">Quero Ser Afiliado!</Link>
+            <Link href={authUrl}>Quero Ser Afiliado!</Link>
           </Button>
         </div>
       </div>

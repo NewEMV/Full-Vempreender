@@ -1,9 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Hero() {
-  const chatbotUrl = process.env.NEXT_PUBLIC_CHATBOT_URL || "/#como-funciona";
+  const authUrl = process.env.NEXT_PUBLIC_AUTH_URL || "#";
+  const chatbotUrl = process.env.NEXT_PUBLIC_CHATBOT_URL || "#";
 
   return (
     <section
@@ -54,7 +54,7 @@ export default function Hero() {
                 size="lg"
                 className="w-full text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30 sm:w-auto"
               >
-                <Link href="/auth.html">
+                <Link href={authUrl}>
                   Teste Grátis por 7 Dias
                 </Link>
               </Button>
