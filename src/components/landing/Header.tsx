@@ -43,7 +43,7 @@ export default function Header() {
               className="text-muted-foreground hover:bg-accent/20 hover:text-foreground"
               asChild
           >
-              <Link href={authUrl}>Login</Link>
+              <Link href={authUrl} target="_blank" rel="noopener noreferrer">Login</Link>
           </Button>
         </nav>
 
@@ -80,7 +80,7 @@ export default function Header() {
                       className="w-full justify-start text-muted-foreground hover:bg-accent/20 hover:text-foreground text-lg"
                       asChild
                     >
-                      <Link href={authUrl}>Login</Link>
+                      <Link href={authUrl} target="_blank" rel="noopener noreferrer">Login</Link>
                     </Button>
                 </div>
               </div>

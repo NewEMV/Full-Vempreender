@@ -25,8 +25,8 @@ export async function getPosts(postLimit?: number): Promise<Post[]> {
       const data = doc.data();
       return {
         id: doc.id,
-        title: data.title || data.Title || "Título não encontrado",
-        image: data.image || data.imageUrl || "",
+        title: data.title || "Título não encontrado",
+        image: data.image || "",
         aiHint: data.aiHint || "",
         content: data.content || "",
       };
@@ -49,8 +49,8 @@ export async function getPost(id: string): Promise<Post | null> {
     const data = snapshot.data();
     return {
       id: snapshot.id,
-      title: data.title || data.Title || "Título não encontrado",
-      image: data.image || data.imageUrl || "",
+      title: data.title || "Título não encontrado",
+      image: data.image || "",
       aiHint: data.aiHint || "",
       content: data.content || "",
     } as Post;

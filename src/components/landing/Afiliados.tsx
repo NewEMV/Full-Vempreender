@@ -32,7 +32,7 @@ export default function Afiliados() {
             </p>
           </div>
           <Button asChild size="lg" className="text-base font-bold">
-            <Link href={authUrl}>Quero Ser Afiliado!</Link>
+            <Link href={authUrl} target="_blank" rel="noopener noreferrer">Quero Ser Afiliado!</Link>
           </Button>
         </div>
       </div>
