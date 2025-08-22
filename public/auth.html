@@ -102,7 +102,7 @@
             cursor: text; 
             margin-right: 10px; 
         }
-        input.form-control#loginPassword { 
+        input.form-control#loginPassword, input.form-control#registerPassword, input.form-control#newPassword { 
             padding-right: 45px; 
         }
 
@@ -182,10 +182,10 @@
             width: 20px;
             height: 20px;
         }
-        .auth-card a, #forgotPasswordScreen a, #registerScreen a {
+        .auth-card a, #forgotPasswordScreen a, #registerScreen a, #resetPasswordActionScreen a {
             color: #03A6A6; 
         }
-        .auth-card a:hover, #forgotPasswordScreen a:hover, #registerScreen a:hover {
+        .auth-card a:hover, #forgotPasswordScreen a:hover, #registerScreen a:hover, #resetPasswordActionScreen a:hover {
             color: #B0D9D9; 
         }
         .message {
@@ -243,7 +243,7 @@
             width: 100%;
             margin-bottom: 15px; 
         }
-        #togglePassword {
+        .toggle-password {
             position: absolute;
             right: 12px; 
             top: 50%;
@@ -257,7 +257,7 @@
             width: 24px; 
             height: 24px; 
         }
-        #togglePassword svg { 
+        .toggle-password svg { 
             width: 20px;
             height: 20px;
             stroke: currentColor; 
@@ -362,7 +362,7 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
         <input type="email" id="loginEmail" class="form-control" placeholder="Seu e-mail" required>
         <div class="password-input-container">
             <input type="password" id="loginPassword" class="form-control" placeholder="Sua senha" required>
-            <span id="togglePassword">
+            <span id="toggleLoginPassword" class="toggle-password">
                 <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
@@ -391,7 +391,19 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
         <h2 class="text-2xl font-bold mb-6">Registrar</h2>
         <input type="text" id="registerName" class="form-control" placeholder="Seu nome" required>
         <input type="email" id="registerEmail" class="form-control" placeholder="Seu e-mail" required>
-        <input type="password" id="registerPassword" class="form-control" placeholder="Crie uma senha (mín. 6 caracteres)" required>
+        <div class="password-input-container">
+            <input type="password" id="registerPassword" class="form-control" placeholder="Crie uma senha (mín. 6 caracteres)" required>
+            <span id="toggleRegisterPassword" class="toggle-password">
+                <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <svg class="eye-slash-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+            </span>
+        </div>
         <button type="button" id="registerBtn" class="btn btn-primary">Criar Conta</button>
         <p class="text-sm mt-4">
             Já tem uma conta? <a href="#" id="showLoginLink">Faça login</a>
@@ -409,6 +421,31 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
         </p>
         <div id="resetMessage" class="message hidden"></div>
     </div>
+
+    <!-- TELA ADICIONADA PARA REDEFINIR A SENHA -->
+    <div id="resetPasswordActionScreen" class="auth-card hidden">
+        <h2 class="text-2xl font-bold mb-6">Crie sua Nova Senha</h2>
+        <p class="text-sm mb-4">Por favor, digite sua nova senha abaixo.</p>
+        <div class="password-input-container">
+            <input type="password" id="newPassword" class="form-control" placeholder="Nova senha (mín. 6 caracteres)" required>
+            <span id="toggleNewPassword" class="toggle-password">
+                <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <svg class="eye-slash-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+            </span>
+        </div>
+        <button type="button" id="saveNewPasswordBtn" class="btn btn-primary">Salvar Nova Senha</button>
+        <p class="text-sm mt-4">
+            <a href="#" id="backToLoginFromResetActionLink">Voltar ao Login</a>
+        </p>
+        <div id="resetActionMessage" class="message hidden"></div>
+    </div>
+
 
     <div id="memberArea" class="form-card hidden">
         <h2 class="text-3xl font-bold mb-4">Bem-vindo à Área de Membros!</h2>
@@ -482,6 +519,10 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
                 <h4 class="text-lg font-semibold mb-4">5. Detalhes do Negócio</h4>
                 <label for="horarioFuncionamento" class="block text-sm font-medium mb-1">Horário de Funcionamento*</label>
                 <input type="text" id="horarioFuncionamento" class="form-control" placeholder="Ex: Seg a Sex, 9h às 18h" required>
+                
+                <label for="linkAgendamento" class="block text-sm font-medium mb-1">Link de Agendamento (Opcional)</label>
+                <input type="url" id="linkAgendamento" class="form-control" placeholder="Ex: https://calendly.com/seu-usuario">
+
                 <label for="formasPagamento" class="block text-sm font-medium mb-1">Formas de Pagamento*</label>
                 <input type="text" id="formasPagamento" class="form-control" placeholder="Ex: Cartão de crédito, Pix, Boleto" required>
                 <label for="nichoTrabalho" class="block text-sm font-medium mb-1">Nicho de Trabalho*</label>
@@ -581,7 +622,6 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
     <script type="module">
         // --- 1. IMPORTS E CONFIGURAÇÃO ---
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-analytics.js"; 
         import {
             getAuth,
             createUserWithEmailAndPassword,
@@ -590,7 +630,9 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
             signInWithPopup,
             GoogleAuthProvider,
             onAuthStateChanged,
-            signOut
+            signOut,
+            verifyPasswordResetCode, // IMPORTADO
+            confirmPasswordReset      // IMPORTADO
         } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js"; 
         import {
             getFirestore,
@@ -618,20 +660,20 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
         };
         
         // --- 2. INICIALIZAÇÃO E VARIÁVEIS GLOBAIS ---
-        let app, auth, db, storage, analytics;
+        let app, auth, db, storage;
         let currentUserId = null; 
         let unsubscribeFromProfile = null;
         let formData = {};
         let profilePicFile = null;
         let currentStep = 1;
         const totalSteps = 10;
+        let passwordResetCode = null; // Variável para guardar o código
 
         try {
             app = initializeApp(firebaseConfig);
             auth = getAuth(app);
             db = getFirestore(app);
             storage = getStorage(app);
-            analytics = getAnalytics(app); 
             console.log("Firebase inicializado com sucesso!");
         } catch (error) {
             console.error("Erro ao inicializar Firebase:", error);
@@ -642,7 +684,7 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
         
         // --- 4. FUNÇÕES DE UI (TELAS E MODAIS) ---
         function displayScreen(screenId) {
-            const screens = ['loginScreen', 'registerScreen', 'forgotPasswordScreen', 'memberArea', 'affiliateScreen'];
+            const screens = ['loginScreen', 'registerScreen', 'forgotPasswordScreen', 'resetPasswordActionScreen', 'memberArea', 'affiliateScreen'];
             screens.forEach(id => {
                 const el = document.getElementById(id);
                 if (el) el.classList.add('hidden');
@@ -684,7 +726,9 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
         
         // --- 5. LÓGICA DE AUTENTICAÇÃO E ESTADO DO USUÁRIO ---
         onAuthStateChanged(auth, async (user) => {
-            if (user) {
+            // Se o usuário estiver logado e não estivermos em modo de reset, vá para a área de membros
+            const urlParams = new URLSearchParams(window.location.search);
+            if (user && urlParams.get('mode') !== 'resetPassword') {
                 currentUserId = user.uid;
                 console.log("Usuário logado:", user.uid);
                 
@@ -695,7 +739,7 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
                 displayScreen('memberArea'); 
 
                 if (unsubscribeFromProfile) unsubscribeFromProfile();
-            } else {
+            } else if (!user && urlParams.get('mode') !== 'resetPassword') {
                 currentUserId = null;
                 formData = {};
                 console.log("Nenhum usuário logado.");
@@ -756,7 +800,7 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
                 2: ['nomeEmpresa', 'cnpjCpf'],
                 3: ['rua', 'numero', 'complemento', 'bairro', 'cidade', 'estadoUf', 'cep'],
                 4: ['instagramPessoal', 'instagramProfissional', 'linkedin', 'tiktok'],
-                5: ['horarioFuncionamento', 'formasPagamento', 'nichoTrabalho'],
+                5: ['horarioFuncionamento', 'linkAgendamento', 'formasPagamento', 'nichoTrabalho'],
                 6: ['nomeAtendenteVirtual', 'tomConversa', 'humorConversa', 'saudacaoPreferida'],
                 9: ['palavrasChaveNegativas']
             };
@@ -777,15 +821,12 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
 
         function validateStep(stepNum) {
             let isValid = true;
-            // Simplified validation for this example
             
-            // Collect data for the current step
             const stepFields = document.querySelectorAll(`#formStep${stepNum} .form-control, #formStep${stepNum} .form-select`);
             stepFields.forEach(el => {
                 if (el.value) formData[el.id] = el.value;
             });
 
-            // Collect array data
             if (stepNum === 7) formData.services = Array.from(document.querySelectorAll('#servicesContainer .service-item')).map(item => ({ titulo: item.querySelector('.service-title').value, descricao: item.querySelector('.service-description').value })).filter(s => s.titulo);
             if (stepNum === 8) formData.faqs = Array.from(document.querySelectorAll('#faqsContainer .faq-item')).map(item => ({ pergunta: item.querySelector('.faq-question').value, resposta: item.querySelector('.faq-answer').value })).filter(f => f.pergunta);
             if (stepNum === 10) {
@@ -808,7 +849,7 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
                 if (currentStep < totalSteps) {
                     currentStep++;
                 } else {
-                    currentStep = 11; // Vai para Revisão
+                    currentStep = 11; 
                 }
                 showStep(currentStep);
             }
@@ -903,7 +944,7 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
                 nomeEmpresa: "Nome da Empresa", cnpjCpf: "CNPJ/CPF", fotoPerfilUrl: "Foto de Perfil",
                 rua: "Rua", numero: "Número", complemento: "Complemento", bairro: "Bairro", cidade: "Cidade", estadoUf: "Estado (UF)", cep: "CEP",
                 instagramPessoal: "Instagram Pessoal", instagramProfissional: "Instagram Profissional", linkedin: "LinkedIn", tiktok: "TikTok",
-                horarioFuncionamento: "Horário de Funcionamento", formasPagamento: "Formas de Pagamento", nichoTrabalho: "Nicho de Trabalho",
+                horarioFuncionamento: "Horário de Funcionamento", linkAgendamento: "Link de Agendamento", formasPagamento: "Formas de Pagamento", nichoTrabalho: "Nicho de Trabalho",
                 nomeAtendenteVirtual: "Nome do Atendente", tomConversa: "Tom de Conversa", humorConversa: "Humor", saudacaoPreferida: "Saudação",
                 palavrasChaveNegativas: "Palavras Negativas", services: "Serviços", faqs: "FAQs", indicacoes: "Indicações"
             };
@@ -968,7 +1009,7 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
              try {
                  const docSnap = await getDoc(userAffiliateDocRef);
                  if (docSnap.exists() && docSnap.data().affiliateCode) {
-                     affiliateLinkOutput.value = `${LANDING_PAGE_URL}?ref=${docSnap.data().affiliateCode}`;
+                     affiliateLinkOutput.value = `${window.location.origin}?ref=${docSnap.data().affiliateCode}`;
                      affiliateLinkDisplayContainer.classList.remove('hidden');
                      generateAffiliateLinkBtn.classList.add('hidden');
                      affiliateStatusMessage.textContent = "Você já é um afiliado! Compartilhe seu link exclusivo.";
@@ -997,13 +1038,14 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
             }
         }
         
-        // --- 11. EVENT LISTENERS ---
+        // --- 11. EVENT LISTENERS E LÓGICA DE PÁGINA ---
         document.addEventListener('DOMContentLoaded', () => {
             // Navegação
             document.getElementById('showRegisterLink').addEventListener('click', (e) => { e.preventDefault(); displayScreen('registerScreen'); });
             document.getElementById('showLoginLink').addEventListener('click', (e) => { e.preventDefault(); displayScreen('loginScreen'); });
             document.getElementById('forgotPasswordLink').addEventListener('click', (e) => { e.preventDefault(); displayScreen('forgotPasswordScreen'); });
             document.getElementById('backToLoginLink').addEventListener('click', (e) => { e.preventDefault(); displayScreen('loginScreen'); });
+            document.getElementById('backToLoginFromResetActionLink').addEventListener('click', (e) => { e.preventDefault(); displayScreen('loginScreen'); });
 
             // Auth
             document.getElementById('loginBtn').addEventListener('click', () => signInWithEmailAndPassword(auth, loginEmail.value, loginPassword.value).catch(err => showMessageModal("Erro", "E-mail ou senha inválidos.")));
@@ -1011,6 +1053,32 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
             document.getElementById('googleLoginBtn').addEventListener('click', () => signInWithPopup(auth, new GoogleAuthProvider()).catch(err => showMessageModal("Erro", err.message)));
             document.getElementById('resetPasswordBtn').addEventListener('click', () => sendPasswordResetEmail(auth, resetEmail.value).then(() => showMessageModal("Sucesso", "Link enviado!")).catch(err => showMessageModal("Erro", err.message)));
             document.getElementById('logoutBtn').addEventListener('click', () => signOut(auth));
+
+            // --- Password Toggles ---
+            const setupPasswordToggle = (toggleId, passwordId) => {
+                const toggle = document.getElementById(toggleId);
+                const password = document.getElementById(passwordId);
+                if (!toggle || !password) return;
+
+                const eyeIcon = toggle.querySelector('.eye-icon');
+                const eyeSlashIcon = toggle.querySelector('.eye-slash-icon');
+
+                toggle.addEventListener('click', () => {
+                    if (password.type === 'password') {
+                        password.type = 'text';
+                        eyeIcon.style.display = 'none';
+                        eyeSlashIcon.style.display = 'block';
+                    } else {
+                        password.type = 'password';
+                        eyeIcon.style.display = 'block';
+                        eyeSlashIcon.style.display = 'none';
+                    }
+                });
+            };
+
+            setupPasswordToggle('toggleLoginPassword', 'loginPassword');
+            setupPasswordToggle('toggleRegisterPassword', 'registerPassword');
+            setupPasswordToggle('toggleNewPassword', 'newPassword');
 
             // Navegação do form
             for (let i = 1; i <= totalSteps; i++) {
@@ -1045,7 +1113,7 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
                 e.preventDefault();
                 const button = e.currentTarget;
                 button.disabled = true; button.textContent = 'Baixando...';
-                const imageUrl = 'https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2FStory%20Insta%20Vempreender.png?alt=media&token=7e8e3571-8521-4729-a4a0-5d109b6118dd';
+                const imageUrl = 'https://firebasestorage.googleapis.com/v0/b/cb-vempreender.appspot.com/o/Imagens%20LP%2FStory%20Insta%20Vempreender.png?alt=media&token=7e8e3571-8521-4729-a4a0-5d109b6118dd';
                 try {
                     const response = await fetch(imageUrl);
                     const blob = await response.blob();
@@ -1079,6 +1147,52 @@ Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial far
             
             // Inicializações
             addIndicacaoCards();
+
+            // --- LÓGICA DE REDEFINIÇÃO DE SENHA ---
+            const handlePasswordReset = async () => {
+                const params = new URLSearchParams(window.location.search);
+                const mode = params.get('mode');
+                const oobCode = params.get('oobCode');
+
+                if (mode === 'resetPassword' && oobCode) {
+                    try {
+                        // Verifica se o código é válido
+                        await verifyPasswordResetCode(auth, oobCode);
+                        passwordResetCode = oobCode; // Guarda o código para usar ao salvar
+                        displayScreen('resetPasswordActionScreen');
+                    } catch (error) {
+                        console.error("Erro ao verificar código de reset:", error);
+                        showMessageModal("Erro", "O link de redefinição de senha é inválido ou expirou. Por favor, tente novamente.");
+                        displayScreen('loginScreen');
+                    }
+                }
+            };
+            
+            handlePasswordReset();
+
+            document.getElementById('saveNewPasswordBtn').addEventListener('click', async () => {
+                const newPassword = document.getElementById('newPassword').value;
+                if (!passwordResetCode) {
+                    showMessageModal("Erro", "Código de redefinição não encontrado. Tente novamente.");
+                    return;
+                }
+                if (newPassword.length < 6) {
+                    showMessageModal("Erro", "A nova senha deve ter pelo menos 6 caracteres.");
+                    return;
+                }
+
+                try {
+                    await confirmPasswordReset(auth, passwordResetCode, newPassword);
+                    showMessageModal("Sucesso!", "Sua senha foi redefinida com sucesso. Você já pode fazer login.");
+                    // Limpa a URL e mostra a tela de login
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                    displayScreen('loginScreen');
+                } catch (error) {
+                    console.error("Erro ao salvar nova senha:", error);
+                    showMessageModal("Erro", "Não foi possível redefinir a senha. O link pode ter expirado.");
+                }
+            });
+
         });
 
     </script>
