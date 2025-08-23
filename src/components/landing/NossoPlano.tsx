@@ -55,7 +55,7 @@ export default function NossoPlano() {
   const authUrl = process.env.NEXT_PUBLIC_AUTH_URL || "#";
 
   return (
-    <section id="nosso-plano" className="relative py-5 md:py-8">
+    <section id="nosso-plano" className="relative pb-5 md:pb-8">
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-20 bg-cover bg-center bg-fixed bg-no-repeat"
