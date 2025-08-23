@@ -30,7 +30,7 @@ const faqData = [
   },
   {
     question: "Como sei o que o chatbot responde pro meu cliente?",
-    answer: "No seu email você receberá:",
+    answer: "No seu email você receberá: 1. O Nome, Whatsapp do cliente e foco de interesse da conversa; 2. Uma sugestão de abordagem feita pela nossa IA a partir da análise da conversa. 3. A transcrição completa da conversa. Sempre analise se seu chatbot está respondendo de forma coerente. 4. Caso as respostas sejam vagas e sem consistência, atualize e insira mais informações no seu formulário de criação, principalmente no FAQ. Em instantes seu chatbot será atualizado. Repita o processo quantas vezes achar necessário.",
   }
 ];
 
