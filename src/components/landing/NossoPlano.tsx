@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, Rocket } from "lucide-react";
 import * as React from "react";
 import Link from "next/link";
@@ -88,7 +88,7 @@ export default function NossoPlano() {
             <React.Fragment key={plan.id}>
               <div className={`sticky ${plan.topClass}`}>
                 <Card className={`flex flex-col border-2 ${plan.colors}`}>
-                  <CardHeader className="p-6">
+                  <CardHeader className="px-6 py-4">
                       <Button className={`w-full text-lg font-bold md:text-xl ${plan.buttonColors}`}>
                       {plan.buttonText}
                       </Button>
