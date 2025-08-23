@@ -98,7 +98,7 @@ export default function ComoFunciona() {
             Um bom atendimento cativa clientes!
           </h2>
           <p className="mt-10 text-xl font-normal text-muted-foreground/80 sm:text-2xl">
-            Empreendedor, cada cliente é vital. Vempreender é seu aliado estratégico para transformar o atendimento em resultados reais, com um chatbot que realmente conversa com seu cliente.
+            Cada cliente é vital. Vempreender é seu aliado para transformar o atendimento em resultados reais. Um Agente IA que realmente conversa com seu cliente.
           </p>
         </div>
 
@@ -126,7 +126,7 @@ export default function ComoFunciona() {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-muted-foreground">{feature.description}</p>
+                                <p className="text-muted-foreground text-lg">{feature.description}</p>
                             </CardContent>
                         </Card>
                     ))}
