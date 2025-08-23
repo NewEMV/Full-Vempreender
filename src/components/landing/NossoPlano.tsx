@@ -42,7 +42,7 @@ const plansData = [
     buttonText: "Vempreender - Mensalidade 250,00",
     title: "Mensalidade na Vempreender",
     price: "Nossa mensalidade custa 579,00 fora da promoção.",
-    description: "É muito simples. Basta indicar 3 contatos que precisam de um chatbot e já recebe o desconto. Você faz a indicação durante a criação do seu chatbot.",
+    description: "Para conquistar seu desconto, basta indicar 3 amigos que precisam de um assistente inteligente como o Vempreender. Você faz a indicação durante a criação do seu chatbot.",
     promoPrice: "Na promoção a mensalidade fica apenas 250,00.",
     colors: "border-blue-900/80 shadow-blue-900/30",
     buttonColors: "bg-blue-900/80 hover:bg-blue-900 text-white",
