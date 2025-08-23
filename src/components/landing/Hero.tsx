@@ -42,8 +42,8 @@ export default function Hero() {
             <p className="mt-6 text-2xl font-medium leading-tight text-white sm:text-3xl lg:text-4xl">
               Transforme um bom atendimento em vendas.
             </p>
-            <p className="mt-6 text-base font-normal text-white sm:text-xl">
-              Quando um novo cliente não é bem atendido, sua chance de venda vai embora. Simples
+            <p className="mt-6 text-lg font-normal text-white sm:text-xl">
+              Se um novo cliente não é bem atendido, sua chance de venda vai embora. Simples
               assim. Com Vempreender você tem um Atendente com Inteligência
               Artificial que conversa com todo novo cliente como se fosse você. Ele
               explica seus serviços, tira as dúvidas e ajuda a separar curiosos de clientes.
