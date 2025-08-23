@@ -78,7 +78,7 @@ export default function NossoPlano() {
 
         <div className="mx-auto mt-8 max-w-2xl text-center">
           <p className="text-xl font-medium text-primary">
-            Vempreender será seu melhor funcionário por uma fração do salário de um atendente humano. Não falta, não esquece suas instruções e não te atrapalha.
+            Vempreender será seu melhor funcionário por uma fração do salário de um atendente humano. Não esquece as suas instruções e trabalha inclusive durante as suas férias!
           </p>
         </div>
 
