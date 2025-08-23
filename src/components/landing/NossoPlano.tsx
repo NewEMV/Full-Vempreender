@@ -119,7 +119,7 @@ export default function NossoPlano() {
                 size="lg"
                 className="text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30"
             >
-                <Link href={authUrl} target="_blank" rel="noopener noreferrer">Teste Grátis por 7 dias</Link>
+                <Link href={authUrl} target="_blank" rel="noopener noreferrer">Teste Grátis por 10 dias</Link>
             </Button>
         </div>
       </div>
