@@ -6,7 +6,7 @@ const insights = [
     icon: <Instagram className="h-8 w-8 text-primary" />,
     title: "Turbine seu Impulsionamento no Instagram",
     description:
-      "Impulsionou no Instagram e a procura aumentou? Vempreender é seu Agente IA 24/7 para recepcionar interessados, responder dúvidas e capturar dados. Contatos qualificados direto para você. Adicione o link na sua Bio!",
+      "Impulsionou no Instagram e a procura aumentou? Vempreender é seu Agente IA que trabalha 24/7 para recepcionar interessados, responder dúvidas e capturar dados. Contatos qualificados direto para você. Adicione o link na sua Bio!",
   },
   {
     icon: (
@@ -58,9 +58,11 @@ export default function AtraiaClientes() {
         </div>
         
         <div className="mt-12 text-center">
-          <p className="text-lg text-muted-foreground sm:text-xl">
-            Quer dominar o Impulsionamento e Tráfego Pago? <a href="#blog" className="text-primary hover:underline">Visite nosso Blog</a> para dicas práticas e faça o Vempreender render ainda mais!
-          </p>
+          <div className="mx-auto max-w-2xl">
+            <p className="text-lg text-muted-foreground sm:text-xl">
+              Quer dominar o Impulsionamento e Tráfego Pago? <a href="#blog" className="text-primary hover:underline">Visite nosso Blog</a> para dicas práticas e faça o Vempreender render ainda mais!
+            </p>
+          </div>
         </div>
 
       </div>
