@@ -26,7 +26,7 @@ const faqData = [
   },
   {
     question: "Como funciona o Teste Grátis?",
-    answer: "Após o preenchimento do formulário, você recebe o link do seu chatbot e terá 7 dias de uso gratuito para testar tudo e fazer os ajustes que achar necessário.",
+    answer: "Após o preenchimento do formulário, você recebe o link do seu chatbot pronto para uso e terá 10 dias de uso gratuito para testar tudo e fazer os ajustes que achar necessário.",
   },
 ];
 
