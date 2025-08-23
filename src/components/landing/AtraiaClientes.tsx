@@ -31,7 +31,7 @@ export default function AtraiaClientes() {
       <div className="container mx-auto px-4 md:px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Sua Máquina de Aquisição de Clientes
+            Pronto em até 1 hora!
           </h2>
           <p className="mt-10 text-xl font-normal text-muted-foreground sm:text-2xl">
             Você já faz um trabalho incrível e que merece ser visto! Elimine o gargalo do atendimento e divulgue seu negócio sem medo. Com Vempreender, você atende a todos, de forma inteligente, eficiente e acessível. O Vempreender cuida da conversa para você vender mais, com mais inteligência e menos esforço.
