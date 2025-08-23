@@ -98,14 +98,14 @@ export default function NossoPlano() {
                       <CardDescription className="text-lg font-bold text-primary md:text-xl">
                       {plan.price}
                       </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-1 pt-0">
-                      <p className="text-lg">{plan.description}</p>
+                      <p className="text-lg pt-2">{plan.description}</p>
                       {plan.promoPrice && (
                       <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
                           {plan.promoPrice}
                       </CardDescription>
                       )}
+                  </CardHeader>
+                  <CardContent className="flex-1 pt-0">
                   </CardContent>
                 </Card>
               </div>
