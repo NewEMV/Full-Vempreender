@@ -88,7 +88,7 @@ export default function NossoPlano() {
             <React.Fragment key={plan.id}>
               <div className={`sticky ${plan.topClass}`}>
                 <Card className={`flex flex-col border-2 ${plan.colors}`}>
-                  <CardHeader>
+                  <CardHeader className="p-6">
                       <Button className={`w-full text-lg font-bold md:text-xl ${plan.buttonColors}`}>
                       {plan.buttonText}
                       </Button>
@@ -105,8 +105,6 @@ export default function NossoPlano() {
                       </CardDescription>
                       )}
                   </CardHeader>
-                  <CardContent className="flex-1 pt-0">
-                  </CardContent>
                 </Card>
               </div>
               {index < plansData.length - 1 && <div className="h-96" />}
