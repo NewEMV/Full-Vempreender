@@ -71,7 +71,7 @@ export default function NossoPlano() {
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Simples no uso. Enorme no resultado.
           </h2>
-          <p className="mt-10 text-lg font-normal text-muted-foreground sm:text-xl">
+          <p className="mt-10 text-xl font-normal text-muted-foreground sm:text-2xl">
             Sem complexidade ou funcionalidades que você não usa. Foco em resolver seu problema principal: atender bem para vender mais.
           </p>
         </div>
