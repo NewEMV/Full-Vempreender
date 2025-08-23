@@ -57,7 +57,7 @@ export default function Hero() {
                 className="w-full text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30 sm:w-auto"
               >
                 <Link href={authUrl} target="_blank" rel="noopener noreferrer">
-                  Teste Grátis por 7 Dias
+                  Teste Grátis por 10 Dias
                 </Link>
               </Button>
               <Button
