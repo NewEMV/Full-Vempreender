@@ -27,7 +27,7 @@ const features = [
   },
   {
     icon: <Clock className="h-8 w-8 text-primary" />,
-    title: "Pronto em Até 24 Horas",
+    title: "Pronto em até 60 minutos",
     description:
       "Simples e rápido: preencha o formulário e seu chatbot IA Vempreender fica pronto em até 24h. Teste grátis por 7 dias!",
   },
