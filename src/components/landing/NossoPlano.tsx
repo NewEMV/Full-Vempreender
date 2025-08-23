@@ -11,7 +11,7 @@ const plansData = [
     buttonText: "Concorrentes - Implantação 5.000,00",
     title: "Implantação nos Concorrentes",
     price: "Podem custar de 1.200,00 a 5.000,00",
-    description: "Nossos concorrentes tem produtos interessantes, geralmente integrando diversas ferramentas que são muito úteis, mas que nem todo pequeno empreendedor tem tempo ou habilidade para utilizar. Você paga por soluções que não consegue usar.",
+    description: "Nossos concorrentes integram ferramentas que são úteis, mas que nem todo empreendedor tem tempo ou habilidade para utilizar. Você paga por soluções que não consegue usar.",
     colors: "border-red-900/80 shadow-red-900/30",
     buttonColors: "bg-red-900/80 hover:bg-red-900 text-white",
     topClass: "top-24",
