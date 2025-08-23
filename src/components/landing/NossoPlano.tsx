@@ -14,7 +14,7 @@ const plansData = [
     description: "Nossos concorrentes integram ferramentas que são úteis, mas que nem todo empreendedor tem tempo e habilidade para aproveitar. Você paga e não usa.",
     colors: "border-red-900/80 shadow-red-900/30",
     buttonColors: "bg-red-900/80 hover:bg-red-900 text-white",
-    topClass: "top-24",
+    topClass: "top-20",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const plansData = [
     description: "A mensalidade dos concorrentes é proporcional à quantidade de ferramentas e funções embutidas que só são úteis se você tiver tempo e habilidades para explorar.",
     colors: "border-orange-400/80 shadow-orange-400/30",
     buttonColors: "bg-orange-400/80 hover:bg-orange-500 text-white",
-    topClass: "top-40",
+    topClass: "top-36",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const plansData = [
     promoPrice: "Na promoção a implantação custa apenas 400,00.",
     colors: "border-green-900/80 shadow-green-900/30",
     buttonColors: "bg-green-900/80 hover:bg-green-900 text-white",
-    topClass: "top-56",
+    topClass: "top-52",
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const plansData = [
     promoPrice: "Na promoção a mensalidade fica apenas 250,00.",
     colors: "border-blue-900/80 shadow-blue-900/30",
     buttonColors: "bg-blue-900/80 hover:bg-blue-900 text-white",
-    topClass: "top-72",
+    topClass: "top-64",
   }
 ];
 
@@ -88,7 +88,7 @@ export default function NossoPlano() {
             <React.Fragment key={plan.id}>
               <div className={`sticky ${plan.topClass}`}>
                 <Card className={`flex flex-col border-2 ${plan.colors}`}>
-                  <CardHeader className="px-6 py-4">
+                  <CardHeader className="flex flex-col space-y-1.5 p-6 px-6 py-4">
                       <Button className={`w-full text-lg font-bold md:text-xl ${plan.buttonColors}`}>
                       {plan.buttonText}
                       </Button>
