@@ -94,10 +94,10 @@ export default function ComoFunciona() {
     <section id="como-funciona" className="py-5 md:py-8 bg-background overflow-x-hidden">
       <div className="container mx-auto px-4 md:px-24">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-headline text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
             Um bom atendimento cativa clientes!
           </h2>
-          <p className="mt-10 text-lg text-muted-foreground/80 sm:text-xl">
+          <p className="mt-10 text-xl text-muted-foreground/80 sm:text-2xl">
             Empreendedor, cada cliente é vital. Vempreender é seu aliado estratégico para transformar o atendimento em resultados reais, com um chatbot que realmente conversa com seu cliente.
           </p>
         </div>
