@@ -21,7 +21,7 @@ const plansData = [
     buttonText: "Concorrentes - Mensalidade 3.000,00",
     title: "Mensalidade nos Concorrentes",
     price: "Podem custar de 900,00 a 3.000,00 por mês.",
-    description: "A mensalidade dos nossos concorrentes é proporcional à quantidade de ferramentas e funções embutidas que podem ter muita utilidade se você tiver tempo e/ou habilidades para explorar todo esse potencial. Caso contrário você paga pra não usar.",
+    description: "A mensalidade dos concorrentes é proporcional à quantidade de ferramentas e funções embutidas que só são úteis se você tiver tempo e habilidades para explorar.",
     colors: "border-orange-400/80 shadow-orange-400/30",
     buttonColors: "bg-orange-400/80 hover:bg-orange-500 text-white",
     topClass: "top-40",
