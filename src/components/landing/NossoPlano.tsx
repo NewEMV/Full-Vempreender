@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, Rocket } from "lucide-react";
@@ -99,7 +100,7 @@ export default function NossoPlano() {
                       </CardDescription>
                   </CardHeader>
                   <CardContent className="flex-1">
-                      <p>{plan.description}</p>
+                      <p className="text-lg">{plan.description}</p>
                       {plan.promoPrice && (
                       <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
                           {plan.promoPrice}
