@@ -40,13 +40,15 @@ export default function Hero() {
             <h1 className="font-headline text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Atender bem vende mais.
             </h1>
-            <p className="mt-6 text-2xl font-medium leading-tight text-white sm:text-3xl lg:text-4xl">
+            <p className="mt-6 text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-5xl">
               Transforme um bom atendimento em vendas.
             </p>
             <p className="mt-6 text-xl font-normal text-white sm:text-2xl">
-              Se um novo cliente não é bem atendido, sua chance de venda vai embora. Com Vempreender você tem um Atendente com Inteligência
-              Artificial que conversa com todo novo cliente como se fosse você. Ele
-              explica seus serviços, tira as dúvidas e ajuda a separar curiosos de clientes.
+              Se um novo cliente não é bem atendido, sua chance de venda vai
+              embora. Com Vempreender você tem um Atendente com Inteligência
+              Artificial que conversa com todo novo cliente como se fosse você.
+              Ele explica seus serviços, tira as dúvidas e ajuda a separar
+              curiosos de clientes.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6">
               <Button
