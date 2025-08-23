@@ -51,7 +51,7 @@ export default function AtraiaClientes() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">{insight.description}</p>
+                <p className="text-muted-foreground text-lg">{insight.description}</p>
               </CardContent>
             </Card>
           ))}
