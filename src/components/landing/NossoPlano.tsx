@@ -77,7 +77,7 @@ export default function NossoPlano() {
         </div>
 
         <div className="mx-auto mt-8 max-w-2xl text-center">
-          <p className="text-lg font-medium text-primary">
+          <p className="text-xl font-medium text-primary">
             Vempreender será seu melhor funcionário por uma fração do salário de um atendente humano. Não falta, não esquece suas instruções e não te atrapalha.
           </p>
         </div>
