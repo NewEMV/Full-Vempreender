@@ -28,6 +28,10 @@ const faqData = [
     question: "Como funciona o Teste Grátis?",
     answer: "Após o preenchimento do formulário, você recebe o link do seu chatbot pronto para uso e terá 10 dias de uso gratuito para testar tudo e fazer os ajustes que achar necessário.",
   },
+  {
+    question: "Como sei o que o chatbot responde pro meu cliente?",
+    answer: "No seu email você receberá:",
+  }
 ];
 
 export default function NewFaq() {
