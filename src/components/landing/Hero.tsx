@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -43,8 +44,7 @@ export default function Hero() {
               Transforme um bom atendimento em vendas.
             </p>
             <p className="mt-6 text-xl font-normal text-white sm:text-2xl">
-              Se um novo cliente não é bem atendido, sua chance de venda vai embora. Simples
-              assim. Com Vempreender você tem um Atendente com Inteligência
+              Se um novo cliente não é bem atendido, sua chance de venda vai embora. Com Vempreender você tem um Atendente com Inteligência
               Artificial que conversa com todo novo cliente como se fosse você. Ele
               explica seus serviços, tira as dúvidas e ajuda a separar curiosos de clientes.
             </p>
