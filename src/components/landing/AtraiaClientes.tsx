@@ -34,7 +34,7 @@ export default function AtraiaClientes() {
             Pronto em até 1 hora!
           </h2>
           <p className="mt-10 text-xl font-normal text-muted-foreground sm:text-2xl">
-            Você já faz um trabalho incrível e que merece ser visto! Elimine o gargalo do atendimento e divulgue seu negócio sem medo. Com Vempreender, você atende a todos, de forma inteligente, eficiente e acessível. O Vempreender cuida da conversa para você vender mais, com mais inteligência e menos esforço.
+            Seu incrível trabalho precisa ser divulgado. Elimine o gargalo do atendimento e divulgue seu negócio sem medo. Com Vempreender, você atende a todos, de forma inteligente, eficiente e acessível. O Vempreender cuida da conversa para você vender mais, com mais inteligência e menos esforço.
           </p>
         </div>
 
