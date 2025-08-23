@@ -38,7 +38,7 @@ export default function Hero() {
 
           <div className="relative z-10 p-4 sm:p-8">
             <h1 className="font-headline text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Atender bem vende mais.
+              Atender bem gera mais vendas
             </h1>
             <p className="mt-6 text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-5xl">
               Transforme um bom atendimento em vendas.
