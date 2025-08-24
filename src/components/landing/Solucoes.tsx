@@ -55,7 +55,7 @@ const chunkArray = <T,>(array: T[], size: number): T[][] => {
 };
 
 
-export default function ComoFunciona() {
+export default function Solucoes() {
   const featureRows = chunkArray(features, 3);
   const rowsRef = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -91,7 +91,7 @@ export default function ComoFunciona() {
   }, []);
 
   return (
-    <section id="como-funciona" className="py-5 md:py-8 bg-background overflow-x-hidden">
+    <section id="solucoes" className="py-5 md:py-8 bg-background overflow-x-hidden">
       <div className="container mx-auto px-4 md:px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-5xl">

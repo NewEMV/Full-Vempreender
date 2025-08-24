@@ -3,7 +3,8 @@ import { Suspense } from "react";
 
 import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
-import ComoFunciona from "@/components/landing/Features";
+import Solucoes from "@/components/landing/Solucoes";
+import ComoFunciona from "@/components/landing/ComoFunciona";
 import AtraiaClientes from "@/components/landing/AtraiaClientes";
 import NossoPlano from "@/components/landing/NossoPlano";
 import Depoimentos from "@/components/landing/Faq";
@@ -27,6 +28,7 @@ export default async function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <Solucoes />
         <ComoFunciona />
         <AtraiaClientes />
         <NossoPlano />
