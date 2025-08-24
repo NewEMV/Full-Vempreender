@@ -13,11 +13,11 @@ type TimelineProps = {
 export const Timeline = ({ children, className }: TimelineProps) => {
   return (
     <div className={cn("flex h-full w-full justify-center", className)}>
-      <div className="w-full max-w-3xl">
+      <div className="w-full max-w-4xl">
         <div className="relative wrap h-full p-4 md:p-10">
           <div
             className="absolute h-full border border-dashed border-opacity-20 border-secondary"
-            style={{ left: "50%" }}
+            style={{ left: "calc(25% + 1.25rem)" }}
           ></div>
            {children}
         </div>
@@ -53,21 +53,22 @@ export const TimelineItem = ({ children, title }: TimelineItemProps) => {
 
   return (
     <motion.div 
-        className="mb-8 flex w-full items-center justify-between md:odd:flex-row-reverse"
+        className="mb-8 flex w-full items-start justify-between md:flex-row"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
         variants={variants}
         transition={{ duration: 0.5 }}
     >
-      <div className="order-1 hidden w-5/12 md:block"></div>
-      <div className="z-20 order-1 flex h-8 w-8 items-center rounded-full bg-primary shadow-xl md:h-10 md:w-10">
+      <div className="order-1 w-1/4 pr-4 text-right">
+        <h3 className="mb-3 text-xl font-bold text-foreground">{title}</h3>
+      </div>
+      <div className="z-20 order-1 flex h-10 w-10 items-center rounded-full bg-primary shadow-xl">
         <div className="mx-auto text-lg font-semibold text-primary-foreground">
           
         </div>
       </div>
-      <div className="order-1 w-full rounded-lg bg-card p-4 shadow-xl md:w-5/12">
-        <h3 className="mb-3 text-xl font-bold text-foreground">{title}</h3>
+      <div className="order-1 w-8/12 rounded-lg bg-card p-4 shadow-xl pl-8">
         <div className="text-sm font-medium leading-snug tracking-wide text-muted-foreground">
           {children}
         </div>

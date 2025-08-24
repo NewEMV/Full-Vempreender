@@ -14,10 +14,10 @@ const timelineData = [
           O primeiro passo é simples e rápido. Crie sua conta na Vempreender AI para ter acesso à nossa plataforma e começar a configurar seu assistente virtual.
         </p>
         <Image
-            src="https://placehold.co/800x400.png"
+            src="https://placehold.co/800x500.png"
             alt="Criação de conta"
             width={800}
-            height={400}
+            height={500}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="interface signup"
         />
@@ -32,10 +32,10 @@ const timelineData = [
           Para que a IA responda como você, ela precisa aprender com você. Preencha um formulário detalhado com informações sobre seu negócio, serviços, preços e perguntas frequentes (FAQ). Quanto mais detalhes, mais inteligente será seu chatbot.
         </p>
          <Image
-            src="https://placehold.co/800x400.png"
+            src="https://placehold.co/800x500.png"
             alt="Preenchimento de formulário"
             width={800}
-            height={400}
+            height={500}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="online form"
         />
@@ -50,10 +50,10 @@ const timelineData = [
           Em até 1 hora, seu chatbot estará pronto! Você receberá um link exclusivo para testar as conversas. Interaja com ele como se fosse um cliente para ver a mágica acontecer.
         </p>
          <Image
-            src="https://placehold.co/800x400.png"
+            src="https://placehold.co/800x500.png"
             alt="Teste do chatbot"
             width={800}
-            height={400}
+            height={500}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="chatbot conversation"
         />
@@ -68,10 +68,10 @@ const timelineData = [
           Notou que uma resposta pode ser melhor? Sem problemas. Volte ao seu formulário, adicione mais informações, refine as respostas do FAQ e veja seu chatbot ficar cada vez mais preciso e eficiente.
         </p>
          <Image
-            src="https://placehold.co/800x400.png"
+            src="https://placehold.co/800x500.png"
             alt="Ajuste de configurações"
             width={800}
-            height={400}
+            height={500}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="dashboard settings"
         />
