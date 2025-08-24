@@ -45,51 +45,7 @@ const features = [
   },
 ];
 
-// Helper to chunk the array
-const chunkArray = <T,>(array: T[], size: number): T[][] => {
-    const chunked_arr: T[][] = [];
-    for (let i = 0; i < array.length; i += size) {
-        chunked_arr.push(array.slice(i, i + size));
-    }
-    return chunked_arr;
-};
-
-
 export default function Solucoes() {
-  const featureRows = chunkArray(features, 3);
-  const rowsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target); // Animate only once
-          }
-        });
-      },
-      {
-        threshold: 0.3, // Trigger when 30% of the element is visible
-      }
-    );
-
-    const currentRefs = rowsRef.current;
-    currentRefs.forEach((ref) => {
-      if (ref) {
-        observer.observe(ref);
-      }
-    });
-
-    return () => {
-      currentRefs.forEach((ref) => {
-        if (ref) {
-          observer.unobserve(ref);
-        }
-      });
-    };
-  }, []);
-
   return (
     <section id="solucoes" className="py-5 md:py-8 bg-background overflow-x-hidden">
       <div className="container mx-auto px-4 md:px-24">
@@ -102,35 +58,22 @@ export default function Solucoes() {
           </p>
         </div>
 
-        <div className="mt-12 flex flex-col gap-12">
-            {featureRows.map((row, rowIndex) => (
-                <div 
-                    key={rowIndex}
-                    ref={el => rowsRef.current[rowIndex] = el}
-                    className="feature-row grid grid-cols-1 gap-8 md:grid-cols-3"
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature) => (
+                <Card
+                    key={feature.title}
+                    className="transform-gpu bg-white/5 backdrop-blur-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 border-border"
                 >
-                    {row.map((feature, cardIndex) => (
-                        <Card
-                            key={feature.title}
-                            className={cn(
-                                "feature-card transform-gpu bg-white/5 backdrop-blur-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 border-border",
-                                cardIndex === 0 && "feature-card-left",
-                                cardIndex === 1 && "feature-card-center",
-                                cardIndex === 2 && "feature-card-right"
-                            )}
-                        >
-                            <CardHeader className="flex flex-col items-start gap-4">
-                                {feature.icon}
-                                <CardTitle className="font-headline text-xl font-medium">
-                                {feature.title}
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-muted-foreground text-lg">{feature.description}</p>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </div>
+                    <CardHeader className="flex flex-col items-start gap-4">
+                        {feature.icon}
+                        <CardTitle className="font-headline text-xl font-medium">
+                        {feature.title}
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground text-lg">{feature.description}</p>
+                    </CardContent>
+                </Card>
             ))}
         </div>
       </div>
