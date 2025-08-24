@@ -140,7 +140,7 @@ const timelineData = [
 ];
 
 
-export default function ComoFuncionaSection() {
+export default function ComoFunciona() {
   return (
     <section id="como-funciona" className="py-10 md:py-16 bg-background">
        <div className="container mx-auto px-4 md:px-24">
