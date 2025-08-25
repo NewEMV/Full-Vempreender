@@ -16,8 +16,8 @@ const timelineData = [
         <Image
             src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Flogin_vempreender.png?alt=media&token=1ad7612f-a1d6-4e1f-851a-e64dffdb1bd2"
             alt="Criação de conta na Vempreender AI"
-            width={1000}
-            height={600}
+            width={800}
+            height={500}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
         />
       </div>
@@ -33,8 +33,8 @@ const timelineData = [
          <Image
             src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fform_vempreender.png?alt=media&token=46279254-bb94-4b11-9eb1-9ffaee0f7954"
             alt="Preenchimento de formulário"
-            width={1000}
-            height={600}
+            width={800}
+            height={500}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="online form"
         />
@@ -69,8 +69,8 @@ const timelineData = [
          <Image
             src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fsummarize_vempreender.png?alt=media&token=9c30350a-708f-464a-adc1-ba6a58c9860d"
             alt="Ajuste de configurações"
-            width={1000}
-            height={600}
+            width={800}
+            height={500}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="dashboard settings"
         />
@@ -89,8 +89,8 @@ const timelineData = [
          <Image
             src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fsummarize_vempreender.png?alt=media&token=9c30350a-708f-464a-adc1-ba6a58c9860d"
             alt="Resumo da conversa do chatbot"
-            width={1000}
-            height={600}
+            width={800}
+            height={500}
             className="rounded-lg object-contain w-full h-auto shadow-lg"
             data-ai-hint="conversation summary"
         />
@@ -107,10 +107,10 @@ const timelineData = [
           <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não processa pagamentos. O foco é no atendimento inicial.</span></li>
         </ul>
          <Image
-            src="https://placehold.co/1000x600.png"
+            src="https://placehold.co/600x375.png"
             alt="Lista de restrições"
-            width={1000}
-            height={600}
+            width={600}
+            height={375}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="stop sign"
         />
