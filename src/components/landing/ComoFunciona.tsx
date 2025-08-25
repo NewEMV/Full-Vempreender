@@ -107,12 +107,12 @@ const timelineData = [
           <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não processa pagamentos. O foco é no atendimento inicial.</span></li>
         </ul>
          <Image
-            src="https://placehold.co/600x375.png"
-            alt="Lista de restrições"
+            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fdelivery.png?alt=media&token=8c12eb83-3d20-4174-ae51-9b633dd20124"
+            alt="Funções não inclusas"
             width={600}
             height={375}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
-            data-ai-hint="stop sign"
+            data-ai-hint="delivery box"
         />
       </div>
     ),
