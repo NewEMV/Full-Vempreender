@@ -80,12 +80,7 @@ const timelineData = [
    {
     title: "5. O que ele faz",
     content: (
-      <div className="grid md:grid-cols-2 gap-8 text-lg">
-        <ul className="space-y-4 text-muted-foreground">
-          <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Conversa fora do whatsapp, pra não encher de curiosos na sua caixa de mensagens.</span></li>
-          <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Ajuda a separar curiosos do seu pontencial cliente. Você decide quem vai conversar no seu whatsapp.</span></li>
-          <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Tira dúvidas e incentiva o cliente a desejar seu produto ou serviço. Você ainda recebe os dados de contato e uma sugestão de abordagem baseada no perfil do cliente.</span></li>
-        </ul>
+      <div className="grid md:grid-cols-2 gap-8 text-lg items-center">
          <Image
             src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fsummarize_vempreender.png?alt=media&token=9c30350a-708f-464a-adc1-ba6a58c9860d"
             alt="Resumo da conversa do chatbot"
@@ -94,19 +89,19 @@ const timelineData = [
             className="rounded-lg object-contain w-full h-auto shadow-lg"
             data-ai-hint="conversation summary"
         />
+        <ul className="space-y-4 text-muted-foreground">
+          <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Conversa fora do whatsapp, pra não encher de curiosos na sua caixa de mensagens.</span></li>
+          <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Ajuda a separar curiosos do seu pontencial cliente. Você decide quem vai conversar no seu whatsapp.</span></li>
+          <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Tira dúvidas e incentiva o cliente a desejar seu produto ou serviço. Você ainda recebe os dados de contato e uma sugestão de abordagem baseada no perfil do cliente.</span></li>
+        </ul>
       </div>
     ),
   },
    {
     title: "6. O que ele NÃO faz",
     content: (
-       <div className="grid md:grid-cols-2 gap-8 text-lg">
-         <ul className="space-y-4 text-muted-foreground">
-          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não é indicado para pedidos de delivery, mas funciona muito bem para agendar encomendas.</span></li>
-          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não se integra a sistemas de CRM ou outras ferramentas.</span></li>
-          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não processa pagamentos. O foco é no atendimento inicial.</span></li>
-        </ul>
-         <Image
+       <div className="grid md:grid-cols-2 gap-8 text-lg items-center">
+        <Image
             src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fdelivery.png?alt=media&token=8c12eb83-3d20-4174-ae51-9b633dd20124"
             alt="Funções não inclusas"
             width={600}
@@ -114,6 +109,11 @@ const timelineData = [
             className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="delivery box"
         />
+         <ul className="space-y-4 text-muted-foreground">
+          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não é indicado para pedidos de delivery, mas funciona muito bem para agendar encomendas.</span></li>
+          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não se integra a sistemas de CRM ou outras ferramentas.</span></li>
+          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não processa pagamentos. O foco é no atendimento inicial.</span></li>
+        </ul>
       </div>
     ),
   },
