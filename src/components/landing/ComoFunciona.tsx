@@ -93,6 +93,7 @@ const timelineData = [
           <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Conversa fora do whatsapp, pra não encher de curiosos na sua caixa de mensagens.</span></li>
           <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Ajuda a separar curiosos do seu pontencial cliente. Você decide quem vai conversar no seu whatsapp.</span></li>
           <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Tira dúvidas e incentiva o cliente a desejar seu produto ou serviço. Você ainda recebe os dados de contato e uma sugestão de abordagem baseada no perfil do cliente.</span></li>
+          <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Insira o link da sua Agenda pra aceitar agendamentos.</span></li>
         </ul>
       </div>
     ),
