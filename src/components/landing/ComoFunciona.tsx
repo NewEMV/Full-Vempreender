@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -86,7 +87,7 @@ const timelineData = [
           <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Coleta nome e WhatsApp para você continuar a conversa.</span></li>
         </ul>
          <Image
-            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fsummarize_vempreender.png?alt=media&token=fae70df0-b3e9-42fc-b410-9ae68a3f52e1"
+            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fsummarize_vempreender.png?alt=media&token=9c30350a-708f-464a-adc1-ba6a58c9860d"
             alt="Resumo da conversa do chatbot"
             width={1000}
             height={600}
