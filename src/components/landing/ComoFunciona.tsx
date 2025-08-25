@@ -82,7 +82,7 @@ const timelineData = [
     content: (
       <div className="space-y-6 text-lg">
          <Image
-            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fsummarize_vempreender.png?alt=media&token=9c30350a-708f-464a-adc1-ba6a58c9860d"
+            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fcalendar_vempreender.png?alt=media&token=453cb2f1-17e0-45dd-adcf-2f8b2a826cf4"
             alt="Resumo da conversa do chatbot"
             width={800}
             height={500}
