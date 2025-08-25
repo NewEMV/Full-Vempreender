@@ -86,7 +86,7 @@ const timelineData = [
             alt="Resumo da conversa do chatbot"
             width={800}
             height={500}
-            className="rounded-lg object-contain w-full h-auto shadow-lg"
+            className="rounded-lg object-contain w-full h-auto shadow-lg mb-6"
             data-ai-hint="conversation summary"
         />
         <ul className="space-y-4 text-muted-foreground">
@@ -102,11 +102,11 @@ const timelineData = [
     content: (
        <div className="space-y-6 text-lg">
         <Image
-            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fdelivery.png?alt=media&token=8c12eb83-3d20-4174-ae51-9b633dd20124"
+            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fcalendar_vempreender.png?alt=media&token=453cb2f1-17e0-45dd-adcf-2f8b2a826cf4"
             alt="Funções não inclusas"
             width={600}
             height={375}
-            className="rounded-lg object-cover w-full h-auto shadow-lg"
+            className="rounded-lg object-cover w-full h-auto shadow-lg mb-6"
             data-ai-hint="delivery box"
         />
          <ul className="space-y-4 text-muted-foreground">
