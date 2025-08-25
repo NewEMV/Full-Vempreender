@@ -82,7 +82,7 @@ const timelineData = [
     content: (
       <div className="grid md:grid-cols-2 gap-8 text-lg">
         <ul className="space-y-4 text-muted-foreground">
-          <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Responde perguntas 24/7 baseado no seu conhecimento.</span></li>
+          <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Conversa fora do whatsapp, pra não encher de curiosos na sua caixa de mensagens.</span></li>
           <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Qualifica leads, separando curiosos de potenciais clientes.</span></li>
           <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Coleta nome e WhatsApp para você continuar a conversa.</span></li>
         </ul>
