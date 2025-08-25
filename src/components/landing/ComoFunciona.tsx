@@ -49,10 +49,10 @@ const timelineData = [
           Em até 1 hora, seu chatbot estará pronto! Você receberá um link exclusivo para testar as conversas. Interaja com ele como se fosse um cliente para ver a mágica acontecer.
         </p>
          <Image
-            src="https://placehold.co/1000x600.png"
+            src="https://placehold.co/800x500.png"
             alt="Teste do chatbot"
-            width={1000}
-            height={600}
+            width={800}
+            height={500}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="chatbot conversation"
         />
