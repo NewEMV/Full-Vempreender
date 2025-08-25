@@ -15,8 +15,8 @@ const timelineData = [
         <Image
             src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Flogin_vempreender.png?alt=media&token=1ad7612f-a1d6-4e1f-851a-e64dffdb1bd2"
             alt="Criação de conta na Vempreender AI"
-            width={800}
-            height={500}
+            width={1000}
+            height={600}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
         />
       </div>
@@ -32,8 +32,8 @@ const timelineData = [
          <Image
             src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fform_vempreender.png?alt=media&token=46279254-bb94-4b11-9eb1-9ffaee0f7954"
             alt="Preenchimento de formulário"
-            width={800}
-            height={500}
+            width={1000}
+            height={600}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="online form"
         />
@@ -48,10 +48,10 @@ const timelineData = [
           Em até 1 hora, seu chatbot estará pronto! Você receberá um link exclusivo para testar as conversas. Interaja com ele como se fosse um cliente para ver a mágica acontecer.
         </p>
          <Image
-            src="https://placehold.co/800x500.png"
+            src="https://placehold.co/1000x600.png"
             alt="Teste do chatbot"
-            width={800}
-            height={500}
+            width={1000}
+            height={600}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="chatbot conversation"
         />
@@ -66,10 +66,10 @@ const timelineData = [
           Notou que uma resposta pode ser melhor? Sem problemas. Volte ao seu formulário, adicione mais informações, refine as respostas do FAQ e veja seu chatbot ficar cada vez mais preciso e eficiente.
         </p>
          <Image
-            src="https://placehold.co/800x500.png"
+            src="https://placehold.co/1000x600.png"
             alt="Ajuste de configurações"
-            width={800}
-            height={500}
+            width={1000}
+            height={600}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="dashboard settings"
         />
@@ -86,12 +86,12 @@ const timelineData = [
           <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Coleta nome e WhatsApp para você continuar a conversa.</span></li>
         </ul>
          <Image
-            src="https://placehold.co/800x500.png"
-            alt="Checklist de funcionalidades"
-            width={600}
-            height={400}
-            className="rounded-lg object-cover w-full h-auto shadow-lg"
-            data-ai-hint="checklist success"
+            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fsummarize_vempreender.png?alt=media&token=fae70df0-b3e9-42fc-b410-9ae68a3f52e1"
+            alt="Resumo da conversa do chatbot"
+            width={1000}
+            height={600}
+            className="rounded-lg object-contain w-full h-auto shadow-lg"
+            data-ai-hint="conversation summary"
         />
       </div>
     ),
@@ -106,10 +106,10 @@ const timelineData = [
           <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não processa pagamentos. O foco é no atendimento inicial.</span></li>
         </ul>
          <Image
-            src="https://placehold.co/800x500.png"
+            src="https://placehold.co/1000x600.png"
             alt="Lista de restrições"
-            width={600}
-            height={400}
+            width={1000}
+            height={600}
             className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="stop sign"
         />
