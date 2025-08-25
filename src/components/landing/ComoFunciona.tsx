@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -31,7 +30,7 @@ const timelineData = [
           Para que a IA responda como você, ela precisa aprender com você. Preencha um formulário detalhado com informações sobre seu negócio, serviços, preços e perguntas frequentes (FAQ). Quanto mais detalhes, mais inteligente será seu chatbot.
         </p>
          <Image
-            src="https://placehold.co/800x500.png"
+            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fform_vempreender.png?alt=media&token=46279254-bb94-4b11-9eb1-9ffaee0f7954"
             alt="Preenchimento de formulário"
             width={800}
             height={500}
