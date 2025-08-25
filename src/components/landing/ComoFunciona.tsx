@@ -102,7 +102,7 @@ const timelineData = [
     content: (
        <div className="grid md:grid-cols-2 gap-8 text-lg">
          <ul className="space-y-4 text-muted-foreground">
-          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não agenda horários diretamente no seu calendário.</span></li>
+          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não é indicado para pedidos de delivery, mas funciona muito bem para agendar encomendas.</span></li>
           <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não se integra a sistemas de CRM ou outras ferramentas.</span></li>
           <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não processa pagamentos. O foco é no atendimento inicial.</span></li>
         </ul>
