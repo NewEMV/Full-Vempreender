@@ -4,7 +4,6 @@
 import Image from "next/image";
 import React from "react";
 import { Timeline, TimelineItem } from "@/components/ui/timeline";
-import { BeamsBackground } from "@/components/ui/beams-background";
 
 const timelineData = [
   {
@@ -143,9 +142,8 @@ const timelineData = [
 
 export default function ComoFunciona() {
   return (
-    <section id="como-funciona" className="py-10 md:py-16 bg-background relative overflow-hidden">
-      <BeamsBackground />
-      <div className="container mx-auto px-4 md:px-24 relative z-10">
+    <section id="como-funciona" className="py-10 md:py-16 bg-background">
+      <div className="container mx-auto px-4 md:px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Como Funciona
