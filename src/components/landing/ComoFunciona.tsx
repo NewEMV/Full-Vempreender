@@ -67,7 +67,7 @@ const timelineData = [
           Notou que uma resposta pode ser melhor? Sem problemas. Volte ao seu formulário, adicione mais informações, refine as respostas do FAQ e veja seu chatbot ficar cada vez mais preciso e eficiente.
         </p>
          <Image
-            src="https://placehold.co/1000x600.png"
+            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fsummarize_vempreender.png?alt=media&token=9c30350a-708f-464a-adc1-ba6a58c9860d"
             alt="Ajuste de configurações"
             width={1000}
             height={600}
