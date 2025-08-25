@@ -5,12 +5,7 @@ import { MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Chatbot() {
-  const chatbotUrl = process.env.NEXT_PUBLIC_CHATBOT_URL;
-
-  // Do not render the button if the URL is not set.
-  if (!chatbotUrl) {
-    return null;
-  }
+  const chatbotUrl = "https://chat.vempreender.com.br/?id=hyP1f247eFPotrOgqnW8OpQuyz23";
 
   return (
     <div className="fixed bottom-6 right-6 z-50">

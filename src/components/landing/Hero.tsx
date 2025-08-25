@@ -1,10 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Hero() {
-  const authUrl = process.env.NEXT_PUBLIC_AUTH_URL || "#";
-  const chatbotUrl = process.env.NEXT_PUBLIC_CHATBOT_URL || "#";
+  const authUrl = "/auth.html";
+  const chatbotUrl = "https://chat.vempreender.com.br/?id=hyP1f247eFPotrOgqnW8OpQuyz23";
 
   return (
     <section
@@ -38,13 +37,17 @@ export default function Hero() {
 
           <div className="relative z-10 p-4 sm:p-8">
             <h1 className="font-headline text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Atender bem gera mais vendas
+              Atender bem vende mais.
             </h1>
             <p className="mt-6 text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-5xl">
               Transforme um bom atendimento em vendas.
             </p>
             <p className="mt-6 text-xl font-normal text-white sm:text-2xl">
-              Uma chance de venda vai embora se um novo cliente não é bem atendido. Vempreender é seu Atendente personalizado com IA que conversa com seu cliente como se fosse você. Ele explica seus serviços, esclarece as dúvidas e ajuda a separar curiosos de clientes.
+              Se um novo cliente não é bem atendido, sua chance de venda vai
+              embora. Com Vempreender você tem um Atendente com Inteligência
+              Artificial que conversa com todo novo cliente como se fosse você.
+              Ele explica seus serviços, tira as dúvidas e ajuda a separar
+              curiosos de clientes.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-x-6">
               <Button
@@ -53,7 +56,7 @@ export default function Hero() {
                 className="w-full text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30 sm:w-auto"
               >
                 <Link href={authUrl} target="_blank" rel="noopener noreferrer">
-                  Teste Grátis por 10 Dias
+                  Teste Grátis por 7 Dias
                 </Link>
               </Button>
               <Button
