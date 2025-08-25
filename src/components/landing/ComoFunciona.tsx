@@ -11,7 +11,7 @@ const timelineData = [
     content: (
       <div>
         <p className="text-muted-foreground text-lg mb-6">
-          O primeiro passo é simples e rápido. Crie sua conta na Vempreender AI para ter acesso à nossa plataforma e começar a configurar seu assistente virtual.
+          O primeiro passo é simples e rápido. Clique em LOGIN e crie sua conta na Vempreender para ter acesso à nossa plataforma e começar a configurar seu assistente virtual.
         </p>
         <Image
             src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Flogin_vempreender.png?alt=media&token=1ad7612f-a1d6-4e1f-851a-e64dffdb1bd2"
@@ -81,20 +81,20 @@ const timelineData = [
     title: "5. O que ele faz",
     content: (
       <div className="space-y-6 text-lg">
-         <Image
-            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fcalendar_vempreender.png?alt=media&token=453cb2f1-17e0-45dd-adcf-2f8b2a826cf4"
-            alt="Resumo da conversa do chatbot"
-            width={800}
-            height={500}
-            className="rounded-lg object-contain w-full h-auto shadow-lg mb-6"
-            data-ai-hint="conversation summary"
-        />
         <ul className="space-y-4 text-muted-foreground">
-          <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Conversa fora do whatsapp, pra não encher de curiosos na sua caixa de mensagens.</span></li>
+          <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Conversa fora do whatsapp, pra não encher sua caixa de mensagens com curiosos.</span></li>
           <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Ajuda a separar curiosos do seu pontencial cliente. Você decide quem vai conversar no seu whatsapp.</span></li>
           <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Tira dúvidas e incentiva o cliente a desejar seu produto ou serviço. Você ainda recebe os dados de contato e uma sugestão de abordagem baseada no perfil do cliente.</span></li>
           <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Insira o link da sua Agenda pra aceitar agendamentos.</span></li>
         </ul>
+        <Image
+            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fcalendar_vempreender.png?alt=media&token=453cb2f1-17e0-45dd-adcf-2f8b2a826cf4"
+            alt="Resumo da conversa do chatbot"
+            width={800}
+            height={500}
+            className="rounded-lg object-contain w-full h-auto shadow-lg"
+            data-ai-hint="conversation summary"
+        />
       </div>
     ),
   },
@@ -102,19 +102,19 @@ const timelineData = [
     title: "6. O que ele NÃO faz",
     content: (
        <div className="space-y-6 text-lg">
+        <ul className="space-y-4 text-muted-foreground">
+          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não é indicado para pedidos de delivery, mas funciona muito bem para agendar encomendas.</span></li>
+          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não se integra a sistemas de CRM ou outras ferramentas.</span></li>
+          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não processa pagamentos. O foco é no atendimento inicial.</span></li>
+        </ul>
         <Image
             src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fdelivery.png?alt=media&token=8c12eb83-3d20-4174-ae51-9b633dd20124"
             alt="Funções não inclusas"
             width={600}
             height={375}
-            className="rounded-lg object-cover w-full h-auto shadow-lg mb-6"
+            className="rounded-lg object-cover w-full h-auto shadow-lg"
             data-ai-hint="delivery box"
         />
-         <ul className="space-y-4 text-muted-foreground">
-          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não é indicado para pedidos de delivery, mas funciona muito bem para agendar encomendas.</span></li>
-          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não se integra a sistemas de CRM ou outras ferramentas.</span></li>
-          <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não processa pagamentos. O foco é no atendimento inicial.</span></li>
-        </ul>
       </div>
     ),
   },

@@ -21,15 +21,15 @@ const features = [
   },
   {
     icon: <Rocket className="h-8 w-8 text-primary" />,
-    title: "Vender!",
+    title: "Vender",
     description:
-      "Divulgue seu link na Bio do Instagram, no Linktr.ee e onde mais quiser. Ao clicar no link, seu novo cliente vai conversar com um Agente IA que sabe tudo sobre o seu negócio.",
+      "Nossa IA aplica técnicas de Vendas, Persuasão e Quebra de Objeções às respostas, gerando uma conversa envolvente pra te ajudar a vender mais.",
   },
   {
     icon: <Clock className="h-8 w-8 text-primary" />,
-    title: "Pronto em até 60 minutos",
+    title: "Não perca tempo.",
     description:
-      "Simples e rápido: preencha o formulário e seu chatbot IA Vempreender fica pronto em até 1 hora. Teste grátis por 10 dias!",
+      "Divulgue seu link na Bio do Instagram, no Linktree e onde mais quiser. Ao clicar no link, seu novo cliente vai conversar com um Agente IA que sabe tudo sobre o seu negócio.",
   },
   {
     icon: <CalendarClock className="h-8 w-8 text-primary" />,
