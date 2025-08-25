@@ -14,7 +14,7 @@ const timelineData = [
           O primeiro passo é simples e rápido. Crie sua conta na Vempreender AI para ter acesso à nossa plataforma e começar a configurar seu assistente virtual.
         </p>
         <Image
-            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Flogin_vempreender.png?alt=media&token=e37a283d-3c2b-4206-a5b6-39c1e7a6f2cb"
+            src="https://placehold.co/800/500.png"
             alt="Criação de conta"
             width={800}
             height={500}
