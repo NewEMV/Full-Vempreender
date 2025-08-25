@@ -80,7 +80,7 @@ const timelineData = [
    {
     title: "5. O que ele faz",
     content: (
-      <div className="grid md:grid-cols-2 gap-8 text-lg items-center">
+      <div className="space-y-6 text-lg">
          <Image
             src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fsummarize_vempreender.png?alt=media&token=9c30350a-708f-464a-adc1-ba6a58c9860d"
             alt="Resumo da conversa do chatbot"
@@ -100,7 +100,7 @@ const timelineData = [
    {
     title: "6. O que ele NÃO faz",
     content: (
-       <div className="grid md:grid-cols-2 gap-8 text-lg items-center">
+       <div className="space-y-6 text-lg">
         <Image
             src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fdelivery.png?alt=media&token=8c12eb83-3d20-4174-ae51-9b633dd20124"
             alt="Funções não inclusas"
