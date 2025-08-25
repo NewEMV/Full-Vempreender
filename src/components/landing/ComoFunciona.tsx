@@ -1,10 +1,8 @@
-
 "use client";
 
 import Image from "next/image";
 import React from "react";
 import { Timeline, TimelineItem } from "@/components/ui/timeline";
-import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 
 const timelineData = [
   {
@@ -143,22 +141,8 @@ const timelineData = [
 
 export default function ComoFunciona() {
   return (
-    <section id="como-funciona" className="relative bg-background">
-      <BackgroundGradientAnimation
-        gradientBackgroundStart="var(--background)"
-        gradientBackgroundEnd="var(--background)"
-        firstColor="37, 90%, 66%"
-        secondColor="180, 95%, 33%"
-        thirdColor="222, 39%, 11%"
-        fourthColor="217, 33%, 17%"
-        fifthColor="210, 40%, 98%"
-        pointerColor="37, 90%, 66%"
-        size="100%"
-        blendingValue="screen"
-        containerClassName="absolute inset-0"
-      >
-      </BackgroundGradientAnimation>
-      <div className="container relative z-10 mx-auto px-4 md:px-24 py-10 md:py-16">
+    <section id="como-funciona" className="bg-background py-10 md:py-16">
+      <div className="container mx-auto px-4 md:px-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Como Funciona
