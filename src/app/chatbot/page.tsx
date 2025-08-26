@@ -8,6 +8,7 @@ import ChatInput from "@/components/chatbot/ChatInput";
 import ChatMessages, { Message } from "@/components/chatbot/ChatMessages";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Logo from "@/components/icons/Logo";
+import Link from "next/link";
 
 function ChatPage() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -76,7 +77,9 @@ function ChatPage() {
   return (
     <div className="flex h-screen flex-col bg-background text-foreground">
       <header className="flex items-center justify-center p-4 border-b border-border/50 bg-background/80 backdrop-blur-lg">
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
       </header>
       <main className="flex-1 overflow-hidden">
         <ScrollArea className="h-full" ref={scrollAreaRef}>

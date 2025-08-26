@@ -1,108 +1,71 @@
 
 "use client";
 
-import { useState, FormEvent, useRef, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
-import { chatbotQualifyLeads } from "@/ai/flows/chatbot-qualify-leads";
-import ChatInput from "@/components/chatbot/ChatInput";
-import ChatMessages, { Message } from "@/components/chatbot/ChatMessages";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import Logo from "@/components/icons/Logo";
-import { Card, CardContent } from "@/components/ui/card";
+import Hero from "@/components/landing/Hero";
+import Solucoes from "@/components/landing/Solucoes";
+import ComoFunciona from "@/components/landing/ComoFunciona";
+import AtraiaClientes from "@/components/landing/AtraiaClientes";
+import NossoPlano from "@/components/landing/NossoPlano";
+import Depoimentos from "@/components/landing/Faq";
+import Blog from "@/components/landing/Blog";
+import Afiliados from "@/components/landing/Afiliados";
+import NewFaq from "@/components/landing/NewFaq";
+import { getPosts } from "@/services/posts";
+import type { Post } from "@/types/post";
+import { useEffect, useState } from "react";
+import Chatbot from "@/components/chatbot/Chatbot";
+import Header from "@/components/landing/Header";
+import Footer from "@/components/landing/Footer";
+import ReferralHandler from "@/components/landing/ReferralHandler";
+import { Suspense } from "react";
 
-function ChatPage() {
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-
-  const scrollAreaRef = useRef<HTMLDivElement>(null);
+function LandingPage() {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Initial greeting from the bot
-    setMessages([
-      {
-        role: "bot",
-        content: "Olá! Sou o assistente virtual da Vempreender. Como posso te ajudar hoje?",
-      },
-    ]);
+    const fetchPosts = async () => {
+      try {
+        const fetchedPosts = await getPosts(3);
+        setPosts(fetchedPosts);
+      } catch (error) {
+        console.error("Failed to fetch posts:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchPosts();
   }, []);
 
-  useEffect(() => {
-    // Scroll to the bottom when messages change
-    if (scrollAreaRef.current) {
-      const viewport = scrollAreaRef.current.querySelector('div[data-radix-scroll-area-viewport]');
-      if (viewport) {
-        viewport.scrollTop = viewport.scrollHeight;
-      }
-    }
-  }, [messages, isLoading]);
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-
-    const userMessage: Message = { role: "user", content: input };
-    setMessages((prev) => [...prev, userMessage]);
-    setIsLoading(true);
-    setInput("");
-
-    try {
-      const conversationHistory = messages.map(m => ({
-        role: m.role as 'user' | 'bot',
-        content: m.content
-      }));
-
-      const response = await chatbotQualifyLeads({ 
-        userInput: input,
-        conversationHistory 
-      });
-      
-      const botMessage: Message = {
-        role: "bot",
-        content: response.chatbotResponse,
-      };
-      setMessages((prev) => [...prev, botMessage]);
-    } catch (error) {
-      console.error("Error calling chatbot API:", error);
-      const errorMessage: Message = {
-        role: "bot",
-        content: "Desculpe, estou com problemas para me conectar. Tente novamente mais tarde.",
-      };
-      setMessages((prev) => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   return (
-    <div className="flex h-screen flex-col bg-background text-foreground">
-      <header className="flex items-center justify-center p-4 border-b border-border/50 bg-background/80 backdrop-blur-lg">
-        <Logo />
-      </header>
-      <main className="flex-1 overflow-hidden">
-        <ScrollArea className="h-full" ref={scrollAreaRef}>
-           <div className="container mx-auto max-w-3xl py-6 px-4">
-              <ChatMessages messages={messages} isLoading={isLoading} />
-           </div>
-        </ScrollArea>
+    <div className="flex min-h-screen flex-col">
+      <Suspense fallback={null}>
+        <ReferralHandler />
+      </Suspense>
+      <Header />
+      <main className="flex-1">
+        <Hero />
+        <Solucoes />
+        <ComoFunciona />
+        <AtraiaClientes />
+        <NossoPlano />
+        <Depoimentos />
+        <Blog posts={posts} />
+        <Afiliados />
+        <NewFaq />
       </main>
-      <footer className="p-4 border-t border-border/50 bg-background/80 backdrop-blur-lg">
-         <div className="container mx-auto max-w-3xl">
-          <ChatInput
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onSubmit={handleSubmit}
-            isLoading={isLoading}
-          />
-        </div>
-      </footer>
+      <Chatbot />
+      <Footer />
     </div>
   );
 }
 
-// Helper component to use useSearchParams
-export default function ChatbotPage() {
+
+export default function Home() {
     return (
-        <ChatPage />
-    );
+        <Suspense fallback={<div>Loading...</div>}>
+            <LandingPage />
+        </Suspense>
+    )
 }
