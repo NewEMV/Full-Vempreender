@@ -1,14 +1,13 @@
 
 "use client";
 
-import { useState, FormEvent, useRef, useEffect } from "react";
+import { useState, FormEvent, useRef, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { chatbotQualifyLeads } from "@/ai/flows/chatbot-qualify-leads";
 import ChatInput from "@/components/chatbot/ChatInput";
 import ChatMessages, { Message } from "@/components/chatbot/ChatMessages";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Logo from "@/components/icons/Logo";
-import { Card, CardContent } from "@/components/ui/card";
 
 function ChatPage() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -103,6 +102,8 @@ function ChatPage() {
 // Helper component to use useSearchParams
 export default function ChatbotPage() {
     return (
+      <Suspense fallback={<div>Loading...</div>}>
         <ChatPage />
+      </Suspense>
     );
 }

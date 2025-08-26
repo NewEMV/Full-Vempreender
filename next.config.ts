@@ -25,6 +25,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/',
+        destination: '/chatbot',
+      },
+    ]
+  },
 };
 
 export default nextConfig;
