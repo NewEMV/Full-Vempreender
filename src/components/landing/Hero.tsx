@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function Hero() {
   // A URL do chatbot agora está diretamente no link abaixo
-  const chatbotUrl = "https://chat.vempreender.com.br/?id=hyP1f247eFPotrOgqnW8OpQuyz23";
+  const chatbotUrl = "https://lpcba.vempreender.com.br/?id=hyP1f247eFPotrOgqnW8OpQuyz23";
   
   // A URL de autenticação agora aponta diretamente para o arquivo
-  const authUrl = "https://lpcba-85495.web.app/auth.html";
+  const authUrl = "https://lpcba.vempreender.com.br/auth.html";
 
   return (
     <section

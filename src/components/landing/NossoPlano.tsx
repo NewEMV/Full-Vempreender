@@ -51,7 +51,7 @@ const plansData = [
 
 
 export default function NossoPlano() {
-  const authUrl = "https://lpcba-85495.web.app/auth.html";
+  const authUrl = "https://lpcba.vempreender.com.br/auth.html";
 
   return (
     <section id="nosso-plano" className="relative pb-5 md:pb-8">

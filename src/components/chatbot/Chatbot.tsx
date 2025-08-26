@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Chatbot() {
   // A URL do chatbot agora está diretamente no link abaixo
-  const chatbotUrl = "https://chat.vempreender.com.br/?id=hyP1f247eFPotrOgqnW8OpQuyz23";
+  const chatbotUrl = "https://lpcba.vempreender.com.br/?id=hyP1f247eFPotrOgqnW8OpQuyz23";
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
