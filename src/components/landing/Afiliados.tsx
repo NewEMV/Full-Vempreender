@@ -3,7 +3,7 @@ import { Handshake } from "lucide-react";
 import Link from "next/link";
 
 export default function Afiliados() {
-  const authUrl = "https://lpcba.vempreender.com.br/auth.html";
+  const authUrl = "https://lpcba.vempreender.com.br";
 
   return (
     <section id="afiliados" className="py-10 md:py-16 bg-background/50">

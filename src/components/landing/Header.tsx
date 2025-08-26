@@ -17,7 +17,7 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const authUrl = "https://lpcba.vempreender.com.br/auth.html";
+  const authUrl = "https://lpcba.vempreender.com.br";
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/60 backdrop-blur-lg">

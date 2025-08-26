@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   const chatbotUrl = "/chatbot";
-  const authUrl = "https://lpcba.vempreender.com.br/auth.html";
+  const authUrl = "https://lpcba.vempreender.com.br";
 
   return (
     <section
@@ -43,8 +43,7 @@ export default function Hero() {
               Transforme um bom atendimento em vendas.
             </p>
             <p className="mt-6 text-xl font-normal text-white sm:text-2xl">
-              Se um novo cliente não é bem atendido, sua chance de venda vai
-              embora. Com Vempreender você tem um Atendente com Inteligência
+            Sua chance de venda vai embora se um novo cliente não é bem atendido. Com Vempreender você tem um Atendente com Inteligência
               Artificial que conversa com todo novo cliente como se fosse você.
               Ele explica seus serviços, tira as dúvidas e ajuda a separar
               curiosos de clientes.
@@ -56,7 +55,7 @@ export default function Hero() {
                 className="w-full text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30 sm:w-auto"
               >
                 <Link href={authUrl} target="_blank" rel="noopener noreferrer">
-                  Teste Grátis por 7 Dias
+                  Teste Grátis por 10 Dias
                 </Link>
               </Button>
               <Button
