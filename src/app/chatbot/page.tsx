@@ -9,6 +9,8 @@ import ChatMessages, { Message } from "@/components/chatbot/ChatMessages";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Logo from "@/components/icons/Logo";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 function ChatPage() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -76,10 +78,16 @@ function ChatPage() {
 
   return (
     <div className="flex h-screen flex-col bg-background text-foreground">
-      <header className="flex items-center justify-center p-4 border-b border-border/50 bg-background/80 backdrop-blur-lg">
+      <header className="flex items-center justify-between p-4 border-b border-border/50 bg-background/80 backdrop-blur-lg">
         <Link href="/">
           <Logo />
         </Link>
+        <Button variant="ghost" asChild>
+            <Link href="/">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Voltar para o Site
+            </Link>
+        </Button>
       </header>
       <main className="flex-1 overflow-hidden">
         <ScrollArea className="h-full" ref={scrollAreaRef}>

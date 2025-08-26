@@ -2,8 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Hero() {
-  const chatbotUrl = "https://lpcba.vempreender.com.br/";
-  
+  const chatbotUrl = "/chatbot";
   const authUrl = "https://lpcba.vempreender.com.br/auth.html";
 
   return (
@@ -67,7 +66,7 @@ export default function Hero() {
                 asChild
               >
                 <Link href={chatbotUrl} target="_blank" rel="noopener noreferrer">
-                  Saiba Mais
+                  Converse com a IA
                 </Link>
               </Button>
             </div>
