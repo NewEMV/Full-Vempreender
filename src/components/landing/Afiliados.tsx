@@ -3,7 +3,7 @@ import { Handshake } from "lucide-react";
 import Link from "next/link";
 
 export default function Afiliados() {
-  const authUrl = process.env.NEXT_PUBLIC_AUTH_URL || "#";
+  const authUrl = "https://lpcba-85495.web.app/auth.html";
 
   return (
     <section id="afiliados" className="py-10 md:py-16 bg-background/50">

@@ -5,6 +5,7 @@ import { MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Chatbot() {
+  // A URL do chatbot agora está diretamente no link abaixo
   const chatbotUrl = "https://chat.vempreender.com.br/?id=hyP1f247eFPotrOgqnW8OpQuyz23";
 
   return (

@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, Rocket } from "lucide-react";
@@ -52,7 +51,7 @@ const plansData = [
 
 
 export default function NossoPlano() {
-  const authUrl = process.env.NEXT_PUBLIC_AUTH_URL || "#";
+  const authUrl = "https://lpcba-85495.web.app/auth.html";
 
   return (
     <section id="nosso-plano" className="relative pb-5 md:pb-8">

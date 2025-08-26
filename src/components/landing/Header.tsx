@@ -17,7 +17,7 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const authUrl = process.env.NEXT_PUBLIC_AUTH_URL || "#";
+  const authUrl = "https://lpcba-85495.web.app/auth.html";
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/60 backdrop-blur-lg">
