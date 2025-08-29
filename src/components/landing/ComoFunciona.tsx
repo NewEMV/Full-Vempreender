@@ -31,7 +31,7 @@ const timelineData = [
           Para que a IA responda como você, ela precisa aprender com você. Preencha um formulário detalhado com informações sobre seu negócio, serviços, preços e perguntas frequentes (FAQ). Quanto mais detalhes, mais inteligente será seu chatbot.
         </p>
          <Image
-            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fform_vempreender.png?alt=media&token=46279254-bb94-4b11-9eb1-9ffaee0f7954"
+            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fform_vempreender.webp?alt=media&token=9893bf2e-2267-4278-aa92-def6f9f78752"
             alt="Preenchimento de formulário"
             width={800}
             height={500}
