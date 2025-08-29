@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Autenticação e Formulário de Chatbot - Vempreender</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <style>
+        /* Tema Escuro - Vempreender */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121826; 
+            color: #cdd5e0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .auth-card, .form-card {
+            background-color: #1a2639; 
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5); 
+            width: 100%;
+            max-width: 500px; 
+            text-align: center;
+            margin-bottom: 20px;
+            border: 1px solid #037F8C; 
+        }
+        #memberArea, #affiliateScreen { 
+            max-width: 700px;
+        }
+
+        .auth-card h2, .form-card h2, .form-card h3, .form-card h4,
+        #formStep1 h4, #formStep2 h4, #formStep3 h4, #formStep4 h4, #formStep5 h4,
+        #formStep6 h4, #formStep7 h4, #formStep8 h4, #formStep9 h4, #formStep10 h4,
+        #formStep11 h4, #formStep12 h4, #affiliateScreen h3, .modal-content h3 {
+            color: #ffffff; 
+        }
+        
+        .form-card p, .auth-card p, .form-card label, 
+        #formStep1 label, #formStep2 label, #formStep3 label, #formStep4 label, #formStep5 label,
+        #formStep6 label, #formStep7 label, #formStep8 label, #formStep9 label, #formStep10 label,
+        #formStep11 p, #formStep12 p,
+        .service-item p, .faq-item p, .indicacao-item p,
+        p.text-sm, p.text-md, p.text-lg,
+        #affiliateScreen p, .modal-content p 
+        {
+            color: #a0aec0; 
+        }
+
+        #affiliateScreen #affiliateLinkDisplayContainer p, 
+        #formStep10 > p.text-md, 
+        #formStep10 > p.text-md + p.text-md, 
+        #formStep12 > p.text-md 
+        {
+            color: #cdd5e0; 
+        }
+        #reviewContent p,
+        #reviewContent strong 
+        {
+            color: #cdd5e0;
+        }
+        #reviewContent p strong, #formStep10 p strong 
+        {
+            color: #B0D9D9; 
+        }
+        .service-item label, .faq-item label, .indicacao-item label, 
+        #reviewContent h5, .service-item h5, .faq-item h5, .indicacao-item h5,
+        #affiliateScreen label 
+        {
+            color: #B0D9D9; 
+        }
+
+        input.form-control, 
+        textarea.form-control, 
+        select.form-select,
+        input.service-title, textarea.service-description,
+        input.faq-question, textarea.faq-answer,  
+        input.indicacao-nome, input.indicacao-whatsapp,
+        input#affiliateLinkOutput  
+        {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background-color: #212d40 !important; 
+            color: #e2e8f0 !important; 
+            border: 1px solid #037F8C !important; 
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input.form-control.is-invalid {
+            border-color: #e53e3e !important;
+        }
+        input#affiliateLinkOutput { 
+            cursor: text; 
+            margin-right: 10px; 
+        }
+        input.form-control#loginPassword, input.form-control#registerPassword, input.form-control#newPassword { 
+            padding-right: 45px; 
+        }
+
+        input.form-control::placeholder, 
+        textarea.form-control::placeholder,
+        input.service-title::placeholder, textarea.service-description::placeholder,
+        input.faq-question::placeholder, textarea.faq-answer::placeholder,
+        input.indicacao-nome::placeholder, input.indicacao-whatsapp::placeholder
+        {
+            color: #718096 !important; 
+        }
+        select.form-select option { 
+            background-color: #212d40;
+            color: #e2e8f0;  
+        }
+        select.form-select:required:invalid {
+            color: #718096 !important; 
+        }
+        select.form-select {
+           color: #e2e8f0 !important; 
+        }
+        
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+        }
+        .btn:disabled {
+            background-color: #56657f;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .auth-card button.btn, #affiliateScreen button.btn { 
+            margin-bottom: 15px;
+        }
+        .auth-card button.btn:last-of-type, #affiliateScreen button.btn:last-of-type {
+            margin-bottom: 0;
+        }
+        #affiliateScreen #copyAffiliateLinkBtn { 
+            margin-bottom:0;
+        }
+
+        .btn-primary {
+            background-color: #F5B25C; 
+            color: #121826; 
+        }
+        .btn-primary:hover:not(:disabled) {
+            background-color: #f7c983; 
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background-color: #037F8C; 
+            color: white;
+        }
+        .btn-secondary:hover:not(:disabled) {
+            background-color: #03A6A6; 
+            transform: translateY(-1px);
+        }
+        .btn-google {
+            background-color: #ffffff; 
+            color: #333333; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #718096; 
+        }
+        .btn-google:hover {
+            background-color: #f0f0f0; 
+        }
+        .btn-google img {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+        .auth-card a, #forgotPasswordScreen a, #registerScreen a, #resetPasswordActionScreen a {
+            color: #03A6A6; 
+        }
+        .auth-card a:hover, #forgotPasswordScreen a:hover, #registerScreen a:hover, #resetPasswordActionScreen a:hover {
+            color: #B0D9D9; 
+        }
+        .message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: left;
+            color: #121826; 
+        }
+        .message.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .message.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(18, 24, 38, 0.8); 
+            display: flex; justify-content: center; align-items: center;
+            z-index: 1000; opacity: 0; visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.visible { opacity: 1; visibility: visible; }
+        .modal-content {
+            background-color: #1a2639; 
+            padding: 30px; border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            width: 90%; max-width: 400px; text-align: center;
+            transform: translateY(-20px); transition: transform 0.3s ease;
+            border: 1px solid #037F8C;
+        }
+        .modal-overlay.visible .modal-content { transform: translateY(0); }
+        .modal-content button { background-color: #F5B25C; color: #121826; padding: 10px 25px; width: auto; }
+        .modal-content button:hover { background-color: #f7c983; }
+
+        .service-item, .faq-item, .indicacao-item, #reviewContent { 
+            background-color: #212d40; 
+            border: 1px solid #037F8C;
+            color: #cdd5e0; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+            text-align: left;
+        }
+        
+        .remove-service-btn, .remove-faq-btn {
+            background-color: #8F0468; 
+            color: white; padding: 5px 10px; font-size: 0.9em;
+            border-radius: 5px; margin-top: 10px; display: inline-block; width: auto; 
+        }
+        .remove-service-btn:hover, .remove-faq-btn:hover { background-color: #720353; }
+        #logoutBtn { background-color: #8F0468; color: white; margin-top: 25px; }
+        #logoutBtn:hover { background-color: #720353; }
+
+        .password-input-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 15px; 
+        }
+        .toggle-password {
+            position: absolute;
+            right: 12px; 
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            user-select: none;
+            color: #B0D9D9; 
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            width: 24px; 
+            height: 24px; 
+        }
+        .toggle-password svg { 
+            width: 20px;
+            height: 20px;
+            stroke: currentColor; 
+        }
+        #affiliateLinkDisplayContainer .flex { 
+            display: flex;
+            align-items: center;
+        }
+        #affiliateLinkDisplayContainer #copyAffiliateLinkBtn {
+            width: auto; 
+            white-space: nowrap; 
+            margin-left: 10px; 
+            margin-bottom: 0; 
+        }
+        #affiliateLinkDisplayContainer #affiliateLinkOutput{
+            margin-bottom: 0; 
+        }
+        .file-upload-container {
+            border: 2px dashed #037F8C; border-radius: 8px; padding: 20px; text-align: center;
+            cursor: pointer; margin-bottom: 15px; background-color: #212d40;
+        }
+        .file-upload-container:hover { background-color: #2a3b52; }
+        #profilePicInput { display: none; }
+        #picUploadLabel { color: #B0D9D9; font-weight: 600; cursor: pointer; }
+        #fileName { display: block; margin-top: 10px; color: #a0aec0; font-size: 14px; }
+        #picPreview { max-width: 150px; max-height: 150px; border-radius: 50%; margin: 15px auto 0; border: 2px solid #03A6A6; display: none; object-fit: cover; }
+        #uploadStatus { font-weight: bold; color: #F5B25C; margin-top: 10px; height: 20px; }
+        .faq-info-box {
+            background-color: #2a3b52;
+            border: 2px solid #F5B25C;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            text-align: left;
+        }
+        .faq-info-box h5 {
+            color: #F5B25C;
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .faq-info-box p {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        .faq-info-box ul {
+            list-style-position: inside;
+            padding-left: 5px;
+        }
+        .faq-info-box button {
+            width: auto; /* Para o botão não ocupar a linha toda */
+            margin-top: 15px;
+            padding: 8px 15px;
+            font-size: 0.9em;
+        }
+        .prompt-box {
+            background-color: #121826;
+            border: 1px solid #037F8C;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            white-space: pre-wrap; /* Garante que as quebras de linha sejam respeitadas */
+            text-align: left;
+            margin-top: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="messageModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 id="modalTitle"></h3>
+            <p id="modalMessage"></p>
+            <button type="button" onclick="closeModal()">OK</button>
+        </div>
+    </div>
+    
+    <div id="faqHelpModal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 600px; text-align: left;">
+            <h3 style="text-align: center;">Dica de Mestre para um FAQ Poderoso</h3>
+            <p>Um bom FAQ antecipa as dúvidas do seu cliente e o deixa mais seguro para comprar. Use a inteligência artificial a seu favor para criar o seu!</p>
+            <p>Abaixo está um prompt (um comando) que você pode usar no ChatGPT (ou outra IA) para gerar ótimas perguntas e respostas, adaptadas para o seu negócio.</p>
+            
+            <h4 class="text-lg font-semibold mt-4">Prompt para o ChatGPT:</h4>
+            <div id="promptToCopy" class="prompt-box">Aja como um especialista em atendimento ao cliente para o seguinte negócio: [Descreva seu negócio aqui, por exemplo: "uma clínica de estética focada em tratamentos faciais"]. Meu público-alvo é [Descreva seu público aqui, por exemplo: "mulheres de 30 a 50 anos que buscam rejuvenescimento"].
+
+Crie uma lista de 40 perguntas frequentes (FAQs) que um cliente em potencial faria. Para cada pergunta, forneça uma resposta clara, amigável e persuasiva, usando o tom de voz [Informe o Tom de Voz, ex: "amigável e profissional"]. As respostas devem quebrar objeções comuns e ressaltar os benefícios dos meus serviços.</div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="button" id="copyPromptBtn" class="btn btn-primary" style="width: auto; margin-right: 15px;">Copiar Prompt</button>
+                <button type="button" id="closeFaqHelpBtn" class="btn btn-secondary" style="width: auto;">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="loginScreen" class="auth-card">
+        <h2 class="text-2xl font-bold mb-6">Login</h2>
+        <input type="email" id="loginEmail" class="form-control" placeholder="Seu e-mail" required>
+        <div class="password-input-container">
+            <input type="password" id="loginPassword" class="form-control" placeholder="Sua senha" required>
+            <span id="toggleLoginPassword" class="toggle-password">
+                <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <svg class="eye-slash-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+            </span>
+        </div>
+        <button type="button" id="loginBtn" class="btn btn-primary">Entrar</button>
+        <button type="button" id="googleLoginBtn" class="btn btn-google">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google icon">
+            Entrar com Google
+        </button>
+        <p class="text-sm mt-4">
+            <a href="#" id="forgotPasswordLink">Esqueceu a senha?</a>
+        </p>
+        <p class="text-sm mt-2">
+            Não tem uma conta? <a href="#" id="showRegisterLink">Registre-se</a>
+        </p>
+        <div id="loginMessage" class="message hidden"></div>
+    </div>
+
+    <div id="registerScreen" class="auth-card hidden">
+        <h2 class="text-2xl font-bold mb-6">Registrar</h2>
+        <input type="text" id="registerName" class="form-control" placeholder="Seu nome" required>
+        <input type="email" id="registerEmail" class="form-control" placeholder="Seu e-mail" required>
+        <div class="password-input-container">
+            <input type="password" id="registerPassword" class="form-control" placeholder="Crie uma senha (mín. 6 caracteres)" required>
+            <span id="toggleRegisterPassword" class="toggle-password">
+                <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <svg class="eye-slash-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+            </span>
+        </div>
+        <button type="button" id="registerBtn" class="btn btn-primary">Criar Conta</button>
+        <p class="text-sm mt-4">
+            Já tem uma conta? <a href="#" id="showLoginLink">Faça login</a>
+        </p>
+        <div id="registerMessage" class="message hidden"></div>
+    </div>
+
+    <div id="forgotPasswordScreen" class="auth-card hidden">
+        <h2 class="text-2xl font-bold mb-6">Recuperar Senha</h2>
+        <p class="text-sm mb-4">Digite seu e-mail para receber um link de redefinição de senha.</p>
+        <input type="email" id="resetEmail" class="form-control" placeholder="Seu e-mail" required>
+        <button type="button" id="resetPasswordBtn" class="btn btn-primary">Enviar Link</button>
+        <p class="text-sm mt-4">
+            <a href="#" id="backToLoginLink">Voltar ao Login</a>
+        </p>
+        <div id="resetMessage" class="message hidden"></div>
+    </div>
+
+    <!-- TELA ADICIONADA PARA REDEFINIR A SENHA -->
+    <div id="resetPasswordActionScreen" class="auth-card hidden">
+        <h2 class="text-2xl font-bold mb-6">Crie sua Nova Senha</h2>
+        <p class="text-sm mb-4">Por favor, digite sua nova senha abaixo.</p>
+        <div class="password-input-container">
+            <input type="password" id="newPassword" class="form-control" placeholder="Nova senha (mín. 6 caracteres)" required>
+            <span id="toggleNewPassword" class="toggle-password">
+                <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <svg class="eye-slash-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+            </span>
+        </div>
+        <button type="button" id="saveNewPasswordBtn" class="btn btn-primary">Salvar Nova Senha</button>
+        <p class="text-sm mt-4">
+            <a href="#" id="backToLoginFromResetActionLink">Voltar ao Login</a>
+        </p>
+        <div id="resetActionMessage" class="message hidden"></div>
+    </div>
+
+
+    <div id="memberArea" class="form-card hidden">
+        <h2 class="text-3xl font-bold mb-4">Bem-vindo à Área de Membros!</h2>
+        <p class="text-lg">Olá, <span id="userName">Usuário</span>!</p>
+        <p class="text-md mb-4">Seu ID de usuário é: <span id="userIdDisplay"></span></p>
+        
+        <button type="button" id="goToAffiliateAreaBtn" class="btn btn-secondary mt-6 mb-6" style="width:auto; display:inline-block;">Minha Conta de Afiliado</button>
+
+        <h3 class="text-xl font-semibold mt-8 mb-4">Formulário de Criação do Chatbot</h3>
+        
+        <div id="chatbotForm" class="text-left">
+            <div id="formStep1" class="form-step">
+                <h4 class="text-lg font-semibold mb-4">1. Informações da Conta</h4>
+                <label for="nomeCompleto" class="block text-sm font-medium mb-1">Nome Completo*</label>
+                <input type="text" id="nomeCompleto" class="form-control" required>
+                <label for="emailConta" class="block text-sm font-medium mb-1">Email*</label>
+                <input type="email" id="emailConta" class="form-control" required>
+                <label for="dataNascimento" class="block text-sm font-medium mb-1">Data de Nascimento*</label>
+                <input type="text" id="dataNascimento" class="form-control" placeholder="DD/MM/AAAA" required>
+                <label for="whatsapp" class="block text-sm font-medium mb-1">WhatsApp*</label>
+                <input type="text" id="whatsapp" class="form-control" placeholder="(00) 00000-0000" required>
+                <div class="flex justify-end mt-6"> <button type="button" id="nextStep1" class="btn btn-primary">Próximo</button> </div>
+            </div>
+            <div id="formStep2" class="form-step hidden">
+                <h4 class="text-lg font-semibold mb-4">2. Informações da Empresa</h4>
+                <label for="nomeEmpresa" class="block text-sm font-medium mb-1">Nome da Empresa*</label>
+                <input type="text" id="nomeEmpresa" class="form-control" required>
+                <label for="cnpjCpf" class="block text-sm font-medium mb-1">CNPJ ou CPF*</label>
+                <input type="text" id="cnpjCpf" class="form-control" placeholder="00.000.000/0000-00 ou 000.000.000-00" required>
+                <label class="block text-sm font-medium mt-4 mb-2">Foto de Perfil / Logo da Empresa (Opcional)</label>
+                <div id="fileUploadWrapper" class="file-upload-container">
+                    <input type="file" id="profilePicInput" accept="image/png, image/jpeg, image/webp">
+                    <label for="profilePicInput" id="picUploadLabel">Clique aqui para escolher uma imagem</label>
+                    <span id="fileName">Nenhum arquivo selecionado</span>
+                </div>
+                <img id="picPreview" src="#" alt="Pré-visualização da Imagem">
+                <p id="uploadStatus" class="text-center"></p>
+                <div class="flex justify-between mt-6"> <button type="button" id="prevStep2" class="btn btn-secondary">Anterior</button> <button type="button" id="nextStep2" class="btn btn-primary">Próximo</button> </div>
+            </div>
+            <div id="formStep3" class="form-step hidden">
+                <h4 class="text-lg font-semibold mb-4">3. Endereço da Empresa</h4>
+                <label for="cep" class="block text-sm font-medium mb-1">CEP*</label>
+                <input type="text" id="cep" class="form-control" placeholder="00000-000" required>
+                <label for="rua" class="block text-sm font-medium mb-1">Rua*</label>
+                <input type="text" id="rua" class="form-control" required>
+                <label for="numero" class="block text-sm font-medium mb-1">Número*</label>
+                <input type="text" id="numero" class="form-control" required>
+                <label for="complemento" class="block text-sm font-medium mb-1">Complemento</label>
+                <input type="text" id="complemento" class="form-control">
+                <label for="bairro" class="block text-sm font-medium mb-1">Bairro*</label>
+                <input type="text" id="bairro" class="form-control" required>
+                <label for="cidade" class="block text-sm font-medium mb-1">Cidade*</label>
+                <input type="text" id="cidade" class="form-control" required>
+                <label for="estadoUf" class="block text-sm font-medium mb-1">Estado (UF)*</label>
+                <input type="text" id="estadoUf" class="form-control" placeholder="SP" maxlength="2" required>
+                <div class="flex justify-between mt-6"> <button type="button" id="prevStep3" class="btn btn-secondary">Anterior</button> <button type="button" id="nextStep3" class="btn btn-primary">Próximo</button> </div>
+            </div>
+            <div id="formStep4" class="form-step hidden">
+                <h4 class="text-lg font-semibold mb-4">4. Redes Sociais (Opcional)</h4>
+                <label for="instagramPessoal" class="block text-sm font-medium mb-1">Instagram Pessoal</label>
+                <input type="text" id="instagramPessoal" class="form-control" placeholder="@seunome">
+                <label for="instagramProfissional" class="block text-sm font-medium mb-1">Instagram Profissional</label>
+                <input type="text" id="instagramProfissional" class="form-control" placeholder="@suaempresa">
+                <label for="linkedin" class="block text-sm font-medium mb-1">LinkedIn</label>
+                <input type="text" id="linkedin" class="form-control" placeholder="linkedin.com/in/seunome">
+                <label for="tiktok" class="block text-sm font-medium mb-1">TikTok</label>
+                <input type="text" id="tiktok" class="form-control" placeholder="@seutiktok">
+                <div class="flex justify-between mt-6"> <button type="button" id="prevStep4" class="btn btn-secondary">Anterior</button> <button type="button" id="nextStep4" class="btn btn-primary">Próximo</button> </div>
+            </div>
+            <div id="formStep5" class="form-step hidden">
+                <h4 class="text-lg font-semibold mb-4">5. Detalhes do Negócio</h4>
+                <label for="horarioFuncionamento" class="block text-sm font-medium mb-1">Horário de Funcionamento*</label>
+                <input type="text" id="horarioFuncionamento" class="form-control" placeholder="Ex: Seg a Sex, 9h às 18h" required>
+                
+                <label for="linkAgendamento" class="block text-sm font-medium mb-1">Link de Agendamento (Opcional)</label>
+                <input type="url" id="linkAgendamento" class="form-control" placeholder="Ex: https://calendly.com/seu-usuario">
+
+                <label for="formasPagamento" class="block text-sm font-medium mb-1">Formas de Pagamento*</label>
+                <input type="text" id="formasPagamento" class="form-control" placeholder="Ex: Cartão de crédito, Pix, Boleto" required>
+                <label for="nichoTrabalho" class="block text-sm font-medium mb-1">Nicho de Trabalho*</label>
+                <input type="text" id="nichoTrabalho" class="form-control" placeholder="Ex: Salão de Beleza, Advocacia, Varejo" required>
+                <div class="flex justify-between mt-6"> <button type="button" id="prevStep5" class="btn btn-secondary">Anterior</button> <button type="button" id="nextStep5" class="btn btn-primary">Próximo</button> </div>
+            </div>
+            <div id="formStep6" class="form-step hidden">
+                <h4 class="text-lg font-semibold mb-4">6. Personalidade do Chatbot</h4>
+                <label for="nomeAtendenteVirtual" class="block text-sm font-medium mb-1">Nome do Atendente Virtual (Opcional)</label>
+                <input type="text" id="nomeAtendenteVirtual" class="form-control" placeholder="Ex: Bia, Robô de Atendimento">
+                <label for="tomConversa" class="block text-sm font-medium mb-1">Tom de Conversa*</label>
+                <select id="tomConversa" class="form-select" required> <option value="" disabled selected>Selecione</option> <option value="Formal">Formal</option> <option value="Informal">Informal</option> <option value="Amigavel">Amigável</option> <option value="Neutro">Neutro</option> </select>
+                <label for="humorConversa" class="block text-sm font-medium mb-1">Humor da Conversa*</label>
+                <select id="humorConversa" class="form-select" required> <option value="" disabled selected>Selecione</option> <option value="Serio">Sério</option> <option value="Divertido">Divertido</option> <option value="Equilibrado">Equilibrado</option> </select>
+                <label for="saudacaoPreferida" class="block text-sm font-medium mb-1">Exemplo de Saudação Preferida*</label>
+                <input type="text" id="saudacaoPreferida" class="form-control" placeholder="Ex: Olá! Como posso ajudar?" required>
+                <div class="flex justify-between mt-6"> <button type="button" id="prevStep6" class="btn btn-secondary">Anterior</button> <button type="button" id="nextStep6" class="btn btn-primary">Próximo</button> </div>
+            </div>
+            <div id="formStep7" class="form-step hidden">
+                <h4 class="text-lg font-semibold mb-4">7. Serviços (1 a 10)</h4>
+                <div id="servicesContainer"></div>
+                <button type="button" id="addServiceBtn" class="btn btn-secondary mb-4">Adicionar Serviço</button>
+                <div class="flex justify-between mt-6"> <button type="button" id="prevStep7" class="btn btn-secondary">Anterior</button> <button type="button" id="nextStep7" class="btn btn-primary">Próximo</button> </div>
+            </div>
+            <div id="formStep8" class="form-step hidden">
+                <h4 class="text-lg font-semibold mb-4">8. FAQs (1 a 50)</h4>
+                <div class="faq-info-box">
+                    <h5>Informação Importante!</h5>
+                    <ul>
+                        <li>Para um chatbot eficaz, adicione no mínimo <strong>15 perguntas e respostas</strong>. Você pode adicionar até 50.</li>
+                        <li>Quanto mais perguntas você responder, mais inteligente seu atendente virtual será!</li>
+                        <li>Precisa de uma pausa? Sem problemas! Seu progresso é salvo a cada vez que você clica em <strong>"Próximo"</strong>.</li>
+                    </ul>
+                    <button type="button" id="showFaqHelpBtn" class="btn btn-secondary">Precisa de ajuda para criar o FAQ?</button>
+                </div>
+                <div id="faqsContainer"></div>
+                <button type="button" id="addFaqBtn" class="btn btn-secondary mb-4">Adicionar FAQ</button>
+                <div class="flex justify-between mt-6"> <button type="button" id="prevStep8" class="btn btn-secondary">Anterior</button> <button type="button" id="nextStep8" class="btn btn-primary">Próximo</button> </div>
+            </div>
+            <div id="formStep9" class="form-step hidden">
+                <h4 class="text-lg font-semibold mb-4">9. Negativação de Palavras-Chave</h4>
+                <p class="mb-4">Liste palavras ou termos que seu chatbot DEVE EVITAR usar ou responder (separe por vírgula).</p>
+                <label for="palavrasChaveNegativas" class="block text-sm font-medium mb-1">Palavras/Termos a Negativar</label>
+                <textarea id="palavrasChaveNegativas" class="form-control" rows="5" placeholder="Ex: política, religião, xingamentos"></textarea>
+                <div class="flex justify-between mt-6"> <button type="button" id="prevStep9" class="btn btn-secondary">Anterior</button> <button type="button" id="nextStep9" class="btn btn-primary">Próximo</button> </div>
+            </div>
+            <div id="formStep10" class="form-step hidden">
+                <h4 class="text-lg font-semibold mb-4">10. Descontos por Indicação e Ação</h4>
+                <p class="text-md mb-4">Garanta sua assinatura mensal de <strong>R$579,00 por apenas R$250,00!</strong> Para isso, preencha os dados de 3 contatos que também são empreendedores.</p>
+                <div id="indicacoesContainer"></div>
+                <p class="text-md mb-4 mt-6">Garanta a implantação de <strong>R$800,00 por apenas R$400,00!</strong> Basta baixar nosso post e publicar nos Stories do seu Instagram marcando o <strong>@vempreender.ia</strong>.</p>
+                <button type="button" id="downloadPostBtn" class="btn btn-primary mb-4">Baixar Post para Stories</button>
+                <p class="text-sm">(Ao clicar, o download será iniciado. A verificação do post será feita após a finalização.)</p>
+                <div class="flex justify-between mt-6"> <button type="button" id="prevStep10" class="btn btn-secondary">Anterior</button> <button type="button" id="nextStep10" class="btn btn-primary">Próximo</button> </div>
+            </div>
+            <div id="formStep11" class="form-step hidden">
+                <h4 class="text-lg font-semibold mb-4">Revisão Final</h4>
+                <p class="mb-6">Confira todos os seus dados. Se estiver tudo certo, clique em "Aprovar e Finalizar" para iniciar a criação do seu chatbot!</p>
+                <div id="reviewContent" class="text-left p-4 rounded-lg mb-6"> <p>Carregando dados...</p> </div>
+                <div class="flex justify-between mt-6"> <button type="button" id="correctReviewBtn" class="btn btn-secondary">Corrigir</button> <button type="button" id="approveFinalizeBtn" class="btn btn-primary">Aprovar e Finalizar</button> </div>
+            </div>
+            <div id="formStep12" class="form-step hidden">
+                <h4 class="text-2xl font-semibold mb-4">Obrigado!</h4>
+                <p class="text-md mb-6">Recebemos seus dados! Seu chatbot está sendo preparado e você receberá o link de acesso e as informações de pagamento em até 24 horas no seu e-mail e WhatsApp.</p>
+                <button type="button" id="backToMemberAreaBtn" class="btn btn-primary">Voltar para a Área de Membros</button>
+            </div>
+        </div>
+
+        <button type="button" id="logoutBtn" class="btn mt-8">Sair</button>
+    </div>
+
+    <div id="affiliateScreen" class="form-card hidden">
+        <h2 class="text-2xl font-bold mb-6">Minha Área de Afiliado</h2>
+        
+        <div id="affiliateLinkInfo" class="mb-6 text-left">
+            <p id="affiliateStatusMessage" class="mb-3">Verificando seu status de afiliado...</p>
+            <div id="affiliateLinkDisplayContainer" class="hidden mt-2">
+                <label for="affiliateLinkOutput" class="block text-sm font-medium mb-1">Seu link de afiliado exclusivo:</label>
+                <div class="flex items-center">
+                    <input type="text" id="affiliateLinkOutput" class="form-control" readonly>
+                    <button type="button" id="copyAffiliateLinkBtn" class="btn btn-secondary">Copiar</button>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" id="generateAffiliateLinkBtn" class="btn btn-primary hidden mb-8">Tornar-me Afiliado e Gerar Link</button>
+        
+        <div class="mt-6 text-left">
+            <h3 class="text-xl font-semibold mb-3">Suas Estatísticas</h3>
+            <p id="affiliateStatsMessage">Em breve, você poderá acompanhar aqui o desempenho do seu link de afiliado e seus ganhos (via Asaas).</p>
+        </div>
+        
+        <button type="button" id="backToMemberAreaFromAffiliateBtn" class="btn btn-secondary mt-8">Voltar</button>
+    </div>
+
+
+    <script type="module">
+        // --- 1. IMPORTS E CONFIGURAÇÃO ---
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+        import {
+            getAuth,
+            createUserWithEmailAndPassword,
+            signInWithEmailAndPassword,
+            sendPasswordResetEmail,
+            signInWithPopup,
+            GoogleAuthProvider,
+            onAuthStateChanged,
+            signOut,
+            verifyPasswordResetCode, // IMPORTADO
+            confirmPasswordReset      // IMPORTADO
+        } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js"; 
+        import {
+            getFirestore,
+            doc,
+            setDoc,
+            getDoc,
+            onSnapshot, 
+            collection 
+        } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js"; 
+        import { 
+            getStorage, 
+            ref, 
+            uploadBytes, 
+            getDownloadURL 
+        } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-storage.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyB3STvFlyzwm95CgGjJU5kQbWmAc8j6jpY", // Sua chave de API
+            authDomain: "cb-vempreender.firebaseapp.com",
+            projectId: "cb-vempreender",
+            storageBucket: "cb-vempreender.appspot.com",
+            messagingSenderId: "826670588256",
+            appId: "1:826670588256:web:1d180e4a246b86c8e47e05",
+            measurementId: "G-RM7VP482DE"
+        };
+        
+        // --- 2. INICIALIZAÇÃO E VARIÁVEIS GLOBAIS ---
+        let app, auth, db, storage;
+        let currentUserId = null; 
+        let unsubscribeFromProfile = null;
+        let formData = {};
+        let profilePicFile = null;
+        let currentStep = 1;
+        const totalSteps = 10;
+        let passwordResetCode = null; // Variável para guardar o código
+
+        try {
+            app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            db = getFirestore(app);
+            storage = getStorage(app);
+            console.log("Firebase inicializado com sucesso!");
+        } catch (error) {
+            console.error("Erro ao inicializar Firebase:", error);
+            alert("Erro de Inicialização: Não foi possível conectar ao Firebase.");
+        }
+        
+        const appIdName = firebaseConfig.projectId;
+        
+        // --- 4. FUNÇÕES DE UI (TELAS E MODAIS) ---
+        function displayScreen(screenId) {
+            const screens = ['loginScreen', 'registerScreen', 'forgotPasswordScreen', 'resetPasswordActionScreen', 'memberArea', 'affiliateScreen'];
+            screens.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('hidden');
+            });
+            const targetEl = document.getElementById(screenId);
+            if (targetEl) targetEl.classList.remove('hidden');
+
+            if (screenId === 'memberArea') { 
+                currentStep = formData.lastCompletedStep ? Math.min(formData.lastCompletedStep + 1, totalSteps) : 1;
+                showStep(currentStep); 
+            }
+        }
+        
+        window.showMessageModal = function(title, message) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalMessage').textContent = message;
+            document.getElementById('messageModal').classList.add('visible');
+        }
+
+        window.closeModal = function() {
+            document.getElementById('messageModal').classList.remove('visible');
+        }
+
+        function showStep(stepNum) {
+            for (let i = 1; i <= totalSteps + 2; i++) {
+                const el = document.getElementById(`formStep${i}`);
+                if (el) el.classList.add('hidden');
+            }
+            const currentEl = document.getElementById(`formStep${stepNum}`);
+            if (currentEl) currentEl.classList.remove('hidden');
+            
+            populateStepFields(stepNum);
+
+            if (stepNum === 11) displayReviewContent();
+            
+            const memberAreaDiv = document.getElementById('memberArea');
+            if(memberAreaDiv) memberAreaDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // --- 5. LÓGICA DE AUTENTICAÇÃO E ESTADO DO USUÁRIO ---
+        onAuthStateChanged(auth, async (user) => {
+            // Se o usuário estiver logado e não estivermos em modo de reset, vá para a área de membros
+            const urlParams = new URLSearchParams(window.location.search);
+            if (user && urlParams.get('mode') !== 'resetPassword') {
+                currentUserId = user.uid;
+                console.log("Usuário logado:", user.uid);
+                
+                document.getElementById('userName').textContent = user.displayName || user.email || 'Usuário';
+                document.getElementById('userIdDisplay').textContent = user.uid;
+                
+                await loadChatbotFormData(user.uid);
+                displayScreen('memberArea'); 
+
+                if (unsubscribeFromProfile) unsubscribeFromProfile();
+            } else if (!user && urlParams.get('mode') !== 'resetPassword') {
+                currentUserId = null;
+                formData = {};
+                console.log("Nenhum usuário logado.");
+                if (unsubscribeFromProfile) unsubscribeFromProfile();
+                displayScreen('loginScreen');
+            }
+        });
+        
+        // --- 6. FUNÇÕES DO BANCO DE DADOS (FIRESTORE) ---
+        async function saveChatbotFormData(userId, dataToSave) {
+            if (!userId) return console.error("ID do usuário não encontrado para salvar.");
+            const chatbotFormDocRef = doc(db, `artifacts/${appIdName}/users/${userId}/chatbotForm/data`);
+            try {
+                await setDoc(chatbotFormDocRef, dataToSave, { merge: true });
+                console.log("Dados do formulário salvos no Firestore.");
+            } catch (error) {
+                console.error("Erro ao salvar dados:", error);
+                window.showMessageModal("Erro de Salvamento", "Não foi possível salvar seu progresso. Tente novamente.");
+            }
+        }
+
+        async function loadChatbotFormData(userId) {
+            if (!userId) return;
+            const chatbotFormDocRef = doc(db, `artifacts/${appIdName}/users/${userId}/chatbotForm/data`);
+            try {
+                const docSnap = await getDoc(chatbotFormDocRef);
+                if (docSnap.exists()) {
+                    formData = docSnap.data();
+                    console.log("Dados do formulário carregados:", formData);
+
+                    if (formData.fotoPerfilUrl) {
+                        picPreview.src = formData.fotoPerfilUrl;
+                        picPreview.style.display = 'block';
+                        fileName.textContent = 'Imagem salva anteriormente.';
+                    }
+
+                    renderServicesFromData(formData.services);
+                    renderFaqsFromData(formData.faqs);
+                } else {
+                    console.log("Nenhum dado de formulário encontrado para este usuário.");
+                    formData = { services: [], faqs: [], indicacoes: [{}, {}, {}] };
+                    renderServicesFromData([]);
+                    renderFaqsFromData([]);
+                }
+            } catch (error) {
+                console.error("Erro ao carregar dados:", error);
+                formData = { services: [], faqs: [], indicacoes: [{}, {}, {}] };
+                renderServicesFromData([]);
+                renderFaqsFromData([]);
+            }
+        }
+
+        // --- 7. LÓGICA DO FORMULÁRIO (NAVEGAÇÃO, VALIDAÇÃO, POPULAR) ---
+        function populateStepFields(stepNum) {
+            if (!formData) return;
+            const fields = {
+                1: ['nomeCompleto', 'emailConta', 'dataNascimento', 'whatsapp'],
+                2: ['nomeEmpresa', 'cnpjCpf'],
+                3: ['rua', 'numero', 'complemento', 'bairro', 'cidade', 'estadoUf', 'cep'],
+                4: ['instagramPessoal', 'instagramProfissional', 'linkedin', 'tiktok'],
+                5: ['horarioFuncionamento', 'linkAgendamento', 'formasPagamento', 'nichoTrabalho'],
+                6: ['nomeAtendenteVirtual', 'tomConversa', 'humorConversa', 'saudacaoPreferida'],
+                9: ['palavrasChaveNegativas']
+            };
+
+            if (fields[stepNum]) {
+                fields[stepNum].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.value = formData[id] || '';
+                });
+            }
+            if (stepNum === 10) {
+                for (let i = 0; i < 3; i++) {
+                    document.getElementById(`indicacaoNome${i+1}`).value = formData.indicacoes?.[i]?.nome || '';
+                    document.getElementById(`indicacaoWhatsapp${i+1}`).value = formData.indicacoes?.[i]?.whatsapp || '';
+                }
+            }
+        }
+
+        function validateStep(stepNum) {
+            let isValid = true;
+            
+            const stepFields = document.querySelectorAll(`#formStep${stepNum} .form-control, #formStep${stepNum} .form-select`);
+            stepFields.forEach(el => {
+                if (el.value) formData[el.id] = el.value;
+            });
+
+            if (stepNum === 7) formData.services = Array.from(document.querySelectorAll('#servicesContainer .service-item')).map(item => ({ titulo: item.querySelector('.service-title').value, descricao: item.querySelector('.service-description').value })).filter(s => s.titulo);
+            if (stepNum === 8) formData.faqs = Array.from(document.querySelectorAll('#faqsContainer .faq-item')).map(item => ({ pergunta: item.querySelector('.faq-question').value, resposta: item.querySelector('.faq-answer').value })).filter(f => f.pergunta);
+            if (stepNum === 10) {
+                 formData.indicacoes = [];
+                 for(let i=1; i<=3; i++) {
+                    const nome = document.getElementById(`indicacaoNome${i}`).value;
+                    if (nome) formData.indicacoes.push({ nome, whatsapp: document.getElementById(`indicacaoWhatsapp${i}`).value });
+                 }
+            }
+            
+            return isValid;
+        }
+
+        async function goToNextStep() {
+            if (validateStep(currentStep)) {
+                formData.lastCompletedStep = currentStep;
+                if (currentUserId) {
+                    await saveChatbotFormData(currentUserId, formData);
+                }
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                } else {
+                    currentStep = 11; 
+                }
+                showStep(currentStep);
+            }
+        }
+
+        function goToPrevStep() {
+            if (currentStep > 1) {
+                currentStep = (currentStep === 11) ? totalSteps : currentStep - 1;
+                showStep(currentStep);
+            }
+        }
+        
+        // --- 8. LÓGICA DE GERAÇÃO DINÂMICA (SERVIÇOS, FAQS) ---
+        let serviceCount = 0;
+        let faqCount = 0;
+        
+        function addServiceCard(service = { titulo: '', descricao: '' }) {
+            if (document.querySelectorAll('#servicesContainer .service-item').length >= 10) return showMessageModal("Limite Atingido", "Você pode adicionar no máximo 10 serviços.");
+            
+            const serviceId = ++serviceCount;
+            const cardHtml = `
+                <div class="service-item" id="serviceCard${serviceId}">
+                    <h5 class="font-semibold mb-2">Serviço ${serviceId}</h5>
+                    <label for="tituloServico${serviceId}">Título do Serviço*</label>
+                    <input type="text" id="tituloServico${serviceId}" class="form-control service-title" value="${service.titulo || ''}" required>
+                    <label for="descricaoServico${serviceId}">Descrição do Serviço*</label>
+                    <textarea id="descricaoServico${serviceId}" class="form-control service-description" rows="3" required>${service.descricao || ''}</textarea>
+                    <button type="button" class="remove-service-btn" data-id="${serviceId}">Remover</button>
+                </div>`;
+            servicesContainer.insertAdjacentHTML('beforeend', cardHtml);
+        }
+
+        function addFaqCard(faq = { pergunta: '', resposta: '' }) {
+            if (document.querySelectorAll('#faqsContainer .faq-item').length >= 50) return showMessageModal("Limite Atingido", "Você pode adicionar no máximo 50 FAQs.");
+            
+            const faqId = ++faqCount;
+            const cardHtml = `
+                <div class="faq-item" id="faqCard${faqId}">
+                    <h5 class="font-semibold mb-2">FAQ ${faqId}</h5>
+                    <label for="perguntaFaq${faqId}">Pergunta*</label>
+                    <input type="text" id="perguntaFaq${faqId}" class="form-control faq-question" value="${faq.pergunta || ''}" required>
+                    <label for="respostaFaq${faqId}">Resposta*</label>
+                    <textarea id="respostaFaq${faqId}" class="form-control faq-answer" rows="3" required>${faq.resposta || ''}</textarea>
+                    <button type="button" class="remove-faq-btn" data-id="${faqId}">Remover</button>
+                </div>`;
+            faqsContainer.insertAdjacentHTML('beforeend', cardHtml);
+        }
+
+        function addIndicacaoCards() {
+            const container = document.getElementById('indicacoesContainer');
+            container.innerHTML = '';
+            for (let i = 1; i <= 3; i++) {
+                 const cardHtml = `
+                    <div class="indicacao-item">
+                        <h5 class="font-semibold mb-2">Indicação ${i}</h5>
+                        <label for="indicacaoNome${i}">Nome*</label>
+                        <input type="text" id="indicacaoNome${i}" class="form-control indicacao-nome" required>
+                        <label for="indicacaoWhatsapp${i}">WhatsApp*</label>
+                        <input type="text" id="indicacaoWhatsapp${i}" class="form-control indicacao-whatsapp" placeholder="(00) 00000-0000" required>
+                    </div>`;
+                container.insertAdjacentHTML('beforeend', cardHtml);
+            }
+        }
+
+        function renderServicesFromData(services = []) {
+            servicesContainer.innerHTML = '';
+            serviceCount = 0;
+            if (services && services.length > 0) {
+                services.forEach(service => addServiceCard(service));
+            } else {
+                addServiceCard();
+            }
+        }
+
+        function renderFaqsFromData(faqs = []) {
+            faqsContainer.innerHTML = '';
+            faqCount = 0;
+            if (faqs && faqs.length > 0) {
+                faqs.forEach(faq => addFaqCard(faq));
+            } else {
+                addFaqCard();
+            }
+        }
+        
+        // --- 9. LÓGICA DE REVISÃO E FINALIZAÇÃO ---
+        function displayReviewContent() {
+            const reviewContentElement = document.getElementById('reviewContent');
+            if (!reviewContentElement) return;
+
+            const displayNames = {
+                nomeCompleto: "Nome Completo", emailConta: "Email da Conta", dataNascimento: "Data de Nascimento", whatsapp: "WhatsApp (Conta)",
+                nomeEmpresa: "Nome da Empresa", cnpjCpf: "CNPJ/CPF", fotoPerfilUrl: "Foto de Perfil",
+                rua: "Rua", numero: "Número", complemento: "Complemento", bairro: "Bairro", cidade: "Cidade", estadoUf: "Estado (UF)", cep: "CEP",
+                instagramPessoal: "Instagram Pessoal", instagramProfissional: "Instagram Profissional", linkedin: "LinkedIn", tiktok: "TikTok",
+                horarioFuncionamento: "Horário de Funcionamento", linkAgendamento: "Link de Agendamento", formasPagamento: "Formas de Pagamento", nichoTrabalho: "Nicho de Trabalho",
+                nomeAtendenteVirtual: "Nome do Atendente", tomConversa: "Tom de Conversa", humorConversa: "Humor", saudacaoPreferida: "Saudação",
+                palavrasChaveNegativas: "Palavras Negativas", services: "Serviços", faqs: "FAQs", indicacoes: "Indicações"
+            };
+            
+            let htmlContent = '';
+
+            for (const key in formData) {
+                if (formData.hasOwnProperty(key) && key !== 'lastCompletedStep' && formData[key]) {
+                    const displayName = displayNames[key] || key;
+                    const value = formData[key];
+                    
+                    if (Array.isArray(value) && value.length === 0) continue;
+                    if (typeof value === 'string' && value.trim() === '') continue;
+
+                    htmlContent += `<div class="mb-4 py-2 border-b border-gray-700">`;
+                    htmlContent += `<h5 class="text-lg font-semibold" style="color: #B0D9D9;">${displayName}</h5>`;
+
+                    if (Array.isArray(value)) {
+                        htmlContent += `<ul class="list-none pl-2 mt-2">`;
+                        value.forEach((item) => {
+                            htmlContent += `<li class="mt-2 p-2 rounded" style="background-color: #2a3b52;">`;
+                            if (key === 'services') htmlContent += `<strong>${item.titulo || ''}:</strong><br>${item.descricao || ''}`;
+                            else if (key === 'faqs') htmlContent += `<strong>P:</strong> ${item.pergunta || ''}<br><strong>R:</strong> ${item.resposta || ''}`;
+                            else if (key === 'indicacoes') htmlContent += `${item.nome || ''} - ${item.whatsapp || ''}`;
+                            htmlContent += `</li>`;
+                        });
+                        htmlContent += `</ul>`;
+                    } else if (key === 'fotoPerfilUrl') {
+                        htmlContent += `<img src="${value}" alt="Foto de Perfil" style="max-width: 100px; border-radius: 50%; margin-top: 10px;">`;
+                    } else {
+                         htmlContent += `<p class="text-md pl-2">${value}</p>`;
+                    }
+                    htmlContent += `</div>`;
+                }
+            }
+
+            reviewContentElement.innerHTML = htmlContent;
+        }
+
+        async function finalizeForm() {
+            if (currentUserId) {
+                formData.status = "finalizado";
+                formData.finalizadoEm = new Date().toISOString();
+                await saveChatbotFormData(currentUserId, formData); 
+                console.log("Dados finais enviados:", formData);
+                currentStep = 12; 
+                showStep(currentStep);
+            } else {
+                showMessageModal("Erro", "Usuário não identificado. Não foi possível finalizar.");
+            }
+        }
+        
+        // --- 10. LÓGICA DE AFILIADOS ---
+        async function checkAffiliateStatus() {
+             if (!currentUserId) return;
+             const affiliateStatusMessage = document.getElementById('affiliateStatusMessage');
+             const generateAffiliateLinkBtn = document.getElementById('generateAffiliateLinkBtn');
+             const affiliateLinkDisplayContainer = document.getElementById('affiliateLinkDisplayContainer');
+             const affiliateLinkOutput = document.getElementById('affiliateLinkOutput');
+
+             const userAffiliateDocRef = doc(db, `artifacts/${appIdName}/users/${currentUserId}/affiliateProfile/data`);
+             try {
+                 const docSnap = await getDoc(userAffiliateDocRef);
+                 if (docSnap.exists() && docSnap.data().affiliateCode) {
+                     affiliateLinkOutput.value = `${window.location.origin}?ref=${docSnap.data().affiliateCode}`;
+                     affiliateLinkDisplayContainer.classList.remove('hidden');
+                     generateAffiliateLinkBtn.classList.add('hidden');
+                     affiliateStatusMessage.textContent = "Você já é um afiliado! Compartilhe seu link exclusivo.";
+                 } else {
+                     affiliateStatusMessage.textContent = "Você ainda não é um afiliado. Clique abaixo para gerar seu link.";
+                     generateAffiliateLinkBtn.classList.remove('hidden');
+                     affiliateLinkDisplayContainer.classList.add('hidden');
+                 }
+             } catch(e) {
+                 console.error("Erro ao checar status de afiliado: ", e);
+                 affiliateStatusMessage.textContent = "Erro ao verificar status de afiliado.";
+             }
+        }
+
+        async function generateAffiliateLink() {
+            if (!currentUserId) return;
+            const newAffiliateCode = currentUserId.substring(0, 8) + Math.random().toString(36).substring(2, 6);
+            const userAffiliateDocRef = doc(db, `artifacts/${appIdName}/users/${currentUserId}/affiliateProfile/data`);
+            try {
+                await setDoc(userAffiliateDocRef, { affiliateCode: newAffiliateCode, joinedAt: new Date() }, { merge: true });
+                await checkAffiliateStatus(); 
+                showMessageModal("Sucesso!", "Parabéns, você agora é um afiliado!");
+            } catch (e) {
+                console.error("Erro ao gerar link de afiliado: ", e);
+                showMessageModal("Erro", "Não foi possível gerar seu link de afiliado.");
+            }
+        }
+        
+        // --- 11. EVENT LISTENERS E LÓGICA DE PÁGINA ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navegação
+            document.getElementById('showRegisterLink').addEventListener('click', (e) => { e.preventDefault(); displayScreen('registerScreen'); });
+            document.getElementById('showLoginLink').addEventListener('click', (e) => { e.preventDefault(); displayScreen('loginScreen'); });
+            document.getElementById('forgotPasswordLink').addEventListener('click', (e) => { e.preventDefault(); displayScreen('forgotPasswordScreen'); });
+            document.getElementById('backToLoginLink').addEventListener('click', (e) => { e.preventDefault(); displayScreen('loginScreen'); });
+            document.getElementById('backToLoginFromResetActionLink').addEventListener('click', (e) => { e.preventDefault(); displayScreen('loginScreen'); });
+
+            // Auth
+            document.getElementById('loginBtn').addEventListener('click', () => signInWithEmailAndPassword(auth, loginEmail.value, loginPassword.value).catch(err => showMessageModal("Erro", "E-mail ou senha inválidos.")));
+            document.getElementById('registerBtn').addEventListener('click', () => createUserWithEmailAndPassword(auth, registerEmail.value, registerPassword.value).catch(err => showMessageModal("Erro", err.message)));
+            document.getElementById('googleLoginBtn').addEventListener('click', () => signInWithPopup(auth, new GoogleAuthProvider()).catch(err => showMessageModal("Erro", err.message)));
+            document.getElementById('resetPasswordBtn').addEventListener('click', () => sendPasswordResetEmail(auth, resetEmail.value).then(() => showMessageModal("Sucesso", "Link enviado!")).catch(err => showMessageModal("Erro", err.message)));
+            document.getElementById('logoutBtn').addEventListener('click', () => signOut(auth));
+
+            // --- Password Toggles ---
+            const setupPasswordToggle = (toggleId, passwordId) => {
+                const toggle = document.getElementById(toggleId);
+                const password = document.getElementById(passwordId);
+                if (!toggle || !password) return;
+
+                const eyeIcon = toggle.querySelector('.eye-icon');
+                const eyeSlashIcon = toggle.querySelector('.eye-slash-icon');
+
+                toggle.addEventListener('click', () => {
+                    if (password.type === 'password') {
+                        password.type = 'text';
+                        eyeIcon.style.display = 'none';
+                        eyeSlashIcon.style.display = 'block';
+                    } else {
+                        password.type = 'password';
+                        eyeIcon.style.display = 'block';
+                        eyeSlashIcon.style.display = 'none';
+                    }
+                });
+            };
+
+            setupPasswordToggle('toggleLoginPassword', 'loginPassword');
+            setupPasswordToggle('toggleRegisterPassword', 'registerPassword');
+            setupPasswordToggle('toggleNewPassword', 'newPassword');
+
+            // Navegação do form
+            for (let i = 1; i <= totalSteps; i++) {
+                const nextBtn = document.getElementById(`nextStep${i}`);
+                if (nextBtn) nextBtn.addEventListener('click', goToNextStep);
+                const prevBtn = document.getElementById(`prevStep${i}`);
+                if (prevBtn) prevBtn.addEventListener('click', goToPrevStep);
+            }
+            document.getElementById('correctReviewBtn').addEventListener('click', () => { currentStep = 1; showStep(currentStep); });
+            document.getElementById('approveFinalizeBtn').addEventListener('click', finalizeForm);
+            
+            // UI Dinâmica
+            document.getElementById('addServiceBtn').addEventListener('click', () => addServiceCard());
+            document.getElementById('addFaqBtn').addEventListener('click', () => addFaqCard());
+            document.getElementById('servicesContainer').addEventListener('click', (e) => { if(e.target.classList.contains('remove-service-btn')) e.target.closest('.service-item').remove(); });
+            document.getElementById('faqsContainer').addEventListener('click', (e) => { if(e.target.classList.contains('remove-faq-btn')) e.target.closest('.faq-item').remove(); });
+            
+            // Upload
+            document.getElementById('fileUploadWrapper').addEventListener('click', () => profilePicInput.click());
+            document.getElementById('profilePicInput').addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if(file){
+                    fileName.textContent = file.name;
+                    picPreview.src = URL.createObjectURL(file);
+                    picPreview.style.display = 'block';
+                    profilePicFile = file;
+                }
+            });
+
+             // Download
+            document.getElementById('downloadPostBtn').addEventListener('click', async (e) => {
+                e.preventDefault();
+                const button = e.currentTarget;
+                button.disabled = true; button.textContent = 'Baixando...';
+                const imageUrl = 'https://firebasestorage.googleapis.com/v0/b/cb-vempreender.appspot.com/o/Imagens%20LP%2FStory%20Insta%20Vempreender.png?alt=media&token=7e8e3571-8521-4729-a4a0-5d109b6118dd';
+                try {
+                    const response = await fetch(imageUrl);
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none'; a.href = url; a.download = 'Vempreender-Story-Instagram.png';
+                    document.body.appendChild(a); a.click(); window.URL.revokeObjectURL(url); a.remove();
+                } catch (err) { console.error('Download error:', err); }
+                finally { button.disabled = false; button.textContent = 'Baixar Post para Stories'; }
+            });
+
+            // Afiliados
+            document.getElementById('goToAffiliateAreaBtn').addEventListener('click', () => { displayScreen('affiliateScreen'); checkAffiliateStatus(); });
+            document.getElementById('backToMemberAreaFromAffiliateBtn').addEventListener('click', () => displayScreen('memberArea'));
+            document.getElementById('generateAffiliateLinkBtn').addEventListener('click', generateAffiliateLink);
+            document.getElementById('copyAffiliateLinkBtn').addEventListener('click', () => {
+                if (!affiliateLinkOutput.value) return;
+                navigator.clipboard.writeText(affiliateLinkOutput.value)
+                    .then(() => showMessageModal("Sucesso", "Link de afiliado copiado!"))
+                    .catch(err => console.error('Erro ao copiar:', err));
+            });
+
+            // Modal Ajuda FAQ
+            document.getElementById('showFaqHelpBtn').addEventListener('click', () => faqHelpModal.classList.add('visible'));
+            document.getElementById('closeFaqHelpBtn').addEventListener('click', () => faqHelpModal.classList.remove('visible'));
+            document.getElementById('copyPromptBtn').addEventListener('click', () => {
+                navigator.clipboard.writeText(promptToCopy.innerText)
+                    .then(() => showMessageModal("Sucesso!", "Prompt copiado."))
+                    .catch(err => console.error('Erro ao copiar prompt:', err));
+            });
+            
+            // Inicializações
+            addIndicacaoCards();
+
+            // --- LÓGICA DE REDEFINIÇÃO DE SENHA ---
+            const handlePasswordReset = async () => {
+                const params = new URLSearchParams(window.location.search);
+                const mode = params.get('mode');
+                const oobCode = params.get('oobCode');
+
+                if (mode === 'resetPassword' && oobCode) {
+                    try {
+                        // Verifica se o código é válido
+                        await verifyPasswordResetCode(auth, oobCode);
+                        passwordResetCode = oobCode; // Guarda o código para usar ao salvar
+                        displayScreen('resetPasswordActionScreen');
+                    } catch (error) {
+                        console.error("Erro ao verificar código de reset:", error);
+                        showMessageModal("Erro", "O link de redefinição de senha é inválido ou expirou. Por favor, tente novamente.");
+                        displayScreen('loginScreen');
+                    }
+                }
+            };
+            
+            handlePasswordReset();
+
+            document.getElementById('saveNewPasswordBtn').addEventListener('click', async () => {
+                const newPassword = document.getElementById('newPassword').value;
+                if (!passwordResetCode) {
+                    showMessageModal("Erro", "Código de redefinição não encontrado. Tente novamente.");
+                    return;
+                }
+                if (newPassword.length < 6) {
+                    showMessageModal("Erro", "A nova senha deve ter pelo menos 6 caracteres.");
+                    return;
+                }
+
+                try {
+                    await confirmPasswordReset(auth, passwordResetCode, newPassword);
+                    showMessageModal("Sucesso!", "Sua senha foi redefinida com sucesso. Você já pode fazer login.");
+                    // Limpa a URL e mostra a tela de login
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                    displayScreen('loginScreen');
+                } catch (error) {
+                    console.error("Erro ao salvar nova senha:", error);
+                    showMessageModal("Erro", "Não foi possível redefinir a senha. O link pode ter expirado.");
+                }
+            });
+
+        });
+
+    </script>
+</body>
+</html>
