@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -107,7 +108,7 @@ const timelineData = [
           <li className="flex items-start"><span className="text-destructive mr-3 mt-1">✖</span><span>Não processa pagamentos. O foco é no atendimento inicial.</span></li>
         </ul>
         <Image
-            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fdelivery.png?alt=media&token=8c12eb83-3d20-4174-ae51-9b633dd20124"
+            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fdelivery.webp?alt=media&token=6179d062-8226-4f10-935f-24bb3d3ddf36"
             alt="Funções não inclusas"
             width={600}
             height={375}
