@@ -88,7 +88,7 @@ const timelineData = [
           <li className="flex items-start"><span className="text-primary mr-3 mt-1">✔</span><span>Insira o link da sua Agenda pra aceitar agendamentos.</span></li>
         </ul>
         <Image
-            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fcalendar_vempreender.png?alt=media&token=453cb2f1-17e0-45dd-adcf-2f8b2a826cf4"
+            src="https://firebasestorage.googleapis.com/v0/b/cb-vempreender.firebasestorage.app/o/Imagens%20LP%2Fcalendar_vempreender.webp?alt=media&token=5fec3b09-3cf1-4c2b-a8eb-8e90acee61d0"
             alt="Resumo da conversa do chatbot"
             width={800}
             height={500}
