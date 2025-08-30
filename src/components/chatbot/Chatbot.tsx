@@ -5,7 +5,8 @@ import { MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Chatbot() {
-  const chatbotUrl = "/chatbot";
+  // CORREÇÃO: Apontando para o caminho local do chatbot no Firebase Hosting.
+  const chatbotUrl = "/chat/?id=hyP1f247eFPotrOgqnW8OpQuyz23";
 
   return (
     <div className="fixed bottom-6 right-6 z-50">

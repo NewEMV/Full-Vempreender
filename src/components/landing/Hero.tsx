@@ -2,8 +2,9 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Hero() {
-  const chatbotUrl = "/chatbot";
-  const authUrl = "https://lpcba.vempreender.com.br";
+  const authUrl = "/login/auth.html"; 
+  // CORREÇÃO: Apontando para o caminho local do chatbot no Firebase Hosting.
+  const chatbotUrl = "/chat/?id=hyP1f247eFPotrOgqnW8OpQuyz23";
 
   return (
     <section
@@ -43,7 +44,8 @@ export default function Hero() {
               Transforme um bom atendimento em vendas.
             </p>
             <p className="mt-6 text-xl font-normal text-white sm:text-2xl">
-            Sua chance de venda vai embora se um novo cliente não é bem atendido. Com Vempreender você tem um Atendente com Inteligência
+              Sua chance de venda vai
+              embora se um novo cliente não é bem atendido. Com Vempreender você tem um Atendente com Inteligência
               Artificial que conversa com todo novo cliente como se fosse você.
               Ele explica seus serviços, tira as dúvidas e ajuda a separar
               curiosos de clientes.
@@ -65,7 +67,7 @@ export default function Hero() {
                 asChild
               >
                 <Link href={chatbotUrl} target="_blank" rel="noopener noreferrer">
-                  Converse com a IA
+                  Saiba Mais
                 </Link>
               </Button>
             </div>
