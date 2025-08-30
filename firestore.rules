@@ -1,8 +1,15 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Regra para dados privados de usuários (mantida)
     match /artifacts/{appName}/users/{userId}/{allSubcollections=**} {
       allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Nova regra para posts públicos do blog
+    match /posts/{postId} {
+      allow read: if true;
+      allow write: if false;
     }
   }
 }
