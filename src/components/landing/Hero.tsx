@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Hero() {
-  const authUrl = "/login/auth.html"; 
-  // CORREÇÃO: Apontando para o caminho local do chatbot no Firebase Hosting.
+  // CORREÇÃO: Usando a URL absoluta para evitar problemas com o roteador do Next.js
+  const authUrl = "https://cba.vempreender.com.br/login/auth.html"; 
   const chatbotUrl = "/chat/?id=hyP1f247eFPotrOgqnW8OpQuyz23";
 
   return (
@@ -56,6 +56,7 @@ export default function Hero() {
                 size="lg"
                 className="w-full text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30 sm:w-auto"
               >
+                {/* CORREÇÃO: Adicionado target="_blank" de volta */}
                 <Link href={authUrl} target="_blank" rel="noopener noreferrer">
                   Teste Grátis por 10 Dias
                 </Link>

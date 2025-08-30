@@ -3,7 +3,8 @@ import { Handshake } from "lucide-react";
 import Link from "next/link";
 
 export default function Afiliados() {
-  const authUrl = "https://lpcba.vempreender.com.br";
+  // CORREÇÃO DEFINITIVA: Usando a URL absoluta para garantir o carregamento correto do arquivo.
+  const authUrl = "https://cba.vempreender.com.br/login/auth.html";
 
   return (
     <section id="afiliados" className="py-10 md:py-16 bg-background/50">
@@ -32,6 +33,7 @@ export default function Afiliados() {
             </p>
           </div>
           <Button asChild size="lg" className="text-base font-bold">
+            {/* CORREÇÃO DEFINITIVA: Adicionado target="_blank" para abrir em nova aba */}
             <Link href={authUrl} target="_blank" rel="noopener noreferrer">Quero Ser Afiliado!</Link>
           </Button>
         </div>

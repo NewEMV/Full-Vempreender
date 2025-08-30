@@ -1,1 +1,0 @@
-self.__RSC_SERVER_MANIFEST="{\"node\":{\"40385a1bbe78e2f2f9ddd0fbb95b3a18b32e8f2086\":{\"workers\":{\"app/chatbot/page\":{\"moduleId\":\"61259\",\"async\":false}},\"layer\":{\"app/chatbot/page\":\"action-browser\"}}},\"edge\":{},\"encryptionKey\":\"process.env.NEXT_SERVER_ACTIONS_ENCRYPTION_KEY\"}"

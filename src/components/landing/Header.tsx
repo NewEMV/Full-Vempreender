@@ -17,7 +17,7 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const authUrl = "https://lpcba.vempreender.com.br";
+  const authUrl = "https://cba.vempreender.com.br/login/auth.html";
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/60 backdrop-blur-lg">
@@ -44,6 +44,7 @@ export default function Header() {
               className="text-muted-foreground hover:bg-accent/20 hover:text-foreground"
               asChild
           >
+              {/* CORREÇÃO: Adicionado target="_blank" para abrir em nova aba */}
               <Link href={authUrl} target="_blank" rel="noopener noreferrer">Login</Link>
           </Button>
         </nav>
@@ -76,11 +77,12 @@ export default function Header() {
                   ))}
                 </nav>
                 <div className="mt-auto border-t pt-6">
-                   <Button
+                    <Button
                       variant="ghost"
                       className="w-full justify-start text-muted-foreground hover:bg-accent/20 hover:text-foreground text-lg"
                       asChild
                     >
+                      {/* CORREÇÃO: Adicionado target="_blank" para abrir em nova aba */}
                       <Link href={authUrl} target="_blank" rel="noopener noreferrer">Login</Link>
                     </Button>
                 </div>

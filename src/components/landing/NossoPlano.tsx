@@ -51,7 +51,8 @@ const plansData = [
 
 
 export default function NossoPlano() {
-  const authUrl = "https://lpcba.vempreender.com.br";
+  // CORREÇÃO: Usando a URL absoluta para evitar problemas com o roteador do Next.js
+  const authUrl = "https://cba.vempreender.com.br/login/auth.html";
 
   return (
     <section id="nosso-plano" className="relative pb-5 md:pb-8">
@@ -88,21 +89,21 @@ export default function NossoPlano() {
               <div className={`sticky ${plan.topClass}`}>
                 <Card className={`flex flex-col border-2 ${plan.colors}`}>
                   <CardHeader className="flex flex-col space-y-1.5 p-6 px-6 py-4">
-                      <Button className={`w-full text-lg font-bold md:text-xl ${plan.buttonColors}`}>
+                    <Button className={`w-full text-lg font-bold md:text-xl ${plan.buttonColors}`}>
                       {plan.buttonText}
-                      </Button>
-                      <CardTitle className="pt-2 font-medium">
+                    </Button>
+                    <CardTitle className="pt-2 font-medium">
                       {plan.title}
-                      </CardTitle>
-                      <CardDescription className="text-lg font-bold text-primary md:text-xl">
+                    </CardTitle>
+                    <CardDescription className="text-lg font-bold text-primary md:text-xl">
                       {plan.price}
-                      </CardDescription>
-                      <p className="text-lg pt-2">{plan.description}</p>
-                      {plan.promoPrice && (
-                      <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
-                          {plan.promoPrice}
-                      </CardDescription>
-                      )}
+                    </CardDescription>
+                    <p className="text-lg pt-2">{plan.description}</p>
+                    {plan.promoPrice && (
+                    <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
+                        {plan.promoPrice}
+                    </CardDescription>
+                    )}
                   </CardHeader>
                 </Card>
               </div>
@@ -113,13 +114,13 @@ export default function NossoPlano() {
         </div>
 
         <div className="mt-16 text-center">
-            <Button
-                asChild
-                size="lg"
-                className="text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30"
-            >
-                <Link href={authUrl} target="_blank" rel="noopener noreferrer">Teste Grátis por 10 dias</Link>
-            </Button>
+          <Button
+            asChild
+            size="lg"
+            className="text-base font-bold shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/30"
+          >
+            <Link href={authUrl} target="_blank" rel="noopener noreferrer">Teste Grátis por 10 dias</Link>
+          </Button>
         </div>
       </div>
     </section>
