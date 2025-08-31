@@ -50,4 +50,4 @@ Local Environment Variables
 Firebase & IDE
 
 .firebase/
-.idx/
+.idx/*.tar.gz
