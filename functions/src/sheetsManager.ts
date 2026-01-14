@@ -1,8 +1,8 @@
 import * as functions from 'firebase-functions';
 import { google } from 'googleapis';
 import * as admin from 'firebase-admin';
-import * as cors from 'cors';
-import * as express from 'express';
+import cors from 'cors';
+import express from 'express';
 
 const corsHandler = cors({ origin: true });
 const app = express();
@@ -33,7 +33,7 @@ async function getSheetsAuth() {
  * Create a new spreadsheet
  * Body: { title, userId }
  */
-app.post('/create', async (req, res) => {
+app.post('/create', async (req: any, res: any) => {
     try {
         const { title, userId } = req.body;
 
@@ -109,7 +109,7 @@ app.post('/create', async (req, res) => {
  * Read data from a specific range
  * Query params: spreadsheetId, range (e.g., "Precos!A2:C50")
  */
-app.get('/read', async (req, res) => {
+app.get('/read', async (req: any, res: any) => {
     try {
         const { spreadsheetId, range } = req.query;
 
@@ -142,7 +142,7 @@ app.get('/read', async (req, res) => {
  * Append a row to a spreadsheet
  * Body: { spreadsheetId, range, values }
  */
-app.post('/append', async (req, res) => {
+app.post('/append', async (req: any, res: any) => {
     try {
         const { spreadsheetId, range, values } = req.body;
 
@@ -177,7 +177,7 @@ app.post('/append', async (req, res) => {
  * Update specific cells in a spreadsheet
  * Body: { spreadsheetId, range, values }
  */
-app.patch('/update', async (req, res) => {
+app.patch('/update', async (req: any, res: any) => {
     try {
         const { spreadsheetId, range, values } = req.body;
 
@@ -213,7 +213,7 @@ app.patch('/update', async (req, res) => {
  * Calculate values based on spreadsheet data (e.g., order total)
  * Body: { spreadsheetId, pricesRange, items: [{ product, quantity }] }
  */
-app.post('/calculate', async (req, res) => {
+app.post('/calculate', async (req: any, res: any) => {
     try {
         const { spreadsheetId, pricesRange, items } = req.body;
 
@@ -262,7 +262,7 @@ app.post('/calculate', async (req, res) => {
             };
         });
 
-        const grandTotal = calculations.reduce((sum, calc) => sum + calc.total, 0);
+        const grandTotal = calculations.reduce((sum: number, calc: any) => sum + calc.total, 0);
 
         return res.status(200).json({
             success: true,
@@ -281,7 +281,7 @@ app.post('/calculate', async (req, res) => {
  * Save lead to user's spreadsheet (triggered by chatbot)
  * Body: { userId, leadData: { name, contact, focus, characteristic } }
  */
-app.post('/saveLead', async (req, res) => {
+app.post('/saveLead', async (req: any, res: any) => {
     try {
         const { userId, leadData } = req.body;
 

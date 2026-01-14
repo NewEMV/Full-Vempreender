@@ -1,9 +1,9 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
-import * as cors from 'cors';
-import * as express from 'express';
+import cors from 'cors';
+import express from 'express';
 import { SpeechClient } from '@google-cloud/speech';
-import * as busboy from 'busboy';
+import busboy from 'busboy';
 import * as os from 'os';
 import * as path from 'path';
 import * as fs from 'fs';
@@ -27,7 +27,7 @@ const speechClient = new SpeechClient({
  * Transcribe audio file to text
  * Accepts: multipart/form-data with audio file
  */
-app.post('/transcribe', (req, res) => {
+app.post('/transcribe', (req: any, res: any) => {
     const bb = busboy({ headers: req.headers });
     const tmpdir = os.tmpdir();
     const uploads: { [key: string]: any } = {};
@@ -136,7 +136,7 @@ app.post('/transcribe', (req, res) => {
  * GET /audio/status
  * Health check endpoint
  */
-app.get('/status', (req, res) => {
+app.get('/status', (req: any, res: any) => {
     res.status(200).json({
         success: true,
         service: 'Audio Transcription',

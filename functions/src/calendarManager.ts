@@ -1,8 +1,8 @@
 import * as functions from 'firebase-functions';
 import { google } from 'googleapis';
 import * as admin from 'firebase-admin';
-import * as cors from 'cors';
-import * as express from 'express';
+import cors from 'cors';
+import express from 'express';
 
 const corsHandler = cors({ origin: true });
 const app = express();
@@ -32,7 +32,7 @@ async function getCalendarAuth() {
  * Create a new calendar event
  * Body: { userId, title, description, start, end, attendees }
  */
-app.post('/create', async (req, res) => {
+app.post('/create', async (req: any, res: any) => {
     try {
         const { userId, title, description, start, end, attendees, calendarId } = req.body;
 
@@ -104,7 +104,7 @@ app.post('/create', async (req, res) => {
  * List available time slots
  * Query params: date (YYYY-MM-DD), duration (minutes), calendarId
  */
-app.get('/available', async (req, res) => {
+app.get('/available', async (req: any, res: any) => {
     try {
         const { date, duration = 60, calendarId } = req.query;
 
@@ -185,7 +185,7 @@ app.get('/available', async (req, res) => {
  * Update an existing calendar event
  * Body: { title, description, start, end }
  */
-app.patch('/update/:eventId', async (req, res) => {
+app.patch('/update/:eventId', async (req: any, res: any) => {
     try {
         const { eventId } = req.params;
         const { title, description, start, end, calendarId } = req.body;
@@ -231,7 +231,7 @@ app.patch('/update/:eventId', async (req, res) => {
  * DELETE /calendar/cancel/:eventId
  * Cancel (delete) a calendar event
  */
-app.delete('/cancel/:eventId', async (req, res) => {
+app.delete('/cancel/:eventId', async (req: any, res: any) => {
     try {
         const { eventId } = req.params;
         const { calendarId, userId } = req.query;
