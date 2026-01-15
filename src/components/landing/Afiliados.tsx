@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Afiliados() {
   // CORREÇÃO DEFINITIVA: Usando a URL absoluta para garantir o carregamento correto do arquivo.
-  const authUrl = "https://cba.vempreender.com.br/login/auth.html";
+  const authUrl = "/chatbot";
 
   return (
     <section id="afiliados" className="py-10 md:py-16 bg-background/50">

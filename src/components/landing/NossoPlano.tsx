@@ -52,7 +52,7 @@ const plansData = [
 
 export default function NossoPlano() {
   // CORREÇÃO: Usando a URL absoluta para evitar problemas com o roteador do Next.js
-  const authUrl = "https://cba.vempreender.com.br/login/auth.html";
+  const authUrl = "/chatbot";
 
   return (
     <section id="nosso-plano" className="relative pb-5 md:pb-8">
@@ -100,9 +100,9 @@ export default function NossoPlano() {
                     </CardDescription>
                     <p className="text-lg pt-2">{plan.description}</p>
                     {plan.promoPrice && (
-                    <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
+                      <CardDescription className="mt-4 text-lg font-bold text-primary md:text-xl">
                         {plan.promoPrice}
-                    </CardDescription>
+                      </CardDescription>
                     )}
                   </CardHeader>
                 </Card>

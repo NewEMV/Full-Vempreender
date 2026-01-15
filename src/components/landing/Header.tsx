@@ -5,19 +5,19 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
 const navLinks = [
-    { href: "/#inicio", label: "Início" },
-    { href: "/#solucoes", label: "Soluções" },
-    { href: "/#como-funciona", label: "Como Funciona" },
-    { href: "/#atraia-clientes", label: "Atraia Clientes" },
-    { href: "/#nosso-plano", label: "Planos" },
-    { href: "/#depoimentos", label: "Depoimentos" },
-    { href: "/blog", label: "Blog" },
-    { href: "/#afiliados", label: "Afiliados" },
-    { href: "/#faq", label: "FAQ" },
+  { href: "/#inicio", label: "Início" },
+  { href: "/#solucoes", label: "Soluções" },
+  { href: "/#como-funciona", label: "Como Funciona" },
+  { href: "/#atraia-clientes", label: "Atraia Clientes" },
+  { href: "/#nosso-plano", label: "Planos" },
+  { href: "/#depoimentos", label: "Depoimentos" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#afiliados", label: "Afiliados" },
+  { href: "/#faq", label: "FAQ" },
 ];
 
 export default function Header() {
-  const authUrl = "https://cba.vempreender.com.br/login/auth.html";
+  const authUrl = "/chatbot";
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/50 bg-background/60 backdrop-blur-lg">
@@ -25,7 +25,7 @@ export default function Header() {
         <Link href="/">
           <Logo />
         </Link>
-        
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-4">
           <div className="flex items-center space-x-4 text-base font-medium">
@@ -40,12 +40,12 @@ export default function Header() {
             ))}
           </div>
           <Button
-              variant="ghost"
-              className="text-muted-foreground hover:bg-accent/20 hover:text-foreground"
-              asChild
+            variant="ghost"
+            className="text-muted-foreground hover:bg-accent/20 hover:text-foreground"
+            asChild
           >
-              {/* CORREÇÃO: Adicionado target="_blank" para abrir em nova aba */}
-              <Link href={authUrl} target="_blank" rel="noopener noreferrer">Login</Link>
+            {/* CORREÇÃO: Adicionado target="_blank" para abrir em nova aba */}
+            <Link href={authUrl} target="_blank" rel="noopener noreferrer">Login</Link>
           </Button>
         </nav>
 
@@ -77,14 +77,14 @@ export default function Header() {
                   ))}
                 </nav>
                 <div className="mt-auto border-t pt-6">
-                    <Button
-                      variant="ghost"
-                      className="w-full justify-start text-muted-foreground hover:bg-accent/20 hover:text-foreground text-lg"
-                      asChild
-                    >
-                      {/* CORREÇÃO: Adicionado target="_blank" para abrir em nova aba */}
-                      <Link href={authUrl} target="_blank" rel="noopener noreferrer">Login</Link>
-                    </Button>
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start text-muted-foreground hover:bg-accent/20 hover:text-foreground text-lg"
+                    asChild
+                  >
+                    {/* CORREÇÃO: Adicionado target="_blank" para abrir em nova aba */}
+                    <Link href={authUrl} target="_blank" rel="noopener noreferrer">Login</Link>
+                  </Button>
                 </div>
               </div>
             </SheetContent>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   // CORREÇÃO: Usando a URL absoluta para evitar problemas com o roteador do Next.js
-  const authUrl = "https://cba.vempreender.com.br/login/auth.html"; 
+  const authUrl = "/chatbot";
   const chatbotUrl = "/chat/?id=hyP1f247eFPotrOgqnW8OpQuyz23";
 
   return (
