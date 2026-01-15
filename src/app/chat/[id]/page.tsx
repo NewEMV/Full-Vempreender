@@ -11,9 +11,10 @@ export default function ChatbotPage() {
     const params = useParams();
     const chatbotId = params.id as string;
 
-    // CORRIGIDO: URLs dos webhooks n8n
+    // URLs dos webhooks e API
     const WEBHOOK_CONFIG_URL = "https://webhook.vempreender.com.br/webhook/get-chatbot-config";
     const WEBHOOK_CHAT_URL = "https://webhook.vempreender.com.br/webhook/conversa-gemini";
+    const API_CHAT_URL = "/api/chat";
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
