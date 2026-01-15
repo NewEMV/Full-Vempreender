@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
+import { buildSPINPrompt } from '@/lib/spinPrompt';
 
 type Message = { sender: 'bot' | 'user', text: string };
 
@@ -79,9 +80,12 @@ export default function ChatbotPage() {
 
         const finalKnowledgeBase = knowledgeBaseParts.join('; ');
 
+        // Add SPIN Selling and Function Calling logic
+        const spinAdditions = buildSPINPrompt(config);
+
         return `
 # PERSONA E CONTEXTO
-- Você é ${config.nomeAtendenteVirtual || 'um assistente virtual'}, um assistente virtual especialista em pré-atendimento.
+- Você é ${config.nomeAtendenteVirtual || 'um assistente virtual'}, um CONSULTOR especialista, não um vendedor pressionado.
 - Sua personalidade é ${config.tomConversa || 'neutra'} e ${config.humorConversa || 'equilibrada'}.
 - Você trabalha para a empresa "${config.nomeEmpresa}", cujo nicho é "${config.nichoTrabalho}".
 - A base de conhecimento a seguir é TUDO o que você sabe sobre a empresa que representa. Não invente informações sobre ela.
@@ -90,6 +94,7 @@ export default function ChatbotPage() {
 # CONTEXTO DE TEMPO REAL
 - A data e hora atuais são: ${currentDateTime}.
 - Use essa informação para dar respostas contextuais sobre o horário de funcionamento.
+${spinAdditions}
 
 # FLUXO ESTRATÉGICO DE CONVERSA (3 FASES)
 
@@ -99,12 +104,13 @@ export default function ChatbotPage() {
 3.  **Coleta de Nome:** APÓS a primeira resposta, SEMPRE pergunte o nome do usuário de forma amigável. Ex: "E qual o seu nome, por favor?". NUNCA presuma o nome a partir da saudação do usuário.
 4.  **Coleta de WhatsApp:** IMEDIATAMENTE APÓS o usuário informar o nome, peça o número de WhatsApp dele para que a equipe possa te dar um atendimento personalizado. Ex: "Ótimo, [Nome do Usuário]! Para que nossa equipe possa te dar um atendimento personalizado, qual o seu WhatsApp com DDD, por favor?".
 
-## FASE 2: ENGAJAMENTO E PERSUASÃO
+## FASE 2: ENGAJAMENTO E CONSULTORIA
 - Após coletar o WhatsApp, continue a conversa normalmente.
 - Use o nome do lead raramente para criar conexão.
 - Entenda a necessidade com perguntas abertas.
 - Use a BASE DE CONHECIMENTO para responder.
 - Use gatilhos mentais e quebre objeções com o FAQ.
+- **Só ative modo vendas (SPIN) quando houver sinais de intenção de compra**
 
 ## FASE 3: CONVERSÃO
 - Quando a conversa parecer estar se concluindo, ou se for pertinente, ofereça o link de agendamento se ele existir na Base de Conhecimento.
@@ -210,26 +216,24 @@ export default function ChatbotPage() {
             return;
         }
 
-        // Formata histórico no formato esperado pelo n8n
+        // Formata histórico para Gemini API
         const formattedHistory = currentHistory.map(msg => ({
             role: msg.sender === 'user' ? 'user' : 'model',
             parts: [{ text: msg.text.replace(/<br>/g, '\n') }]
         }));
 
-        const payload = {
-            body: {
-                systemPrompt: systemPromptRef.current,
-                chatHistory: formattedHistory,
-                chatbotId: chatbotId,
-                sessionId: currentSessionId
-            }
-        };
-
         try {
-            const response = await fetch(WEBHOOK_CHAT_URL, {
+            // DUAL-PATH 1: Chama API nova (Gemini + Function Calling)
+            const response = await fetch(API_CHAT_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
+                body: JSON.stringify({
+                    systemPrompt: systemPromptRef.current,
+                    chatHistory: formattedHistory,
+                    chatbotId: chatbotId,
+                    sessionId: currentSessionId,
+                    chatbotConfig: chatbotConfig || {}
+                })
             });
 
             if (!response.ok) {
@@ -249,11 +253,29 @@ export default function ChatbotPage() {
                 } else {
                     addMessageToList('bot', aiContent);
                 }
+
+                // DUAL-PATH 2: TAMBÉM envia para n8n (Firestore, debounce, análise)
+                // Executa em background sem aguardar resposta
+                fetch('https://webhook.vempreender.com.br/webhook/conversa-gemini', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        body: {
+                            systemPrompt: systemPromptRef.current,
+                            chatHistory: formattedHistory,
+                            chatbotId: chatbotId,
+                            sessionId: currentSessionId
+                        }
+                    })
+                }).catch(err => {
+                    // Silently fail - n8n é para persistência, não afeta conversa
+                    console.warn('n8n webhook falhou (não afeta conversa):', err);
+                });
             } else {
                 throw new Error("Resposta inválida do servidor.");
             }
         } catch (error) {
-            console.error("Error calling webhook for chat:", error);
+            console.error("Error calling API:", error);
             addMessageToList('bot', "Desculpe, estou com uma instabilidade no momento. Tente novamente em alguns instantes.");
         } finally {
             setIsTyping(false);

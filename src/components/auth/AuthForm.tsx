@@ -477,6 +477,10 @@ const FormSchema = z.object({
     tomConversa: z.string({ required_error: "Tom de conversa é obrigatório" }).min(1, "Tom de conversa é obrigatório"),
     humorConversa: z.string({ required_error: "Humor da conversa é obrigatório" }).min(1, "Humor da conversa é obrigatório"),
     saudacaoPreferida: z.string().min(5, "Saudação é obrigatória"),
+    precoBase: z.string().optional(),
+    permitirCalculoFinal: z.boolean().optional(),
+    calendarId: z.string().optional(),
+    spreadsheetId: z.string().optional(),
     services: z.array(z.object({
         titulo: z.string().min(1, "Título do serviço é obrigatório"),
         descricao: z.string().min(1, "Descrição do serviço é obrigatória"),
@@ -744,7 +748,7 @@ const MemberArea = ({ user, handleLogout, setView, showMessageModal }: { user: U
             case 3: return ["cep", "rua", "numero", "bairro", "cidade", "estadoUf"];
             case 4: return ["instagramPessoal", "instagramProfissional", "linkedin", "tiktok"];
             case 5: return ["horarioFuncionamento", "formasPagamento", "nichoTrabalho"];
-            case 6: return ["tomConversa", "humorConversa", "saudacaoPreferida"];
+            case 6: return ["tomConversa", "humorConversa", "saudacaoPreferida", "precoBase", "calendarId", "spreadsheetId"];
             case 7: return ["services"];
             case 8: return [];
             case 9: return ["palavrasChaveNegativas"];
@@ -931,6 +935,54 @@ const MemberArea = ({ user, handleLogout, setView, showMessageModal }: { user: U
                         <option value="Equilibrado">Equilibrado</option>
                     </FormSelect>
                     <FormInput name="saudacaoPreferida" label="Exemplo de Saudação" placeholder="Exemplo de Saudação Preferida*" />
+
+                    <div className="mt-6 p-4 bg-muted rounded-lg">
+                        <h5 className="text-xl font-semibold mb-2 text-primary">Funcionalidades Avançadas (Opcional)</h5>
+                        <p className="text-sm text-muted-foreground mb-4">Configure recursos extras como agendamento e cálculo de preços</p>
+
+                        <FormInput
+                            name="precoBase"
+                            label="Preço Base"
+                            placeholder='Ex: "A partir de R$ 150" (Opcional)'
+                        />
+                        <p className="text-xs text-muted-foreground -mt-2 mb-4">Valor inicial que a IA pode mencionar antes de qualificar o lead</p>
+
+                        <div className="mb-4">
+                            <Controller
+                                name="permitirCalculoFinal"
+                                control={control}
+                                render={({ field }) => (
+                                    <div className="flex items-center space-x-2">
+                                        <input
+                                            type="checkbox"
+                                            id="permitirCalculoFinal"
+                                            checked={field.value || false}
+                                            onChange={(e) => field.onChange(e.target.checked)}
+                                            className="w-5 h-5"
+                                        />
+                                        <label htmlFor="permitirCalculoFinal" className="text-base cursor-pointer">
+                                            Permitir cálculo de preço final pela IA
+                                        </label>
+                                    </div>
+                                )}
+                            />
+                            <p className="text-xs text-muted-foreground mt-1 ml-7">Marque apenas se seus preços são fixos. Serviços personalizados devem solicitar avaliação</p>
+                        </div>
+
+                        <FormInput
+                            name="calendarId"
+                            label="ID do Google Calendar"
+                            placeholder="ID do Google Calendar (Opcional)"
+                        />
+                        <p className="text-xs text-muted-foreground -mt-2 mb-4">Para agendar compromissos automaticamente</p>
+
+                        <FormInput
+                            name="spreadsheetId"
+                            label="ID da Planilha de Preços"
+                            placeholder="ID da Planilha Google Sheets (Opcional)"
+                        />
+                        <p className="text-xs text-muted-foreground -mt-2">Para calcular orçamentos com base na planilha</p>
+                    </div>
                 </MemoizedFormStep>
             );
             case 7: return (
