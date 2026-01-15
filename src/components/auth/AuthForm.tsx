@@ -470,7 +470,6 @@ const FormSchema = z.object({
     linkedin: z.string().optional(),
     tiktok: z.string().optional(),
     horarioFuncionamento: z.string().min(5, "Horário de funcionamento é obrigatório"),
-    linkAgendamento: z.string().url("URL inválida").optional().or(z.literal('')),
     formasPagamento: z.string().min(3, "Formas de pagamento são obrigatórias"),
     nichoTrabalho: z.string().min(3, "Nicho de trabalho é obrigatório"),
     nomeAtendenteVirtual: z.string().optional(),
@@ -481,6 +480,16 @@ const FormSchema = z.object({
     permitirCalculoFinal: z.boolean().optional(),
     calendarId: z.string().optional(),
     spreadsheetId: z.string().optional(),
+    funcaoAssistente: z.enum(['vender', 'agendar', 'reuniao', 'qualificar', 'orcamento', 'coletar', 'suporte', 'outro'], { required_error: "Selecione uma função" }),
+    funcaoAssistenteOutro: z.string().optional(),
+    nivelAbordagemSPIN: z.enum(['agressivo', 'perspicaz', 'envolvente', 'sutil', 'desligado'], { required_error: "Selecione o nível de abordagem" }),
+    assistenteFechaVenda: z.enum(['sim', 'nao'], { required_error: "Campo obrigatório" }),
+    assistenteEncaminhaLead: z.enum(['sim', 'nao'], { required_error: "Campo obrigatório" }),
+    linksUteis: z.array(z.object({
+        titulo: z.string().min(1, "Título do link é obrigatório"),
+        url: z.string().url("URL inválida"),
+        descricao: z.string().min(1, "Descrição é obrigatória"),
+    })).optional(),
     services: z.array(z.object({
         titulo: z.string().min(1, "Título do serviço é obrigatório"),
         descricao: z.string().min(1, "Descrição do serviço é obrigatória"),
@@ -490,13 +499,17 @@ const FormSchema = z.object({
         resposta: z.string().optional(),
     })).optional(),
     palavrasChaveNegativas: z.string().optional(),
-    indicacoes: z.array(z.object({
-        nome: z.string().optional(),
-        whatsapp: z.string().optional().refine(val => !val || val.replace(/\D/g, '').length === 11, { message: "WhatsApp inválido" }),
-    })).optional(),
     lastCompletedStep: z.number().optional(),
     status: z.string().optional(),
     finalizadoEm: z.string().optional(),
+}).refine((data) => {
+    if (data.funcaoAssistente === 'outro') {
+        return data.funcaoAssistenteOutro && data.funcaoAssistenteOutro.trim().length > 0;
+    }
+    return true;
+}, {
+    message: "Especifique a função personalizada",
+    path: ["funcaoAssistenteOutro"]
 });
 
 const FormInput = ({ name, label, placeholder, ...props }: { name: keyof z.infer<typeof FormSchema>; label: string; placeholder: string;[key: string]: any }) => {
@@ -592,6 +605,41 @@ const FormSelect = ({ name, label, placeholder, children }: { name: keyof z.infe
     );
 };
 
+const FormRadio = ({ name, label, options }: { name: keyof z.infer<typeof FormSchema>; label: string; options: { value: string; label: string }[] }) => {
+    const { control, formState: { errors } } = useFormContext();
+    const error = errors[name];
+
+    return (
+        <div className="mb-4">
+            <label className="block text-base font-medium mb-2">{label}</label>
+            <Controller
+                name={name}
+                control={control}
+                render={({ field }) => (
+                    <div className="flex gap-4">
+                        {options.map(option => (
+                            <label
+                                key={option.value}
+                                className="flex items-center space-x-2 cursor-pointer"
+                            >
+                                <input
+                                    type="radio"
+                                    value={option.value}
+                                    checked={field.value === option.value}
+                                    onChange={() => field.onChange(option.value)}
+                                    className="w-5 h-5"
+                                />
+                                <span className="text-lg">{option.label}</span>
+                            </label>
+                        ))}
+                    </div>
+                )}
+            />
+            {error && <p className="text-red-500 text-sm mt-1">{String(error.message)}</p>}
+        </div>
+    );
+};
+
 const MemoizedFormStep = memo(function FormStep({ children, onNext, onPrev, isFirst = false, isLast = false }: { children: React.ReactNode; onNext: () => void; onPrev?: () => void; isFirst?: boolean; isLast?: boolean }) {
     return (
         <div className="space-y-4">
@@ -615,14 +663,14 @@ const MemberArea = ({ user, handleLogout, setView, showMessageModal }: { user: U
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     const appIdName = auth?.app?.options?.projectId;
-    const totalSteps = 10;
+    const totalSteps = 7;
 
     const methods = useForm({
         resolver: zodResolver(FormSchema),
         defaultValues: {
             services: [],
             faqs: [],
-            indicacoes: [{}, {}, {}],
+            linksUteis: [],
             status: 'incompleto',
         },
         mode: "onChange"
@@ -632,7 +680,7 @@ const MemberArea = ({ user, handleLogout, setView, showMessageModal }: { user: U
 
     const { fields: serviceFields, append: appendService, remove: removeService } = useFieldArray({ control, name: "services" });
     const { fields: faqFields, append: appendFaq, remove: removeFaq } = useFieldArray({ control, name: "faqs" });
-    const { fields: indicacaoFields } = useFieldArray({ control, name: "indicacoes" });
+    const { fields: linksUteisFields, append: appendLinksUteis, remove: removeLinksUteis } = useFieldArray({ control, name: "linksUteis" });
 
     const profilePicUrlWatcher = watch('fotoPerfilUrl');
     const formData = watch();
@@ -744,15 +792,12 @@ const MemberArea = ({ user, handleLogout, setView, showMessageModal }: { user: U
     const getFieldsForStep = (step: number) => {
         switch (step) {
             case 1: return ["nomeCompleto", "emailConta", "dataNascimento", "whatsapp"];
-            case 2: return ["nomeEmpresa", "cnpjCpf"];
-            case 3: return ["cep", "rua", "numero", "bairro", "cidade", "estadoUf"];
-            case 4: return ["instagramPessoal", "instagramProfissional", "linkedin", "tiktok"];
-            case 5: return ["horarioFuncionamento", "formasPagamento", "nichoTrabalho"];
-            case 6: return ["tomConversa", "humorConversa", "saudacaoPreferida", "precoBase", "calendarId", "spreadsheetId"];
-            case 7: return ["services"];
-            case 8: return [];
-            case 9: return ["palavrasChaveNegativas"];
-            case 10: return ["indicacoes"];
+            case 2: return ["nomeEmpresa", "cnpjCpf", "cep", "rua", "numero", "bairro", "cidade", "estadoUf"];
+            case 3: return ["instagramPessoal", "instagramProfissional", "linkedin", "tiktok", "horarioFuncionamento", "formasPagamento", "nichoTrabalho", "precoBase", "calendarId", "spreadsheetId"];
+            case 4: return ["nomeAtendenteVirtual", "tomConversa", "humorConversa", "saudacaoPreferida", "funcaoAssistente", "funcaoAssistenteOutro", "nivelAbordagemSPIN", "assistenteFechaVenda", "assistenteEncaminhaLead", "linksUteis"];
+            case 5: return ["services"];
+            case 6: return [];
+            case 7: return ["palavrasChaveNegativas"];
             default: return [];
         }
     };
@@ -862,48 +907,51 @@ const MemberArea = ({ user, handleLogout, setView, showMessageModal }: { user: U
             );
             case 2: return (
                 <MemoizedFormStep key="step-2" onPrev={goToPrevStep} onNext={goToNextStep}>
-                    <h4 className="text-3xl font-semibold mb-4">2. Informações da Empresa</h4>
-                    <FormInput name="nomeEmpresa" label="Nome da Empresa" placeholder="Nome da Empresa*" />
-                    <FormMaskedInput
-                        name="cnpjCpf"
-                        label="CNPJ ou CPF"
-                        placeholder="CNPJ ou CPF"
-                        mask={[
-                            { mask: '000.000.000-00' },
-                            { mask: '00.000.000/0000-00' }
-                        ]}
-                    />
+                    <h4 className="text-3xl font-semibold mb-4">2. Informações da Empresa + Endereço</h4>
 
-                    <label className="block text-xl font-medium mt-4 mb-2">Foto de Perfil / Logo (Opcional)</label>
-                    <div className="cursor-pointer border-dashed border-2 border-border p-4 text-center rounded-lg hover:bg-muted" onClick={() => fileInputRef.current?.click()}>
-                        <input type="file" ref={fileInputRef} id="profilePicInput" accept="image/png, image/jpeg, image/webp" className="hidden" onChange={(e) => {
-                            const file = e.target.files?.[0];
-                            if (file) {
-                                setProfilePicFile(file);
-                                setValue('fotoPerfilUrl', URL.createObjectURL(file));
-                            }
-                        }} />
-                        <span id="fileName" className="text-lg">{profilePicFile?.name || 'Clique para escolher uma imagem'}</span>
+                    <div className="mb-6">
+                        <h5 className="text-2xl font-semibold mb-4 text-primary">Informações da Empresa</h5>
+                        <FormInput name="nomeEmpresa" label="Nome da Empresa" placeholder="Nome da Empresa*" />
+                        <FormMaskedInput
+                            name="cnpjCpf"
+                            label="CNPJ ou CPF"
+                            placeholder="CNPJ ou CPF"
+                            mask={[
+                                { mask: '000.000.000-00' },
+                                { mask: '00.000.000/0000-00' }
+                            ]}
+                        />
+
+                        <label className="block text-xl font-medium mt-4 mb-2">Foto de Perfil / Logo (Opcional)</label>
+                        <div className="cursor-pointer border-dashed border-2 border-border p-4 text-center rounded-lg hover:bg-muted" onClick={() => fileInputRef.current?.click()}>
+                            <input type="file" ref={fileInputRef} id="profilePicInput" accept="image/png, image/jpeg, image/webp" className="hidden" onChange={(e) => {
+                                const file = e.target.files?.[0];
+                                if (file) {
+                                    setProfilePicFile(file);
+                                    setValue('fotoPerfilUrl', URL.createObjectURL(file));
+                                }
+                            }} />
+                            <span id="fileName" className="text-lg">{profilePicFile?.name || 'Clique para escolher uma imagem'}</span>
+                        </div>
+                        {profilePicUrlWatcher && <img src={profilePicUrlWatcher} alt="Preview" width={150} height={150} className="rounded-full mx-auto mt-4 border-2 border-primary object-cover" />}
+                        <p className="text-center font-bold text-primary text-xl">{uploadStatus}</p>
                     </div>
-                    {profilePicUrlWatcher && <img src={profilePicUrlWatcher} alt="Preview" width={150} height={150} className="rounded-full mx-auto mt-4 border-2 border-primary object-cover" />}
-                    <p className="text-center font-bold text-primary text-xl">{uploadStatus}</p>
+
+                    <div>
+                        <h5 className="text-2xl font-semibold mb-4 text-primary">Endereço da Empresa</h5>
+                        <FormMaskedInput name="cep" label="CEP" placeholder="CEP*" mask="00000-000" />
+                        <FormInput name="rua" label="Rua" placeholder="Rua*" />
+                        <FormInput name="numero" label="Número" placeholder="Número*" />
+                        <FormInput name="complemento" label="Complemento" placeholder="Complemento" />
+                        <FormInput name="bairro" label="Bairro" placeholder="Bairro*" />
+                        <FormInput name="cidade" label="Cidade" placeholder="Cidade*" />
+                        <FormInput name="estadoUf" label="Estado" placeholder="Estado (UF)*" maxLength={2} />
+                    </div>
                 </MemoizedFormStep>
             );
             case 3: return (
                 <MemoizedFormStep key="step-3" onPrev={goToPrevStep} onNext={goToNextStep}>
-                    <h4 className="text-3xl font-semibold mb-4">3. Endereço da Empresa</h4>
-                    <FormMaskedInput name="cep" label="CEP" placeholder="CEP*" mask="00000-000" />
-                    <FormInput name="rua" label="Rua" placeholder="Rua*" />
-                    <FormInput name="numero" label="Número" placeholder="Número*" />
-                    <FormInput name="complemento" label="Complemento" placeholder="Complemento" />
-                    <FormInput name="bairro" label="Bairro" placeholder="Bairro*" />
-                    <FormInput name="cidade" label="Cidade" placeholder="Cidade*" />
-                    <FormInput name="estadoUf" label="Estado" placeholder="Estado (UF)*" maxLength={2} />
-                </MemoizedFormStep>
-            );
-            case 4: return (
-                <MemoizedFormStep key="step-4" onPrev={goToPrevStep} onNext={goToNextStep}>
-                    <h4 className="text-3xl font-semibold mb-4">4. Redes Sociais (Opcional)</h4>
+                    <h4 className="text-3xl font-semibold mb-4">3. Redes Sociais (Opcional)</h4>
                     <FormInput name="instagramPessoal" label="Instagram Pessoal" placeholder="Instagram Pessoal" />
                     <FormInput name="instagramProfissional" label="Instagram Profissional" placeholder="Instagram Profissional" />
                     <FormInput name="linkedin" label="LinkedIn" placeholder="LinkedIn" />
